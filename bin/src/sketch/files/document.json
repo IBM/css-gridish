@@ -1,0 +1,26 @@
+{
+  "_class": "document",
+  "do_objectID": "0FBB6CDA-F85E-40DB-B6D3-2A9FA7AEA2D3",
+  "assets": {
+    "_class": "assetCollection",
+    "colors": [],
+    "gradients": [],
+    "imageCollection": { "_class": "imageCollection", "images": {} },
+    "images": []
+  },
+  "colorSpace": 0,
+  "currentPageIndex": 0,
+  "enableLayerInteraction": true,
+  "enableSliceInteraction": true,
+  "foreignSymbols": [],
+  "layerStyles": { "_class": "sharedStyleContainer", "objects": [] },
+  "layerSymbols": { "_class": "symbolContainer", "objects": [] },
+  "layerTextStyles": { "_class": "sharedTextStyleContainer", "objects": [] },
+  "pages": [
+    {
+      "_class": "MSJSONFileReference",
+      "_ref_class": "MSImmutablePage",
+      "_ref": "pages/BC333699-815E-4E1B-9816-9836EDA5B291"
+    }
+  ]
+}

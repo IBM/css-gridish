@@ -1,0 +1,80 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+  <link href="./css-gridish/css/material-grid.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      grid-auto-flow: row dense;
+    }
+
+    .selection {
+      grid-column-start: span 6;
+      grid-row-start: span 35;
+    }
+
+    .material-grid--fluid-rows .selection {
+      grid-row-start: span 4;
+    }
+
+    .selection * {
+      margin-top: 0;
+    }
+
+    p {
+      max-width: 16rem;
+    }
+  </style>
+</head>
+
+<body class="material-container material-grid">
+  <div class="material-padding selection">
+    <h1>CSS Gridish</h1>
+    <h2>Material Example</h2>
+    <input type="radio" id="fixedRows" onclick="handleToggle(this);" name="contact" value="false">
+    <label for="fixedRows">Fixed rows (default)</label>
+    <br>
+    <input checked type="radio" id="fluidRows" onclick="handleToggle(this);" name="contact" value="true">
+    <label for="fluidRows">Fluid rows (.material-grid--fluid-rows)</label>
+    <br>
+    <br>
+    <p>Learn more about
+      <a href="https://github.com/ibm/css-gridish">CSS Gridish.</a>
+    </p>
+    <p>Also check out our examples of CSS Gridish making grid code for
+      <a href="../bootstrap/index.html">Bootstrap</a> and
+      <a href="../carbon/index.html">Carbon.</a>
+    </p>
+  </div>
+</body>
+<script>
+  function makeNewElement() {
+    var colors = ["#F44336", "#673AB7", "#00BCD4", "#FF9800", "#FFEB3B"];
+    var div = document.createElement("div");
+    var columnSize = Math.ceil(Math.random() * 6);
+    var rowSize = Math.ceil(Math.random() * 6);
+    var color = colors[Math.ceil(Math.random() * (colors.length - 1))];
+    div.setAttribute("style", "background: " + color + "; grid-column-start: span " + columnSize + "; grid-row-start: span " + rowSize + ";");
+    return div;
+  }
+
+  for (var i = 0; i < 50; i++) {
+    document.body.appendChild(makeNewElement());
+  }
+
+  function handleToggle(radio) {
+    if (radio.value === "true") {
+      document.body.classList.add("material-grid--fluid-rows")
+    } else {
+      document.body.classList.remove("material-grid--fluid-rows")
+    }
+  }
+
+  handleToggle({ value: "true" });
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+.css-gridish-checker {
+  left: 0;
+  height: 100vh !important;
+  margin: 0 auto;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100vw !important;
+  z-index: 9999;
+}
+
+.css-gridish-checker__grid,
+.css-gridish-checker__layout {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.css-gridish-checker__grid {
+  background: linear-gradient(to right, #c0c6cd 1px, transparent 1px),
+    linear-gradient(to bottom, #c0c6cd 1px, transparent 1px);
+}
+
+.css-gridish-checker__layout {
+  box-sizing: border-box;
+  display: flex;
+}
+
+.css-gridish-checker__layout__col {
+  background: #b8c1c1;
+  display: none;
+  flex: 1;
+  opacity: 0.75;
+}

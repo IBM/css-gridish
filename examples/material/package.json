@@ -1,0 +1,18 @@
+{
+  "name": "css-gridish-example-carbon",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=8.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@ibm.com:ibm/css-gridish.git"
+  },
+  "author": "James Y. Rauhut <jamesrauhut@us.ibm.com>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "node ../../bin/index.js",
+    "test": "true"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,27 @@
+{
+  "prefix": "bootstrap",
+  "breakpoints": {
+    "sm": {
+      "breakpoint": 36,
+      "columns": 12,
+      "gutter": "30px",
+      "margin": 0
+    },
+    "xl": {
+      "breakpoint": 100,
+      "columns": 12,
+      "gutter": "30px",
+      "margin": 0
+    }
+  },
+  "extraArtboards": {
+    "md": 51,
+    "lg": 66
+  },
+  "rem": 15,
+  "rowHeight": 1,
+  "rows": 30,
+  "paths": {
+    "intro": "intro.md"
+  }
+}

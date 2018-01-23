@@ -1,0 +1,36 @@
+$grid-values: (
+  prefix: material,
+  breakpoints: (
+    xsmall: (
+      breakpoint: 22.5,
+      columns: 4,
+      gutter: 1rem,
+      margin: 0
+    ),
+    small: (
+      breakpoint: 37.5,
+      columns: 8,
+      gutter: 1rem,
+      margin: 0
+    ),
+    medium: (
+      breakpoint: 64,
+      columns: 12,
+      gutter: 2rem,
+      margin: 0
+    ),
+    xlarge: (
+      breakpoint: 120,
+      columns: 12,
+      gutter: 2rem,
+      margin: 0
+    )
+  ),
+  extraArtboards: (
+    large: 90
+  ),
+  rem: 16,
+  rowHeight: 0.5,
+  rows: 30,
+  paths: null
+);

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSS Gridish</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    body {
+      margin: 0;
+    }
+
+    #css-gridish-checker {
+      font-family: Helvetica, Arial, sans-serif;
+      padding: 1rem;
+      width: 300px;
+    }
+
+    h1 {
+      margin-top: -.5rem;
+    }
+
+    p:last-child {
+      margin-bottom: -.25rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="css-gridish-checker">
+    <h1>CSS Gridish</h1>
+    <p id="currentGrid"></p>
+    <p>Upload your grid’s css-gridish.json to check the alignment of a webpage.</p>
+    <p>Press CTRL+G to toggle your grid, CTRL+L to toggle your layout.</p>
+    <p>Note: Refreshing already open webpages is necessary after installing CSS Gridish.</p>
+    <p>Change grid by uploading new css-gridish.json:
+      <input accept=".json" type="file" id="upload" value="Browse and Upload" />
+    </p>
+  </div>
+  <script src="browserAction.js"></script>
+</body>
+
+</html>

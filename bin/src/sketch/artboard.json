@@ -1,0 +1,72 @@
+{
+  "_class": "artboard",
+  "do_objectID": "CF812E16-6AB8-4E0D-AA6C-E98BE3E292AC",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [],
+    "includedLayerIds": [],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 600,
+    "width": 320,
+    "x": 173,
+    "y": 103
+  },
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "name": "artboard1",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": true,
+  "style": {
+    "_class": "style",
+    "endDecorationType": 0,
+    "miterLimit": 10,
+    "startDecorationType": 0
+  },
+  "hasClickThrough": false,
+  "layers": [],
+  "backgroundColor": {
+    "_class": "color",
+    "alpha": 1,
+    "blue": 1,
+    "green": 1,
+    "red": 1
+  },
+  "grid": {
+    "_class": "simpleGrid",
+    "isEnabled": true,
+    "gridSize": 8,
+    "thickGridTimes": 0
+  },
+  "hasBackgroundColor": false,
+  "horizontalRulerData": { "_class": "rulerData", "base": 0, "guides": [] },
+  "includeBackgroundColorInExport": true,
+  "includeInCloudUpload": true,
+  "layout": {
+    "_class": "layoutGrid",
+    "isEnabled": true,
+    "columnWidth": 48,
+    "drawHorizontal": false,
+    "drawHorizontalLines": false,
+    "drawVertical": true,
+    "gutterHeight": 12,
+    "gutterWidth": 32,
+    "guttersOutside": true,
+    "horizontalOffset": 0,
+    "numberOfColumns": 4,
+    "rowHeightMultiplication": 5,
+    "totalWidth": 320
+  },
+  "resizesContent": false,
+  "verticalRulerData": { "_class": "rulerData", "base": 0, "guides": [] }
+}
