@@ -85,7 +85,7 @@ body {
       }
     }
 
-    @if (map-has-key($cleanedBreakpoints, $name)) {
+    @if (map-has-key($allBreakpoints, $name)) {
       @include gridMargin($breakpoint, $last);
       @include gridPadding($breakpoint);
       @include gridLegacyWrapper($includeFlexFallback) {

@@ -323,6 +323,22 @@ body {
     display: none; }
   [class*="bootstrap-grid__col--"] {
     min-width: 0; }
+  .bootstrap-padding {
+    padding: calc(30px / 2); }
+  .bootstrap-padding--bottom {
+    padding-bottom: calc(30px / 2); }
+  .bootstrap-padding--left {
+    padding-left: calc(30px / 2); }
+  .bootstrap-padding--right {
+    padding-right: calc(30px / 2); }
+  .bootstrap-padding--top {
+    padding-top: calc(30px / 2); }
+  .bootstrap-padding--horizontal {
+    padding-left: calc(30px / 2);
+    padding-right: calc(30px / 2); }
+  .bootstrap-padding--vertical {
+    padding-bottom: calc(30px / 2);
+    padding-top: calc(30px / 2); }
   @supports (display: grid) {
     .bootstrap-grid {
       grid-template-columns: repeat(auto-fill, calc( 100rem / 12)); }

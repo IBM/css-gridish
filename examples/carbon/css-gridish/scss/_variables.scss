@@ -6,15 +6,9 @@ $prefix: gridish !default;
 }
 $extraBreakpoints: () !default;
 $breakpoints: addPadding(map-get($grid-values, "breakpoints"));
-$cleanedBreakpoints: cleanBreakpoints($breakpoints);
 $first: nth(nth($breakpoints, 1), 2);
 $last: nth(nth($breakpoints, -1), 2);
 $includeFlexFallback: false !default;
 $rowHeight: map-get($grid-values, "rowHeight");
 $rows: map-get($grid-values, "rows");
-$allBreakpoints: allBreakpoints(
-  $cleanedBreakpoints,
-  $extraBreakpoints,
-  $first,
-  $last
-);
+$allBreakpoints: allBreakpoints($breakpoints, $extraBreakpoints, $first, $last);
