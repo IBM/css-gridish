@@ -301,7 +301,7 @@ body {
 @supports (display: grid) {
   .bx-grid {
     display: grid;
-    grid-auto-rows: 0.5rem;
+    grid-auto-rows: minmax(0.5rem, min-content);
     grid-template-columns: repeat(auto-fill, calc(8.33333vw - 0.83333vw)); }
     .bx-grid.bx-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 1.66667rem); }

@@ -57,7 +57,7 @@ body {
 
 .material-grid {
   display: grid;
-  grid-auto-rows: 0.5rem;
+  grid-auto-rows: minmax(0.5rem, min-content);
   grid-template-columns: repeat(auto-fill, 25vw); }
   .material-grid.material-grid--fixed-columns {
     grid-template-columns: repeat(auto-fill, 5.625rem); }
