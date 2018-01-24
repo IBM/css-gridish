@@ -55,7 +55,7 @@ The config file is where all of your design system specs live. See this [example
   },
   "extraArtboards": {
     "xlg": 100 // Additional breakpoint for the Sketch file (number in rem)
-  }
+  },
   "rem": 16, // Base rem unit for all measurements (number in px)
   "rowHeight": 0.5, // Height of a fixed row (number in rem)
   "rows": 30, // Quantity of row variables (number)
