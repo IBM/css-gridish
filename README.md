@@ -61,7 +61,7 @@ The config file is where all of your design system specs live. See this [example
   "rows": 30, // Quantity of row variables (number)
   "paths": {
     "route": "css-gridish", // Route that files save in from project root (optional, use `""` for project root, `"css-gridish"` is default)
-    "intro": "intro.md" // Path to any markdown you want inserted at the top of your README.md documentation(optional)
+    "intro": "intro.md" // Path to any markdown you want inserted at the top of your README.md documentation (optional)
   }
 }
 ```
