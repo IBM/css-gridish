@@ -62,36 +62,6 @@
   @return maps-sort($allBreakpoints, breakpoint);
 }
 
-@function cleanBreakpoint($name, $breakpoint) {
-  $cleanBreakpoint: $breakpoint;
-  $previousKey: index(map-keys($breakpoints), $name) - 1;
-
-  @if $previousKey != 0 {
-    $prevMap: nth(nth($breakpoints, $previousKey), 2);
-
-    @each $key, $value in $breakpoint {
-      @if $value == map-get($prevMap, $key) {
-        $cleanBreakpoint: map-remove($cleanBreakpoint, $key);
-      }
-    }
-  }
-
-  @return ($name: map-merge($cleanBreakpoint, (columns: map-get($breakpoint, columns))));
-}
-
-@function cleanBreakpoints($breakpoints) {
-  $cleanBreakpoints: $breakpoints;
-
-  @each $name, $breakpoint in $breakpoints {
-    $cleanBreakpoints: map-merge(
-      $cleanBreakpoints,
-      cleanBreakpoint($name, $breakpoint)
-    );
-  }
-
-  @return $cleanBreakpoints;
-}
-
 @function columnStringWidth($string, $multiple) {
   @return 1rem;
 }
