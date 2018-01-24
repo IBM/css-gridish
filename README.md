@@ -18,7 +18,7 @@ The truth is that many enterprise projects can’t afford to drop support for br
 
 Requires [Node v8.2.0](https://nodejs.org/en/) or higher, which includes npm and npx.
 
-1. Create a file called `css-gridish.json` in your project root. See the [config documentation](#quick-overview) or an [example config](./examples/material/css-gridish.json) for help.
+1. Create a file called `css-gridish.json` in your project root. See the [config documentation](#config-file) or an [example config](./examples/material/css-gridish.json) for help.
 2. Determine how you want your grid built:
    * If you want to build once, run command `npx css-gridish`.
    * If you want to add the grid building to your project’s build process:
