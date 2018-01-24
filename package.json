@@ -1,8 +1,8 @@
 {
   "name": "css-gridish",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
-    "Automatically build your grid design’s CSS Grid code, CSS Flexbox fallback code, Sketch artboards, and Chrome extension for review.",
+    "Automatically build your grid design’s CSS Grid code, CSS Flexbox fallback code, Sketch artboards, and Chrome extension.",
   "engines": {
     "node": ">=8.2.0"
   },
@@ -36,6 +36,8 @@
   },
   "scripts": {
     "build": "babel index.js --out-file ./bin/index.js",
+    "build-examples":
+      "npm run build && cd ./examples/bootstrap && npm run build && cd ../carbon && npm run build && cd ../material && npm run build && cd ../../",
     "dev": "gulp watch",
     "start": "node bin/css-gridish.js",
     "test": "true"

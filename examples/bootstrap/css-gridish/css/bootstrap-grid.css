@@ -57,7 +57,7 @@ body {
 
 .bootstrap-grid {
   display: grid;
-  grid-auto-rows: 1rem;
+  grid-auto-rows: minmax(1rem, min-content);
   grid-template-columns: repeat(auto-fill, 8.33333vw); }
   .bootstrap-grid.bootstrap-grid--fixed-columns {
     grid-template-columns: repeat(auto-fill, 3rem); }

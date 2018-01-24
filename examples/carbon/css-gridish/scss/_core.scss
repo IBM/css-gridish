@@ -91,7 +91,7 @@ body {
       @include gridLegacyWrapper($includeFlexFallback) {
         @include gridColumns($breakpoint, $first, $last) {
           display: grid;
-          grid-auto-rows: $rowHeight * 1rem;
+          grid-auto-rows: minmax($rowHeight * 1rem, min-content);
         }
         @include gridVariables($breakpoint, $first, $rows, $rowHeight);
       }
