@@ -80,7 +80,7 @@ If you are supporting browsers that lack [CSS Grid Layout support](https://devel
 
 One of the best parts about CSS Grid Layout is that your users can rearrange the layout at any width in their own media query. Your grid will also support rearranging layout at custom breakpoints for the legacy implementation when the user compiles their own Sass. Just have them define the following map of rem widths before they import in your Sass file:
 
-```
+```sass
 $extraBreakpoints: (
   xsm: 10,
   whatever: 78,
