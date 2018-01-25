@@ -7,13 +7,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 120rem;
-  overflow-x: hidden;
-  width: 100vw; }
+  width: 100vw;
+  overflow-x: hidden; }
 
 @supports (display: grid) {
   .material-container {
-    overflow-x: initial;
-    width: initial; } }
+    overflow-x: initial; } }
 
 .material-container--left {
   margin-left: 0; }
