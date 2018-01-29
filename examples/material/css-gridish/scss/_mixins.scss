@@ -170,12 +170,12 @@
 
 // Generate all classes for 0 and 0-only displaying, including custom breakpoints if they exist
 @mixin gridLegacyZeros($breakpoint, $breakpoints, $name) {
-  // Undo previous breakpoint’s 0-only class
+  // Undo previous breakpoint’s 0--only class
   $onlyCorrectionFound: false;
   @for $i from length($breakpoints) *-1 through -1 {
     $currentBreakpoint: nth($breakpoints, $i);
     @if map-get(nth($currentBreakpoint, 2), breakpoint) < map-get($breakpoint, breakpoint) and $onlyCorrectionFound == false {
-      .#{$prefix}-grid__col--#{nth($currentBreakpoint, 1)}--0-only {
+      .#{$prefix}-grid__col--#{nth($currentBreakpoint, 1)}--0--only {
         display: flex;
       }
 
@@ -183,13 +183,8 @@
     }
   }
 
-  // Undo previous breakpoint’s 0 class
-  @each $currentBreakpoint in $breakpoints {
-    @if map-get(nth($currentBreakpoint, 2), breakpoint) < map-get($breakpoint, breakpoint) {
-      [class*="#{$prefix}-grid__col--#{nth($currentBreakpoint, 1)}--0"][class*="#{$prefix}-grid__col--#{$name}--"] {
-        display: flex;
-      }
-    }
+  [class*="#{$prefix}-grid__col--#{$name}--"] {
+    display: flex;
   }
 
   .#{$prefix}-grid__col--#{$name}--0,
