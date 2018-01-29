@@ -48,7 +48,7 @@ body {
     width: initial; } }
 
 .bx-grid__col--sm--0,
-.bx-grid__col-sm--0--only {
+.bx-grid__col--sm--0--only {
   display: none; }
 
 .bx-grid__col--sm--1 {
@@ -343,7 +343,7 @@ body {
   [class*="bx-grid__col--sm--0"][class*="bx-grid__col--xxl--"] {
     display: flex; }
   .bx-grid__col--xxl--0,
-  .bx-grid__col-xxl--0--only {
+  .bx-grid__col--xxl--0--only {
     display: none; }
   [class*="bx-grid__col--"] {
     min-width: 0; }

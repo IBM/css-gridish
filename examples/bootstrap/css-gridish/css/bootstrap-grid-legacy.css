@@ -48,7 +48,7 @@ body {
     width: initial; } }
 
 .bootstrap-grid__col--sm--0,
-.bootstrap-grid__col-sm--0--only {
+.bootstrap-grid__col--sm--0--only {
   display: none; }
 
 .bootstrap-grid__col--sm--1 {
@@ -318,7 +318,7 @@ body {
   [class*="bootstrap-grid__col--sm--0"][class*="bootstrap-grid__col--xl--"] {
     display: flex; }
   .bootstrap-grid__col--xl--0,
-  .bootstrap-grid__col-xl--0--only {
+  .bootstrap-grid__col--xl--0--only {
     display: none; }
   [class*="bootstrap-grid__col--"] {
     min-width: 0; }
