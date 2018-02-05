@@ -1,6 +1,6 @@
-# Carbon Design Grid
+# Material Design Grid
 
-An example of [CSS Gridish](../../../README.md) generating CSS Grid code, fallback flexbox code, dev documentation, and Sketch files based on the [Carbon Design System grid.](https://github.com/carbon-design-system/carbon-components/blob/master/src/globals/grid/_grid.scss#L29-L31)
+An example of [CSS Gridish](../../../README.md) generating CSS Grid code, fallback flexbox code, dev documentation, and Sketch files based on the [Material Design System grid.](https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints)
 
 This grid was bootstrapped using [CSS Gridish](https://github.com/ibm/css-gridish). It includes:
 - CSS Grid Layout code with a Flexbox fallback in CSS and SCSS
@@ -97,7 +97,7 @@ Please remember that the classes below have no affect on browsers that have [CSS
 | `.material-grid__height-fluid--medium--[1-12]`                          | Set the min-height on the width of 1-12 columns for an item starting at the medium breakpoint |
 | `.material-grid__height--[xsmall, small, medium]--0`                          | Reset the min-height for an item starting at the specified breakpoint |
 
-The legacy `.material-grid__height-fixed--[xsmall, small, medium]--[1-30]` class follows the numbering system as described in our height variables](#Fixed Height).
+The legacy `.material-grid__height-fixed--[xsmall, small, medium]--[1-30]` class follows the numbering system as described in our [height variables](#Fixed Height).
 
 If you follow the instructions above for custom breakpoints, all of these legacy classes will generate with a version for each custom breakpoint too. For example, adding the custom breakpoint of `35` will create `.material-grid__col--35--1` and `.material-grid__height-fixed--35--1`. Since that custom breakpoint is right after the previous breakpoint, it will have the same amount of columns and min-height.
 
