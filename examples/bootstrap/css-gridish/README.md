@@ -1,6 +1,6 @@
-# Carbon Design Grid
+# Bootstrap Design Grid
 
-An example of [CSS Gridish](../../../README.md) generating CSS Grid code, fallback flexbox code, dev documentation, and Sketch files based on the [Carbon Design System grid.](https://github.com/carbon-design-system/carbon-components/blob/master/src/globals/grid/_grid.scss#L29-L31)
+An example of [CSS Gridish](../../../README.md) generating CSS Grid code, fallback flexbox code, dev documentation, and Sketch files based on the [Bootstrap v4 grid.](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss#L168-174)
 
 This grid was bootstrapped using [CSS Gridish](https://github.com/ibm/css-gridish). It includes:
 - CSS Grid Layout code with a Flexbox fallback in CSS and SCSS
