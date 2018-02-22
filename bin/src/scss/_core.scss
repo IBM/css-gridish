@@ -2,8 +2,11 @@
 @import "mixins.scss";
 @import "variables.scss";
 
-body {
+html {
   font-size: map-get($grid-values, "rem") * 1px;
+}
+
+body {
   margin: 0;
 }
 
