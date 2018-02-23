@@ -124,6 +124,7 @@
             }
             min-width: $columnSize;
             width: $columnSize;
+            grid-column: span $i;
           }
 
           .#{$prefix}-grid__height-fluid--#{$currentName}--#{$i} {
