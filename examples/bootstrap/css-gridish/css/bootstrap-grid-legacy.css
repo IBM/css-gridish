@@ -1,5 +1,7 @@
+html {
+  font-size: 15px; }
+
 body {
-  font-size: 15px;
   margin: 0; }
 
 .bootstrap-container {
