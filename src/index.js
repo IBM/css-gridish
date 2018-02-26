@@ -31,7 +31,7 @@ const dirDestScss = `${dirDest}/s\css`;
 const dirDestSketch = `${dirDest}/sketch`;
 const prefix = config.prefix ? config.prefix : "gridish";
 
-const artboard = require(`${__dirname}/src/sketch/artboard.json`);
+const artboard = require(`${__dirname}/sketch/artboard.json`);
 
 const parseUnit = function(value, width) {
   let parsed = value;
@@ -102,7 +102,7 @@ gulp.task("css-legacy", ["css"], function() {
 
 gulp.task("docs", ["css-legacy"], function() {
   return gulp
-    .src(`${__dirname}/src/docs/*.hbs`)
+    .src(`${__dirname}/docs/*.hbs`)
     .pipe(
       map.obj(chunk => {
         var template = handlebars.compile(chunk.contents.toString());
@@ -130,9 +130,7 @@ gulp.task("docs", ["css-legacy"], function() {
 });
 
 gulp.task("scss", ["valuesClean"], function() {
-  return gulp
-    .src(`${__dirname}/src/scss/**/*.s\css`)
-    .pipe(gulp.dest(dirDestScss));
+  return gulp.src(`${__dirname}/scss/**/*.s\css`).pipe(gulp.dest(dirDestScss));
 });
 
 gulp.task("scssRename", ["scss"], function() {
@@ -158,8 +156,8 @@ gulp.task("sketchClean", ["sketchZip"], function() {
 gulp.task("sketchFiles", ["docs"], function() {
   return gulp
     .src([
-      `${__dirname}/src/sketch/files/**/*`,
-      `!${__dirname}/src/sketch/files/pages/BC333699-815E-4E1B-9816-9836EDA5B291.json`
+      `${__dirname}/sketch/files/**/*`,
+      `!${__dirname}/sketch/files/pages/BC333699-815E-4E1B-9816-9836EDA5B291.json`
     ])
     .pipe(gulp.dest(dirDestSketch));
 });
@@ -243,7 +241,7 @@ gulp.task("sketchPage", ["sketchFiles"], function() {
   }
   return gulp
     .src(
-      `${__dirname}/src/sketch/files/pages/BC333699-815E-4E1B-9816-9836EDA5B291.json`
+      `${__dirname}/sketch/files/pages/BC333699-815E-4E1B-9816-9836EDA5B291.json`
     )
     .pipe(
       jeditor({

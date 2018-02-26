@@ -32,12 +32,15 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.5",
-    "gulp-debug": "^3.2.0"
+    "gulp-debug": "^3.2.0",
+    "gulp-run": "^1.7.1"
   },
   "scripts": {
-    "build": "babel index.js --out-file ./bin/index.js",
-    "build-examples":
-      "npm run build && cd ./examples/bootstrap && npm run build && cd ../carbon && npm run build && cd ../material && npm run build && cd ../../",
+    "build": "npm run build:src && npm run build:examples",
+    "build:src":
+      "cp -a src/. bin/ && babel src/index.js --out-file ./bin/index.js",
+    "build:examples":
+      "npm run build --prefix ./examples/bootstrap && npm run build --prefix ./examples/carbon && npm run build --prefix ./examples/material",
     "dev": "gulp watch",
     "start": "node bin/css-gridish.js",
     "test": "true"
