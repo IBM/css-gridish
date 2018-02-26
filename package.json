@@ -38,7 +38,7 @@
   "scripts": {
     "build": "npm run build:src && npm run build:examples",
     "build:src":
-      "babel src/index.js --out-file ./bin/index.js && cp -a src/. bin/",
+      "cp -a src/. bin/ && babel src/index.js --out-file ./bin/index.js",
     "build:examples":
       "npm run build --prefix ./examples/bootstrap && npm run build --prefix ./examples/carbon && npm run build --prefix ./examples/material",
     "dev": "gulp watch",
