@@ -1,6 +1,7 @@
 @import "functions.scss";
 @import "mixins.scss";
 @import "variables.scss";
+@import "utilities.scss";
 
 html {
   font-size: map-get($grid-values, "rem") * 1px;
