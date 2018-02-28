@@ -24,8 +24,7 @@ body {
   flex-wrap: wrap;
   position: relative; }
   .bootstrap-grid > * {
-    box-sizing: border-box;
-    height: 100%; }
+    box-sizing: border-box; }
     .bootstrap-grid > * :last-child,
     .bootstrap-grid > * :last-child > :last-child,
     .bootstrap-grid > * :last-child > :last-child > :last-child {
@@ -33,6 +32,10 @@ body {
 
 [class*="bootstrap-padding"] {
   box-sizing: border-box; }
+
+@supports (display: grid) {
+  .bootstrap-grid > * {
+    height: 100%; } }
 
 .bootstrap-padding {
   padding: calc(30px / 2); }

@@ -30,8 +30,7 @@ body {
   flex-wrap: wrap;
   position: relative; }
   .bootstrap-grid > * {
-    box-sizing: border-box;
-    height: 100%; }
+    box-sizing: border-box; }
     .bootstrap-grid > * :last-child,
     .bootstrap-grid > * :last-child > :last-child,
     .bootstrap-grid > * :last-child > :last-child > :last-child {
@@ -49,8 +48,12 @@ body {
   .bootstrap-grid > * {
     width: initial; } }
 
+@supports (display: grid) {
+  .bootstrap-grid > * {
+    height: 100%; } }
+
 [class*="bootstrap-grid__col--sm--"] {
-  display: flex; }
+  display: block; }
 
 .bootstrap-grid__col--sm--0,
 .bootstrap-grid__col--sm--0--only {
@@ -319,9 +322,9 @@ body {
 
 @media (min-width: 100rem) {
   .bootstrap-grid__col--sm--0--only {
-    display: flex; }
+    display: block; }
   [class*="bootstrap-grid__col--xl--"] {
-    display: flex; }
+    display: block; }
   .bootstrap-grid__col--xl--0,
   .bootstrap-grid__col--xl--0--only {
     display: none; }
