@@ -17,7 +17,7 @@
 /// @param {string} An existing breakpoint name (sm, md, lg, amd so on).
 /// @return {length} The breakpoint value in rems.
 @function getBreakpointValue($breakpointName) {
-  $breakpointValue: map-deep-get($grid-values, 'breakpoints', $breakpointName, 'breakpoint');
+  $breakpointValue: map-deep-get($allBreakpoints, $breakpointName, 'breakpoint');
   @return $breakpointValue * 1rem;
 }
 
@@ -25,24 +25,21 @@
 /// @param {string} A valid breakpoint (sm, md, lg, xlg, or max)
 /// @param {number} The number of columns to span across.
 /// @return {length} A calc() expression representing fluid width.
-@function getFluidSize($breakpointName, $columns) {
-  $fluidWidth: 0; // default
-
-  $breakpoint: map-deep-get($grid-values, 'breakpoints', $breakpointName);
+@function getFluidSize($breakpointName, $columnSpan) {
+  $breakpoint: map-get($allBreakpoints, $breakpointName);
+  $columnTotal: map-get($breakpoint, columns);
+  $margin: map-get($breakpoint, margin);
 
   @if (map-get($breakpoint, columns) != null) {
-    $columnQuantity: map-get($breakpoint, columns);
-    $fluidWidth: 100vw / $columnQuantity;
-
-    $totalMargin: 0;
-    @if (map-get($breakpoint, margin) != null) {
-      $totalMargin: map-get($breakpoint, margin) * 2;
-    }
-
-    $fluidWidth: calc((100vw - #{$totalMargin}) * #{$columns} / #{$columnQuantity});
+    @error 'The provided breakpoint #{$breakpointName} needs to have a total number of columns set in $grid-values.';
   }
 
-  @return $fluidWidth;
+  // For IE, we can't have a 0 in the $fluidWidth calc()
+  @if ($margin == 0) {
+    @return calc((100vw) * #{$columnSpan} / #{$columnTotal});
+  }
+
+  @return calc((100vw - (#{$margin} * 2)) * #{$columnSpan} / #{$columnTotal});
 }
 
 /// Gets a calculated rem value for a fixed nondimensional unit size.
@@ -60,4 +57,12 @@
   }
 
   @return $remValue;
+}
+
+/// Utility for declaring mobile-first media queries.
+/// @param {String} $breakpoint-name The name of the breakpoint to set its width value to media query.
+@mixin media-query($breakpointNme) {
+  @media screen and (min-width: #{getBreakpointValue($breakpointName)}) {
+    @content;
+  }
 }

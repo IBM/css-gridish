@@ -1,6 +1,6 @@
 @import "variables";
 @import "values";
-
+@debug $allBreakpoints;
 /// Traverse maps and retrieve deeply nested values.
 /// @author Hugo Giraudel
 /// @param {map} A sass map.
@@ -60,4 +60,12 @@
   }
 
   @return $remValue;
+}
+
+/// Utility for declaring mobile-first media queries.
+/// @param {String} $breakpoint-name The name of the breakpoint to set its width value to media query.
+@mixin media-query($breakpointNme) {
+  @media screen and (min-width: #{getBreakpointValue($breakpointName)}) {
+    @content;
+  }
 }
