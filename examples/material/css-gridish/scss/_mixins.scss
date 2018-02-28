@@ -212,8 +212,8 @@
         padding-left: calc(#{$maxBleed} * -1 + #{$margin});
         padding-right: calc(#{$maxBleed} * -1 + #{$margin});
       } @else {
-        margin-left: -$margin;
-        margin-right: -$margin;
+        margin-left: -#{$margin};
+        margin-right: -#{$margin};
         padding-left: $margin;
         padding-right: $margin;
       }
@@ -222,21 +222,21 @@
 
     .#{$prefix}-grid--bleed--left {
       padding-left: $margin;
-      margin-left: -$margin;
+      margin-left: -#{$margin};
     }
 
     .#{$prefix}-grid--bleed--right {
       padding-right: $margin;
-      margin-right: -$margin;
+      margin-right: -#{$margin};
     }
 
     @include gridLegacyWrapper($includeFlexFallback) {
       .#{$prefix}-grid__break--left {
-        margin-left: -$margin;
+        margin-left: -#{$margin};
       }
 
       .#{$prefix}-grid__break--right {
-        margin-right: -$margin;
+        margin-right: -#{$margin};
       }
     }
   }
