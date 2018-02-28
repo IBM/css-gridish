@@ -1,6 +1,6 @@
 {
   "name": "css-gridish",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description":
     "Automatically build your grid design’s CSS Grid code, CSS Flexbox fallback code, Sketch artboards, and Chrome extension.",
   "engines": {

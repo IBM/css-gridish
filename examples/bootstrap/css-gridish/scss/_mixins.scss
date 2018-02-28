@@ -176,7 +176,7 @@
     $currentBreakpoint: nth($breakpoints, $i);
     @if map-get(nth($currentBreakpoint, 2), breakpoint) < map-get($breakpoint, breakpoint) and $onlyCorrectionFound == false {
       .#{$prefix}-grid__col--#{nth($currentBreakpoint, 1)}--0--only {
-        display: flex;
+        display: block;
       }
 
       $onlyCorrectionFound: true;
@@ -184,7 +184,7 @@
   }
 
   [class*="#{$prefix}-grid__col--#{$name}--"] {
-    display: flex;
+    display: block;
   }
 
   .#{$prefix}-grid__col--#{$name}--0,

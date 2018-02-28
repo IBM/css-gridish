@@ -24,8 +24,7 @@ body {
   flex-wrap: wrap;
   position: relative; }
   .bx-grid > * {
-    box-sizing: border-box;
-    height: 100%; }
+    box-sizing: border-box; }
     .bx-grid > * :last-child,
     .bx-grid > * :last-child > :last-child,
     .bx-grid > * :last-child > :last-child > :last-child {
@@ -33,6 +32,10 @@ body {
 
 [class*="bx-padding"] {
   box-sizing: border-box; }
+
+@supports (display: grid) {
+  .bx-grid > * {
+    height: 100%; } }
 
 .bx-container {
   padding-left: 5vw;

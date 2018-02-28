@@ -24,8 +24,7 @@ body {
   flex-wrap: wrap;
   position: relative; }
   .material-grid > * {
-    box-sizing: border-box;
-    height: 100%; }
+    box-sizing: border-box; }
     .material-grid > * :last-child,
     .material-grid > * :last-child > :last-child,
     .material-grid > * :last-child > :last-child > :last-child {
@@ -33,6 +32,10 @@ body {
 
 [class*="material-padding"] {
   box-sizing: border-box; }
+
+@supports (display: grid) {
+  .material-grid > * {
+    height: 100%; } }
 
 .material-padding {
   padding: calc(1rem / 2); }
