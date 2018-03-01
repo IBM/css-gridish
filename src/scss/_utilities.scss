@@ -1,20 +1,9 @@
-@import 'variables';
+@import 'functions';
 @import 'values';
-
-/// Traverse maps and retrieve deeply nested values: https://css-tricks.com/snippets/sass/deep-getset-maps/
-/// @author Hugo Giraudel
-/// @param {Map} $map A sass map and any number of keys.
-/// @param {*} $keys Nested values.
-/// @return Nested values or nested map.
-@function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
-  }
-  @return $map;
-}
+@import 'variables';
 
 /// Function returns the value for a given breakpoint.
-/// @param {String} $breakpointName Breakpoint name (sm, md, lg, xlg, max).
+/// @param {String} $breakpointName Breakpoint name.
 /// @return {Length} The breakpoint value in rems.
 @function getBreakpointValue($breakpointName) {
   $breakpointValue: map-deep-get($allBreakpoints, $breakpointName, 'breakpoint');
@@ -23,7 +12,7 @@
 }
 
 /// Returns a calc() expression that represents a fluid width at a given breakpoint.
-/// @param {String} $breakpointName A valid breakpoint (sm, md, lg, xlg, or max).
+/// @param {String} $breakpointName A valid breakpoint.
 /// @param {Number} $columnSpan The number of columns to span across.
 /// @return {Length} A calc() expression representing fluid width.
 /// @example scss

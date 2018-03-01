@@ -195,3 +195,15 @@ map-get($breakpoint, margin) != 0) {
 
   @return if($minus, -$result, $result);
 }
+
+/// Traverse maps and retrieve deeply nested values: https://css-tricks.com/snippets/sass/deep-getset-maps/
+/// @author Hugo Giraudel
+/// @param {Map} $map A sass map and any number of keys.
+/// @param {*} $keys Nested values.
+/// @return Nested values or nested map.
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
