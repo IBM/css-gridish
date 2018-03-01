@@ -1,11 +1,11 @@
-@import "variables";
-@import "values";
-@debug $allBreakpoints;
-/// Traverse maps and retrieve deeply nested values.
-/// @author Hugo Giraudel
-/// @param {map} A sass map.
-/// @param {arglist} Any number of keys.
-/// @return {*} Nested values or nested map.
+@import 'variables';
+@import 'values';
+
+/// Function from https://css-tricks.com/snippets/sass/deep-getset-maps/
+/// Helps you traverse maps and retrieve deeply nested values.
+/// @param {Map} $map A sass map and any number of keys.
+/// @param {*} $keys Nested values.
+/// @return Nested values or nested map.
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
     $map: map-get($map, $key);
@@ -13,58 +13,93 @@
   @return $map;
 }
 
-/// Function returns the rem value of a given breakpoint.
-/// @param {string} An existing breakpoint name (sm, md, lg, amd so on).
-/// @return {length} The breakpoint value in rems.
+/// Function returns the value for a given breakpoint.
+/// @param {String} $breakpointName Breakpoint name (sm, md, lg, xlg, max).
+/// @return {Length} The breakpoint value in rems.
 @function getBreakpointValue($breakpointName) {
-  $breakpointValue: map-deep-get($grid-values, 'breakpoints', $breakpointName, 'breakpoint');
+  $breakpointValue: map-deep-get($allBreakpoints, $breakpointName, 'breakpoint');
+  
   @return $breakpointValue * 1rem;
 }
 
 /// Returns a calc() expression that represents a fluid width at a given breakpoint.
-/// @param {string} A valid breakpoint (sm, md, lg, xlg, or max)
-/// @param {number} The number of columns to span across.
-/// @return {length} A calc() expression representing fluid width.
-@function getFluidSize($breakpointName, $columns) {
-  $fluidWidth: 0; // default
+/// @param {String} $breakpointName A valid breakpoint (sm, md, lg, xlg, or max).
+/// @param {Number} $columnSpan The number of columns to span across.
+/// @return {Length} A calc() expression representing fluid width.
+/// @example scss
+/// @media screen and (min-width: 20rem) {
+/// button {
+///   @include mediaQuery('sm') {
+///     max-width: getFluidSize('sm', 1);
+///   }
+/// }
+/// @output css
+/// @media screen and (min-width: 20rem) {
+///   button {
+///     max-width: 25vw;
+///   }
+/// }
+@function getFluidSize($breakpointName, $columnSpan) {
+  $breakpoint: map-get($allBreakpoints, $breakpointName);
+  $columnTotal: map-get($breakpoint, columns);
+  $margin: map-get($breakpoint, margin);
 
-  $breakpoint: map-deep-get($grid-values, 'breakpoints', $breakpointName);
-
-  @if (map-get($breakpoint, columns) != null) {
-    $columnQuantity: map-get($breakpoint, columns);
-    $fluidWidth: 100vw / $columnQuantity;
-
-    $totalMargin: 0;
-    @if (map-get($breakpoint, margin) != null) {
-      $totalMargin: map-get($breakpoint, margin) * 2;
-    }
-
-    $fluidWidth: calc((100vw - #{$totalMargin}) * #{$columns} / #{$columnQuantity});
+  @if ($breakpoint == null) {
+    @error 'The provided breakpoint `#{$breakpointName}` is not a valid breakpoint found in breakpoints or extraArtboards in $grid-values. Please double-check your grid configuration.';
   }
 
-  @return $fluidWidth;
+  @if ($columnTotal == null or type-of($columnTotal) != 'number') {
+    @error 'The provided breakpoint `#{$breakpointName}` needs to have a total number of columns set in $grid-values. Please double-check your grid configuration.';
+  }
+
+  @if ($columnSpan == null or type-of($columnSpan) != 'number') {
+    @error 'The number of columns to span for the breakpoint `#{$breakpointName}` must be a valid number. The provided column span value `#{$columnSpan}` is not a number';
+  }
+
+  @if ($columnSpan > $columnTotal or $columnSpan <= 0) {
+    @error 'The number of columns to span for the breakpoint `#{$breakpointName}` must be greater than 0 and less than or equal to the total number of columns for this breakpoint. The provided column value `#{$columnSpan}` does not meet this criteria';
+  }
+
+  // For IE, we can't have a 0 in the $fluidWidth calc().
+  @if ($margin == 0) {
+    @return calc((100vw) * #{$columnSpan} / #{$columnTotal});
+  }
+
+  @return calc((100vw - (#{$margin} * 2)) * #{$columnSpan} / #{$columnTotal});
 }
 
-/// Gets a calculated rem value for a fixed nondimensional unit size.
-/// @param {number} Fixed nondimensional units.
-/// @return {length} A calculated rem value.
+/// Function gets a calculated rem value for a fixed size.
+/// @param {Number} $fixedUnit Fixed nondimensional units.
+/// @return {Length} A calculated rem value.
+/// @example scss
+/// button {
+///   @include mediaQuery('sm') {
+///     max-width: getFixedSize(10);
+///   }
+/// }
+/// @output css
+/// @media screen and (min-width: 20rem) {
+///   button {
+///     max-width: 5rem;
+///   }
+/// }
 @function getFixedSize($fixedUnit) {
+  $rowHeight: map-get($grid-values, 'rowHeight');
 
-  $remValue: 0; // default
-
-  @if $fixedUnit != null and $fixedUnit > 0 {
-    $remValue: $fixedUnit * map-get($grid-values, 'rowHeight') * 1rem;
-  }
-  @else {
-    @error 'The provided value #{$fixedUnit} to getFixedSize() is not a number.'
+  @if ($rowHeight == null or type-of($rowHeight) != 'number') {
+    @error 'The rowHeight in $grid-values needs be a valid number. Please check your grid configuration.';
   }
 
-  @return $remValue;
+  @if ($fixedUnit == null or type-of($fixedUnit) != 'number') {
+    @error 'The provided fixed value `#{$fixedUnit}` to get-fixed-size() needs to be a valid number greater than 0.';
+  }
+
+  @return $fixedUnit * $rowHeight * 1rem;
 }
 
 /// Utility for declaring mobile-first media queries.
-/// @param {String} $breakpoint-name The name of the breakpoint to set its width value to media query.
-@mixin media-query($breakpointNme) {
+/// @param {String} $breakpointName The name of the breakpoint to set its width value to media query.
+@mixin mediaQuery($breakpointName) {
   @media screen and (min-width: #{getBreakpointValue($breakpointName)}) {
     @content;
   }
