@@ -73,8 +73,13 @@ If you are new to CSS Grid, please try [learning the basics](https://www.google.
 | `.bx-padding`                            | Add one unit of padding to element on all sides                                            |
 | `.bx-padding--[bottom, left, right, top]` | Add one unit of padding to element on one side                                             |
 | `.bx-padding--[horizontal, vertical]`     | Add one unit of padding to element on two sides                                            |
+| `.bx-grid__col--sm--[1-12]`                          | Set the width out of 12 columns for an item in the grid starting at the sm breakpoint |
+| `.bx-grid__col--[sm]--0`                          | Do not display item at a specific breakpoint, but display at the next breakpoint with columns specified |
+| `.bx-grid__col--[sm]--0--only`                          | Do not display item only at specific breakpoint |
 
 By default, the grid code uses fluid columns and fixed rows. You can switch both aspects with `.bx-grid--fixed-columns` and `.bx-grid--fluid-rows`.
+
+If you follow the instructions above for custom breakpoints, all of these legacy classes will generate with a version for each custom breakpoint too. For example, adding the custom breakpoint of `whateversize` will create `.bx-grid__col--whateversize--1`. Since that custom breakpoint is right after the previous breakpoint, it will have the same amount of columns and min-height.
 
 ### Legacy
 
@@ -84,16 +89,11 @@ Please remember that the classes below have no affect on browsers that have [CSS
 
 | Class Name                                | Purpose                                                                                    |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| `.bx-grid__col--sm--[1-12]`                          | Set the width out of 12 columns for an item in the grid starting at the sm breakpoint |
-| `.bx-grid__col--[sm]--0`                          | Do not display item at a specific breakpoint, but display at the next breakpoint with columns specified |
-| `.bx-grid__col--[sm]--0--only`                          | Do not display item only at specific breakpoint |
 | `.bx-grid__height-fixed--[sm]--[1-30]`                          | Set the min-height based on an interval of 8px for an item starting at the breakpoint specified |
 | `.bx-grid__height-fluid--sm--[1-12]`                          | Set the min-height on the width of 1-12 columns for an item starting at the sm breakpoint |
 | `.bx-grid__height--[sm]--0`                          | Reset the min-height for an item starting at the specified breakpoint |
 
 The legacy `.bx-grid__height-fixed--[sm]--[1-30]` class follows the numbering system as described in our height variables](#Fixed Height).
-
-If you follow the instructions above for custom breakpoints, all of these legacy classes will generate with a version for each custom breakpoint too. For example, adding the custom breakpoint of `35` will create `.bx-grid__col--35--1` and `.bx-grid__height-fixed--35--1`. Since that custom breakpoint is right after the previous breakpoint, it will have the same amount of columns and min-height.
 
 ## Variables
 

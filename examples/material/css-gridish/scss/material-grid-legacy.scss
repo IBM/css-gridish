@@ -3,7 +3,6 @@ $includeFlexFallback: true;
 
 @supports (display: grid) {
   .#{$prefix}-grid > * {
-    display: initial;
     min-width: initial;
     max-width: initial;
     width: initial;

@@ -30,7 +30,8 @@ body {
   flex-wrap: wrap;
   position: relative; }
   .bx-grid > * {
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    grid-column: span 100; }
     .bx-grid > * :last-child,
     .bx-grid > * :last-child > :last-child,
     .bx-grid > * :last-child > :last-child > :last-child {
@@ -51,121 +52,6 @@ body {
 @supports (display: grid) {
   .bx-grid > * {
     height: 100%; } }
-
-[class*="bx-grid__col--sm--"] {
-  display: block; }
-
-.bx-grid__col--sm--0,
-.bx-grid__col--sm--0--only {
-  display: none; }
-
-.bx-grid__col--sm--1 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 1);
-  min-width: calc( (100vw - 10vw) * 0.083);
-  width: calc( (100vw - 10vw) * 0.083); }
-
-.bx-grid__height-fluid--sm--1 {
-  height: calc( (100vw - 10vw) * 0.083);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 1); }
-
-.bx-grid__col--sm--2 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 2);
-  min-width: calc( (100vw - 10vw) * 0.166);
-  width: calc( (100vw - 10vw) * 0.166); }
-
-.bx-grid__height-fluid--sm--2 {
-  height: calc( (100vw - 10vw) * 0.166);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 2); }
-
-.bx-grid__col--sm--3 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 3);
-  min-width: calc( (100vw - 10vw) * 0.25);
-  width: calc( (100vw - 10vw) * 0.25); }
-
-.bx-grid__height-fluid--sm--3 {
-  height: calc( (100vw - 10vw) * 0.25);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 3); }
-
-.bx-grid__col--sm--4 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 4);
-  min-width: calc( (100vw - 10vw) * 0.333);
-  width: calc( (100vw - 10vw) * 0.333); }
-
-.bx-grid__height-fluid--sm--4 {
-  height: calc( (100vw - 10vw) * 0.333);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 4); }
-
-.bx-grid__col--sm--5 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 5);
-  min-width: calc( (100vw - 10vw) * 0.416);
-  width: calc( (100vw - 10vw) * 0.416); }
-
-.bx-grid__height-fluid--sm--5 {
-  height: calc( (100vw - 10vw) * 0.416);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 5); }
-
-.bx-grid__col--sm--6 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 6);
-  min-width: calc( (100vw - 10vw) * 0.5);
-  width: calc( (100vw - 10vw) * 0.5); }
-
-.bx-grid__height-fluid--sm--6 {
-  height: calc( (100vw - 10vw) * 0.5);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 6); }
-
-.bx-grid__col--sm--7 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 7);
-  min-width: calc( (100vw - 10vw) * 0.583);
-  width: calc( (100vw - 10vw) * 0.583); }
-
-.bx-grid__height-fluid--sm--7 {
-  height: calc( (100vw - 10vw) * 0.583);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 7); }
-
-.bx-grid__col--sm--8 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 8);
-  min-width: calc( (100vw - 10vw) * 0.666);
-  width: calc( (100vw - 10vw) * 0.666); }
-
-.bx-grid__height-fluid--sm--8 {
-  height: calc( (100vw - 10vw) * 0.666);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 8); }
-
-.bx-grid__col--sm--9 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 9);
-  min-width: calc( (100vw - 10vw) * 0.75);
-  width: calc( (100vw - 10vw) * 0.75); }
-
-.bx-grid__height-fluid--sm--9 {
-  height: calc( (100vw - 10vw) * 0.75);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 9); }
-
-.bx-grid__col--sm--10 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 10);
-  min-width: calc( (100vw - 10vw) * 0.833);
-  width: calc( (100vw - 10vw) * 0.833); }
-
-.bx-grid__height-fluid--sm--10 {
-  height: calc( (100vw - 10vw) * 0.833);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 10); }
-
-.bx-grid__col--sm--11 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 11);
-  min-width: calc( (100vw - 10vw) * 0.916);
-  width: calc( (100vw - 10vw) * 0.916); }
-
-.bx-grid__height-fluid--sm--11 {
-  height: calc( (100vw - 10vw) * 0.916);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 11); }
-
-.bx-grid__col--sm--12 {
-  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 12);
-  min-width: calc( (100vw - 10vw) * 1);
-  width: calc( (100vw - 10vw) * 1); }
-
-.bx-grid__height-fluid--sm--12 {
-  height: calc( (100vw - 10vw) * 1);
-  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 12); }
 
 .bx-grid__height--sm--0 {
   height: 0; }
@@ -256,6 +142,133 @@ body {
 
 .bx-grid__height-fixed--sm--29 {
   height: 14.5rem; }
+
+[class*="bx-grid__col--sm--"] {
+  display: block; }
+
+.bx-grid__col--sm--0,
+.bx-grid__col--sm--0--only {
+  display: none; }
+
+.bx-grid__col--sm--1 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 1);
+  min-width: calc( (100vw - 10vw) * 0.083);
+  width: calc( (100vw - 10vw) * 0.083);
+  grid-column: span 1; }
+
+.bx-grid__height-fluid--sm--1 {
+  height: calc( (100vw - 10vw) * 0.083);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 1); }
+
+.bx-grid__col--sm--2 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 2);
+  min-width: calc( (100vw - 10vw) * 0.166);
+  width: calc( (100vw - 10vw) * 0.166);
+  grid-column: span 2; }
+
+.bx-grid__height-fluid--sm--2 {
+  height: calc( (100vw - 10vw) * 0.166);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 2); }
+
+.bx-grid__col--sm--3 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 3);
+  min-width: calc( (100vw - 10vw) * 0.25);
+  width: calc( (100vw - 10vw) * 0.25);
+  grid-column: span 3; }
+
+.bx-grid__height-fluid--sm--3 {
+  height: calc( (100vw - 10vw) * 0.25);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 3); }
+
+.bx-grid__col--sm--4 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 4);
+  min-width: calc( (100vw - 10vw) * 0.333);
+  width: calc( (100vw - 10vw) * 0.333);
+  grid-column: span 4; }
+
+.bx-grid__height-fluid--sm--4 {
+  height: calc( (100vw - 10vw) * 0.333);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 4); }
+
+.bx-grid__col--sm--5 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 5);
+  min-width: calc( (100vw - 10vw) * 0.416);
+  width: calc( (100vw - 10vw) * 0.416);
+  grid-column: span 5; }
+
+.bx-grid__height-fluid--sm--5 {
+  height: calc( (100vw - 10vw) * 0.416);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 5); }
+
+.bx-grid__col--sm--6 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 6);
+  min-width: calc( (100vw - 10vw) * 0.5);
+  width: calc( (100vw - 10vw) * 0.5);
+  grid-column: span 6; }
+
+.bx-grid__height-fluid--sm--6 {
+  height: calc( (100vw - 10vw) * 0.5);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 6); }
+
+.bx-grid__col--sm--7 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 7);
+  min-width: calc( (100vw - 10vw) * 0.583);
+  width: calc( (100vw - 10vw) * 0.583);
+  grid-column: span 7; }
+
+.bx-grid__height-fluid--sm--7 {
+  height: calc( (100vw - 10vw) * 0.583);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 7); }
+
+.bx-grid__col--sm--8 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 8);
+  min-width: calc( (100vw - 10vw) * 0.666);
+  width: calc( (100vw - 10vw) * 0.666);
+  grid-column: span 8; }
+
+.bx-grid__height-fluid--sm--8 {
+  height: calc( (100vw - 10vw) * 0.666);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 8); }
+
+.bx-grid__col--sm--9 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 9);
+  min-width: calc( (100vw - 10vw) * 0.75);
+  width: calc( (100vw - 10vw) * 0.75);
+  grid-column: span 9; }
+
+.bx-grid__height-fluid--sm--9 {
+  height: calc( (100vw - 10vw) * 0.75);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 9); }
+
+.bx-grid__col--sm--10 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 10);
+  min-width: calc( (100vw - 10vw) * 0.833);
+  width: calc( (100vw - 10vw) * 0.833);
+  grid-column: span 10; }
+
+.bx-grid__height-fluid--sm--10 {
+  height: calc( (100vw - 10vw) * 0.833);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 10); }
+
+.bx-grid__col--sm--11 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 11);
+  min-width: calc( (100vw - 10vw) * 0.916);
+  width: calc( (100vw - 10vw) * 0.916);
+  grid-column: span 11; }
+
+.bx-grid__height-fluid--sm--11 {
+  height: calc( (100vw - 10vw) * 0.916);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 11); }
+
+.bx-grid__col--sm--12 {
+  max-width: calc(  ( 100rem - 5vw * 2 ) / 12 * 12);
+  min-width: calc( (100vw - 10vw) * 1);
+  width: calc( (100vw - 10vw) * 1);
+  grid-column: span 12; }
+
+.bx-grid__height-fluid--sm--12 {
+  height: calc( (100vw - 10vw) * 1);
+  max-height: calc(  ( 100rem - 5vw * 2 ) / 12 * 12); }
 
 .bx-container {
   padding-left: 5vw;
@@ -401,7 +414,6 @@ body {
 
 @supports (display: grid) {
   .bx-grid > * {
-    display: initial;
     min-width: initial;
     max-width: initial;
     width: initial; }

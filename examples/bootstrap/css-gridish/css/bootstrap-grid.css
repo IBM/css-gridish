@@ -24,7 +24,8 @@ body {
   flex-wrap: wrap;
   position: relative; }
   .bootstrap-grid > * {
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    grid-column: span 100; }
     .bootstrap-grid > * :last-child,
     .bootstrap-grid > * :last-child > :last-child,
     .bootstrap-grid > * :last-child > :last-child > :last-child {
@@ -36,6 +37,49 @@ body {
 @supports (display: grid) {
   .bootstrap-grid > * {
     height: 100%; } }
+
+[class*="bootstrap-grid__col--sm--"] {
+  display: block; }
+
+.bootstrap-grid__col--sm--0,
+.bootstrap-grid__col--sm--0--only {
+  display: none; }
+
+.bootstrap-grid__col--sm--1 {
+  grid-column: span 1; }
+
+.bootstrap-grid__col--sm--2 {
+  grid-column: span 2; }
+
+.bootstrap-grid__col--sm--3 {
+  grid-column: span 3; }
+
+.bootstrap-grid__col--sm--4 {
+  grid-column: span 4; }
+
+.bootstrap-grid__col--sm--5 {
+  grid-column: span 5; }
+
+.bootstrap-grid__col--sm--6 {
+  grid-column: span 6; }
+
+.bootstrap-grid__col--sm--7 {
+  grid-column: span 7; }
+
+.bootstrap-grid__col--sm--8 {
+  grid-column: span 8; }
+
+.bootstrap-grid__col--sm--9 {
+  grid-column: span 9; }
+
+.bootstrap-grid__col--sm--10 {
+  grid-column: span 10; }
+
+.bootstrap-grid__col--sm--11 {
+  grid-column: span 11; }
+
+.bootstrap-grid__col--sm--12 {
+  grid-column: span 12; }
 
 .bootstrap-padding {
   padding: calc(30px / 2); }
@@ -101,6 +145,13 @@ body {
   --bootstrap-height-29: 29rem; }
 
 @media (min-width: 100rem) {
+  .bootstrap-grid__col--sm--0--only {
+    display: block; }
+  [class*="bootstrap-grid__col--xl--"] {
+    display: block; }
+  .bootstrap-grid__col--xl--0,
+  .bootstrap-grid__col--xl--0--only {
+    display: none; }
   .bootstrap-padding {
     padding: calc(30px / 2); }
   .bootstrap-padding--bottom {
