@@ -211,7 +211,7 @@ gulp.task("sketchPage", ["sketchFiles"], function() {
     const values = sorted[i];
     const width = values.breakpoint * config.rem;
     const margin = parseUnit(values.margin, width);
-    const gutter = parseUnit(values.gutter);
+    const gutter = parseUnit(values.gutter, width);
     const gridWidth = width - margin * 2;
     const gutterWidth = gutter;
 
