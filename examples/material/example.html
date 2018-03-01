@@ -29,7 +29,6 @@
 
     .nav {
       background: #ececec;
-      grid-column-start: span 4;
       grid-row-start: span 6;
     }
 
@@ -37,18 +36,15 @@
       align-items: center;
       align-self: center;
       display: flex;
-      grid-column-start: span 1;
       grid-row-start: span 6;
       height: 100%;
     }
 
     .nav__item--link {
-      grid-column: span 1;
       grid-row-start: span 6;
     }
 
     .aside {
-      grid-column-start: span 4;
       grid-row-start: 7;
     }
 
@@ -58,7 +54,6 @@
 
     .aside__item,
     .aside__description {
-      grid-column-start: span 4;
       grid-row-start: span 4;
     }
 
@@ -73,21 +68,11 @@
       border-top: 1px solid #ececec;
     }
 
-    .main {
-      grid-column-start: span 4;
-    }
-
     .main__title {
-      grid-column-start: span 4;
       grid-row: span 10;
     }
 
-    .main__cards {
-      grid-column-start: span 4;
-    }
-
     .main__cards__card {
-      grid-column-start: span 4;
       grid-row: span 2;
     }
 
@@ -96,20 +81,7 @@
     }
 
     @media (min-width: 37.5rem) {
-      .nav {
-        grid-column-start: span 12;
-      }
-
-      .nav__item {
-        grid-column-start: span 3;
-      }
-
-      .nav__item--link {
-        grid-column-start: span 1;
-      }
-
       .aside {
-        grid-column-start: span 2;
         grid-row-start: 10;
       }
 
@@ -134,16 +106,7 @@
       }
 
       .main {
-        grid-column: 4 / span 5;
         grid-row-start: 10;
-      }
-
-      .main__cards {
-        grid-column-start: span 5;
-      }
-
-      .main__cards__card {
-        grid-column-start: span 2;
       }
 
       .main__cards__card:nth-child(2) {
@@ -156,22 +119,6 @@
     }
 
     @media (min-width: 64rem) {
-      .nav {
-        grid-column-start: span 12;
-      }
-
-      .main {
-        grid-column: 4 / span 9;
-      }
-
-      .main__title {
-        grid-column-start: span 9;
-      }
-
-      .main__cards {
-        grid-column-start: span 9;
-      }
-
       .main__cards__card:nth-child(2n+1) {
         border-left: none;
       }
@@ -189,7 +136,7 @@
 </head>
 
 <body class="material-container material-grid">
-  <nav class="material-grid material-grid--bleed material-grid__height-fixed--xsmall--6 nav">
+  <nav class="material-grid material-grid__height-fixed--xsmall--6 nav">
     <p class="material-padding material-grid__col--xsmall--1 material-grid__col--small--3 material-grid__col--medium--3 nav__item">
       <strong>Page Title</strong>
     </p>
