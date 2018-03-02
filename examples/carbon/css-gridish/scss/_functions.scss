@@ -21,7 +21,7 @@
 
 // Merge standard and custom breakpoints into list
 @function all-breakpoints($breakpoints, $extraBreakpoints, $first, $last) {
-  $all-breakpoints: $breakpoints;
+  $allBreakpoints: $breakpoints;
   @each $currentBreakpoint in $extraBreakpoints {
     $extraBreakpointName: nth($currentBreakpoint, 1);
     $extraBreakpointWidth: nth($currentBreakpoint, 2);
@@ -56,10 +56,10 @@
     $currentBreakpoint: (
       $extraBreakpointName: map-merge(nth($match, 2),  (breakpoint: $extraBreakpointWidth))
     );
-    $all-breakpoints: map-merge($all-breakpoints, $currentBreakpoint);
+    $allBreakpoints: map-merge($allBreakpoints, $currentBreakpoint);
   }
 
-  @return maps-sort($all-breakpoints, breakpoint);
+  @return maps-sort($allBreakpoints, breakpoint);
 }
 
 @function column-string-width($string, $multiple) {
