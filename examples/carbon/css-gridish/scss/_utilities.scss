@@ -6,7 +6,7 @@
 /// @param {String} $breakpointName Breakpoint name.
 /// @return {Length} The breakpoint value in rems.
 @function getBreakpointValue($breakpointName) {
-  $breakpointValue: map-deep-get($allBreakpoints, $breakpointName, 'breakpoint');
+  $breakpointValue: map-deep-get($breakpointsAndArtboards, $breakpointName, 'breakpoint');
   
   @return $breakpointValue * 1rem;
 }
@@ -29,13 +29,14 @@
 ///   }
 /// }
 @function getFluidSize($breakpointName, $columnSpan) {
-  $breakpoint: map-get($allBreakpoints, $breakpointName);
-  $columnTotal: map-get($breakpoint, columns);
-  $margin: map-get($breakpoint, margin);
+  $breakpoint: map-get($breakpointsAndArtboards, $breakpointName);
 
-  @if ($breakpoint == null) {
+  @if ($breakpoint == null or type-of($breakpoint) != 'map') {
     @error 'The provided breakpoint `#{$breakpointName}` is not a valid breakpoint found in breakpoints or extraArtboards in $grid-values. Please double-check your grid configuration.';
   }
+
+  $columnTotal: map-get($breakpoint, columns);
+  $margin: map-get($breakpoint, margin);
 
   @if ($columnTotal == null or type-of($columnTotal) != 'number') {
     @error 'The provided breakpoint `#{$breakpointName}` needs to have a total number of columns set in $grid-values. Please double-check your grid configuration.';
