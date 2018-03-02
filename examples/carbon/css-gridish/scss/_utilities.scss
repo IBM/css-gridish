@@ -5,7 +5,7 @@
 /// Function returns the value for a given breakpoint.
 /// @param {String} $breakpointName Breakpoint name.
 /// @return {Length} The breakpoint value in rems.
-@function getBreakpointValue($breakpointName) {
+@function get-breakpoint-value($breakpointName) {
   $breakpointValue: map-deep-get($breakpointsAndArtboards, $breakpointName, 'breakpoint');
   
   @return $breakpointValue * 1rem;
@@ -18,8 +18,8 @@
 /// @example scss
 /// @media screen and (min-width: 20rem) {
 /// button {
-///   @include mediaQuery('sm') {
-///     max-width: getFluidSize('sm', 1);
+///   @include media-query('sm') {
+///     max-width: get-fluid-size('sm', 1);
 ///   }
 /// }
 /// @output css
@@ -28,7 +28,7 @@
 ///     max-width: 25vw;
 ///   }
 /// }
-@function getFluidSize($breakpointName, $columnSpan) {
+@function get-fluid-size($breakpointName, $columnSpan) {
   $breakpoint: map-get($breakpointsAndArtboards, $breakpointName);
 
   @if ($breakpoint == null or type-of($breakpoint) != 'map') {
@@ -63,8 +63,8 @@
 /// @return {Length} A calculated rem value.
 /// @example scss
 /// button {
-///   @include mediaQuery('sm') {
-///     max-width: getFixedSize(10);
+///   @include media-query('sm') {
+///     max-width: get-fixed-size(10);
 ///   }
 /// }
 /// @output css
@@ -73,7 +73,7 @@
 ///     max-width: 5rem;
 ///   }
 /// }
-@function getFixedSize($fixedUnit) {
+@function get-fixed-size($fixedUnit) {
   $rowHeight: map-get($grid-values, 'rowHeight');
 
   @if ($rowHeight == null or type-of($rowHeight) != 'number') {
@@ -89,8 +89,8 @@
 
 /// Utility for declaring mobile-first media queries.
 /// @param {String} $breakpointName The name of the breakpoint to set its width value to media query.
-@mixin mediaQuery($breakpointName) {
-  @media screen and (min-width: #{getBreakpointValue($breakpointName)}) {
+@mixin media-query($breakpointName) {
+  @media screen and (min-width: #{get-breakpoint-value($breakpointName)}) {
     @content;
   }
 }

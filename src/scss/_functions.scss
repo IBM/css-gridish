@@ -1,7 +1,7 @@
 @import "sass-list-maps";
 
 // Transform the gutter property into a padding property for web
-@function addPadding($breakpoints) {
+@function add-padding($breakpoints) {
   $cleanBreakpoints: ();
   @each $name, $breakpoint in $breakpoints {
     $cleanBreakpoints: map-merge(
@@ -20,7 +20,7 @@
 }
 
 // Merge standard and custom breakpoints into list
-@function allBreakpoints($breakpoints, $extraBreakpoints, $first, $last) {
+@function all-breakpoints($breakpoints, $extraBreakpoints, $first, $last) {
   $allBreakpoints: $breakpoints;
   @each $currentBreakpoint in $extraBreakpoints {
     $extraBreakpointName: nth($currentBreakpoint, 1);
@@ -62,11 +62,11 @@
   @return maps-sort($allBreakpoints, breakpoint);
 }
 
-@function columnStringWidth($string, $multiple) {
+@function column-string-width($string, $multiple) {
   @return 1rem;
 }
 
-@function columnWidth($breakpoint, $first, $last, $i, $columnAmount) {
+@function column-width($breakpoint, $first, $last, $i, $columnAmount) {
   $columnSize: 100 / map-get($breakpoint, columns) * $i *
     map-get($breakpoint, columns) / $columnAmount;
   $margin: 0;
@@ -77,7 +77,7 @@
   @if (map-get($breakpoint, margin) != null and
 map-get($breakpoint, margin) != 0) {
     $columnSize: calc(
-       (#{100vw} - #{$margin}) * #{roundDecimal($i / $columnAmount, 3, floor)}
+       (#{100vw} - #{$margin}) * #{round-decimal($i / $columnAmount, 3, floor)}
     );
     $type: "";
   }
@@ -85,43 +85,12 @@ map-get($breakpoint, margin) != 0) {
   @return #{$columnSize}#{$type};
 }
 
-@function isSameBreakpoint($a, $b) {
+@function is-same-breakpoint($a, $b) {
   @return map-get($a, breakpoint) == map-get($b, breakpoint);
 }
 
 // _decimal.scss | MIT License | gist.github.com/terkel/4373420
-@function roundDecimal ($number, $digits: 0, $mode: round) {
-  $n: 1;
-  // $number must be a number
-  @if type-of($number) != number {
-    @warn '#{ $number } is not a number.';
-    @return $number;
-  }
-  // $digits must be a unitless number
-  @if type-of($digits) != number {
-    @warn '#{ $digits } is not a number.';
-    @return $number;
-  } @else if not unitless($digits) {
-    @warn '#{ $digits } has a unit.';
-    @return $number;
-  }
-  @for $i from 1 through $digits {
-    $n: $n * 10;
-  }
-  @if $mode == round {
-    @return round($number * $n) / $n;
-  } @else if $mode == ceil {
-    @return ceil($number * $n) / $n;
-  } @else if $mode == floor {
-    @return floor($number * $n) / $n;
-  } @else {
-    @warn '#{ $mode } is undefined keyword.';
-    @return $number;
-  }
-}
-
-// _decimal.scss | MIT License | gist.github.com/terkel/4373420
-@function roundDecimal ($number, $digits: 0, $mode: round) {
+@function round-decimal($number, $digits: 0, $mode: round) {
   $n: 1;
   // $number must be a number
   @if type-of($number) != number {
@@ -153,7 +122,7 @@ map-get($breakpoint, margin) != 0) {
 
 /// String to number converter
 /// @author Hugo Giraudel
-@function stringToNumber($value) {
+@function string-to-number($value) {
   @if type-of($value) == "number" {
     @return $value;
   } @else if type-of($value) != "string" {
