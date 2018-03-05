@@ -81,6 +81,31 @@ body {
 .bootstrap-grid__col--sm--12 {
   grid-column: span 12; }
 
+.bootstrap-container {
+  padding-left: 0;
+  padding-right: 0; }
+
+.bootstrap-grid.bootstrap-grid--bleed {
+  margin-left: -0;
+  margin-right: -0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100vw; }
+
+.bootstrap-grid--bleed--left {
+  padding-left: 0;
+  margin-left: -0; }
+
+.bootstrap-grid--bleed--right {
+  padding-right: 0;
+  margin-right: -0; }
+
+.bootstrap-grid__break--left {
+  margin-left: -0; }
+
+.bootstrap-grid__break--right {
+  margin-right: -0; }
+
 .bootstrap-padding {
   padding: calc(30px / 2); }
 
@@ -152,6 +177,25 @@ body {
   .bootstrap-grid__col--xl--0,
   .bootstrap-grid__col--xl--0--only {
     display: none; }
+  .bootstrap-container {
+    padding-left: 0;
+    padding-right: 0; }
+  .bootstrap-grid.bootstrap-grid--bleed {
+    margin-left: calc((100vw - 100rem) / -2 - 0);
+    margin-right: calc((100vw - 100rem) / -2 - 0);
+    padding-left: calc((100vw - 100rem) / -2 * -1 + 0);
+    padding-right: calc((100vw - 100rem) / -2 * -1 + 0);
+    width: 100vw; }
+  .bootstrap-grid--bleed--left {
+    padding-left: 0;
+    margin-left: -0; }
+  .bootstrap-grid--bleed--right {
+    padding-right: 0;
+    margin-right: -0; }
+  .bootstrap-grid__break--left {
+    margin-left: -0; }
+  .bootstrap-grid__break--right {
+    margin-right: -0; }
   .bootstrap-padding {
     padding: calc(30px / 2); }
   .bootstrap-padding--bottom {

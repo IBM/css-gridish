@@ -147,8 +147,7 @@
 // Set the width of a grid’s margin
 // and allow for a child to break out of the grid’s margin
 @mixin grid-margin($breakpoint, $last) {
-  @if map-get($breakpoint, margin) != null and map-get($breakpoint, margin) > 0
-  {
+  @if map-get($breakpoint, margin) != null {
     $margin: #{map-get($breakpoint, margin)};
 
     .#{$prefix}-container {
