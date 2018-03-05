@@ -1,6 +1,6 @@
 // Enclose content in appropiate media query
-@mixin gridBreakpointWrapper($breakpoint, $first) {
-  @if isSameBreakpoint($breakpoint, $first) {
+@mixin grid-breakpoint-wrapper($breakpoint, $first) {
+  @if is-same-breakpoint($breakpoint, $first) {
     @content;
   } @else {
     @media (min-width: map-get($breakpoint, breakpoint) * 1rem) {
@@ -10,26 +10,34 @@
 }
 
 // Set the width of a grid’s column
-@mixin gridColumns($breakpoint, $first, $last) {
+@mixin grid-columns($breakpoint, $first, $last) {
   @if (map-get($breakpoint, columns) != null) {
     $columnQuantity: map-get($breakpoint, columns);
     $columnSize: 100vw / $columnQuantity;
     $gridWidth: null;
     $totalMargin: 0;
 
-    @if map-get($breakpoint, margin) != 0 and map-get($breakpoint, margin) != null {
+    @if map-get($breakpoint, margin) !=
+      0 and
+      map-get($breakpoint, margin) !=
+      null
+    {
       $totalMargin: map-get($breakpoint, margin) * 2;
     }
 
-    @if isSameBreakpoint($breakpoint, $last) and map-get($last, margin) != null {
+    @if is-same-breakpoint($breakpoint, $last) and
+      map-get($last, margin) !=
+      null
+    {
       $totalMargin: map-get($last, margin) * 2;
     }
 
-    @if isSameBreakpoint($breakpoint, $last) and $totalMargin != 0 {
+    @if is-same-breakpoint($breakpoint, $last) and $totalMargin != 0 {
       $columnSize: calc(
-         (#{map-get($breakpoint, breakpoint) * 1rem} - #{$totalMargin}) / #{$columnQuantity}
+        (#{map-get($breakpoint, breakpoint) * 1rem} - #{$totalMargin}) /
+          #{$columnQuantity}
       );
-    } @else if isSameBreakpoint($breakpoint, $last) {
+    } @else if is-same-breakpoint($breakpoint, $last) {
       $columnSize: calc(
         #{map-get($breakpoint, breakpoint) * 1rem} / #{$columnQuantity}
       );
@@ -38,7 +46,7 @@
     }
 
     .#{$prefix}-grid {
-      @if isSameBreakpoint($breakpoint, $first) {
+      @if is-same-breakpoint($breakpoint, $first) {
         @content;
       }
       grid-template-columns: repeat(auto-fill, $columnSize);
@@ -46,7 +54,8 @@
       &.#{$prefix}-grid--fixed-columns {
         grid-template-columns: repeat(
           auto-fill,
-          map-get($breakpoint, breakpoint) * 1rem /
+          map-get($breakpoint, breakpoint) *
+            1rem /
             map-get($breakpoint, columns)
         );
       }
@@ -59,14 +68,14 @@
 }
 
 // Generate variables for commonly used rows
-@mixin gridHeightsFixed($rows, $rowHeight) {
+@mixin grid-heights-fixed($rows, $rowHeight) {
   @for $i from 1 to $rows {
     --#{$prefix}-height-#{$i}: $i * $rowHeight * 1rem;
   }
 }
 
 // Set the width of a grid’s column for legacy grid
-@mixin gridLegacyColumns($breakpoint, $first, $last, $name, $breakpoints) {
+@mixin grid-legacy-columns($breakpoint, $first, $last, $name, $breakpoints) {
   $columnValue: null;
   $columnSize: null;
   $totalMargin: 0;
@@ -76,18 +85,20 @@
   }
 
   // Do not make class if last media query
-  @if isSameBreakpoint($breakpoint, $last) == false {
+  @if is-same-breakpoint($breakpoint, $last) == false {
     // Loop each breakpoint to insert previous breakpoint classes inside this breakpoint’s media query
     // Ex: Make sure .yourPrefix-grid__col--sm--2 has correct sizes in the lg media query
     @each $currentName, $currentBreakpoint in $breakpoints {
       // Check if current breakpoint is not bigger than current media query
-      @if map-get($breakpoint, breakpoint) >= map-get($currentBreakpoint, breakpoint) {
+      @if map-get($breakpoint, breakpoint) >=
+        map-get($currentBreakpoint, breakpoint)
+      {
         $columnAmount: map-get($currentBreakpoint, columns);
 
         // Loop each column in current breakpoint for new class
         // Ex: .yourPrefix-grid__col--sm--1, .yourPrefix-grid__col--sm--2, etc.
         @for $i from 1 through map-get($currentBreakpoint, columns) {
-          $columnSize: columnWidth(
+          $columnSize: column-width(
             $breakpoint,
             $first,
             $last,
@@ -95,25 +106,26 @@
             $columnAmount
           );
 
-          $isSecondToLast: isSameBreakpoint(
+          $isSecondToLast: is-same-breakpoint(
             $breakpoint,
             nth(nth($breakpoints, length($breakpoints) - 1), 2)
           );
 
           $maxColumnSize: calc(
-            #{map-get($last, breakpoint)}rem / #{map-get(
-                $currentBreakpoint,
-                columns
-              )} * #{$i}
+            #{map-get($last, breakpoint)}rem /
+              #{map-get($currentBreakpoint, columns)} *
+              #{$i}
           );
 
           @if map-get($last, margin) > 0 {
             $maxColumnSize: calc(
-
-                (
-                  #{map-get($last, breakpoint)}rem - #{map-get($last, margin)} *
+              (
+                  #{map-get($last, breakpoint)}rem -
+                    #{map-get($last, margin)} *
                     2
-                ) / #{map-get($currentBreakpoint, columns)} * #{$i}
+                ) /
+                #{map-get($currentBreakpoint, columns)} *
+                #{$i}
             );
           }
 
@@ -127,8 +139,10 @@
               width: $columnSize;
             }
 
-            grid-column: span #{map-get($breakpoint, columns) /
-              map-get($currentBreakpoint, columns) * $i};
+            grid-column: span
+              #{map-get($breakpoint, columns) /
+              map-get($currentBreakpoint, columns) *
+              $i};
           }
 
           @if $includeFlexFallback {
@@ -146,7 +160,7 @@
   }
 
   @if $includeFlexFallback {
-    @if isSameBreakpoint($breakpoint, $last) {
+    @if is-same-breakpoint($breakpoint, $last) {
       [class*="#{$prefix}-grid__col--"] {
         min-width: 0;
       }
@@ -155,7 +169,7 @@
 }
 
 // Set the height of an item for legacy grid
-@mixin gridLegacyHeights($name, $rows, $rowHeight) {
+@mixin grid-legacy-heights($name, $rows, $rowHeight) {
   .#{$prefix}-grid__height--#{$name}--0 {
     height: 0;
   }
@@ -167,7 +181,7 @@
 }
 
 // If we need legacy grid, wrap this content in support tag
-@mixin gridLegacyWrapper($includeFlexFallback) {
+@mixin grid-legacy-wrapper($includeFlexFallback) {
   @if $includeFlexFallback {
     @supports (display: grid) {
       @content;
@@ -178,11 +192,13 @@
 }
 
 // Generate all classes for 0 and 0-only displaying, including custom breakpoints if they exist
-@mixin gridLegacyZeros($breakpoint, $breakpoints, $name) {
+@mixin grid-legacy-zeros($breakpoint, $breakpoints, $name) {
   // Undo previous breakpoint’s 0--only class
-  @for $i from length($breakpoints) *-1 through -1 {
+  @for $i from length($breakpoints) * -1 through -1 {
     $currentBreakpoint: nth($breakpoints, $i);
-    @if map-get(nth($currentBreakpoint, 2), breakpoint) < map-get($breakpoint, breakpoint) {
+    @if map-get(nth($currentBreakpoint, 2), breakpoint) <
+      map-get($breakpoint, breakpoint)
+    {
       .#{$prefix}-grid__col--#{nth($currentBreakpoint, 1)}--0--only {
         display: block;
       }
@@ -201,8 +217,9 @@
 
 // Set the width of a grid’s margin
 // and allow for a child to break out of the grid’s margin
-@mixin gridMargin($breakpoint, $last) {
-  @if map-get($breakpoint, margin) != null and map-get($breakpoint, margin) > 0 {
+@mixin grid-margin($breakpoint, $last) {
+  @if map-get($breakpoint, margin) != null and map-get($breakpoint, margin) > 0
+  {
     $margin: #{map-get($breakpoint, margin)};
 
     .#{$prefix}-container {
@@ -211,7 +228,7 @@
     }
 
     .#{$prefix}-grid.#{$prefix}-grid--bleed {
-      @if isSameBreakpoint($breakpoint, $last) {
+      @if is-same-breakpoint($breakpoint, $last) {
         $maxBleed: "(100vw - #{map-get($breakpoint, breakpoint) * 1rem}) / -2";
         margin-left: calc(#{$maxBleed} - #{$margin});
         margin-right: calc(#{$maxBleed} - #{$margin});
@@ -236,7 +253,7 @@
       margin-right: -#{$margin};
     }
 
-    @include gridLegacyWrapper($includeFlexFallback) {
+    @include grid-legacy-wrapper($includeFlexFallback) {
       .#{$prefix}-grid__break--left {
         margin-left: -#{$margin};
       }
@@ -249,7 +266,7 @@
 }
 
 // Classnames for different padding options
-@mixin gridPadding($breakpoint) {
+@mixin grid-padding($breakpoint) {
   @if (map-get($breakpoint, padding) != null) {
     $padding: map-get($breakpoint, padding);
 
@@ -286,10 +303,10 @@
 }
 
 // Use all CSS Variable mixins
-@mixin gridVariables($breakpoint, $first, $rows, $rowHeight) {
-  @if isSameBreakpoint($breakpoint, $first) {
+@mixin grid-variables($breakpoint, $first, $rows, $rowHeight) {
+  @if is-same-breakpoint($breakpoint, $first) {
     :root {
-      @include gridHeightsFixed($rows, $rowHeight);
+      @include grid-heights-fixed($rows, $rowHeight);
     }
   }
 }

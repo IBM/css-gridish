@@ -1,17 +1,17 @@
 @import "sass-list-maps";
 
 // Transform the gutter property into a padding property for web
-@function addPadding($breakpoints) {
+@function add-padding($breakpoints) {
   $cleanBreakpoints: ();
   @each $name, $breakpoint in $breakpoints {
     $cleanBreakpoints: map-merge(
       $cleanBreakpoints,
-
       (
-        $name: map-merge($breakpoint,  (padding: calc(#{map-get(
-                      $breakpoint,
-                      gutter
-                    )} / 2)))
+        $name:
+          map-merge(
+            $breakpoint,
+            (padding: calc(#{map-get($breakpoint, gutter)} / 2))
+          )
       )
     );
   }
@@ -20,7 +20,7 @@
 }
 
 // Merge standard and custom breakpoints into list
-@function allBreakpoints($breakpoints, $extraBreakpoints, $first, $last) {
+@function all-breakpoints($breakpoints, $extraBreakpoints, $first, $last) {
   $allBreakpoints: $breakpoints;
   @each $currentBreakpoint in $extraBreakpoints {
     $extraBreakpointName: nth($currentBreakpoint, 1);
@@ -29,7 +29,9 @@
     $match: null;
     @each $majorBreakpoint in $breakpoints {
       @if $found == false {
-        @if map-get(nth($majorBreakpoint, 2), breakpoint) > $extraBreakpointWidth {
+        @if map-get(nth($majorBreakpoint, 2), breakpoint) >
+          $extraBreakpointWidth
+        {
           $found: true;
         } @else {
           $match: $majorBreakpoint;
@@ -51,10 +53,11 @@
 
     $newBreakpoint: map-merge(
       nth($match, 2),
-       (breakpoint: $extraBreakpointWidth)
+      (breakpoint: $extraBreakpointWidth)
     );
     $currentBreakpoint: (
-      $extraBreakpointName: map-merge(nth($match, 2),  (breakpoint: $extraBreakpointWidth))
+      $extraBreakpointName:
+        map-merge(nth($match, 2), (breakpoint: $extraBreakpointWidth))
     );
     $allBreakpoints: map-merge($allBreakpoints, $currentBreakpoint);
   }
@@ -62,11 +65,11 @@
   @return maps-sort($allBreakpoints, breakpoint);
 }
 
-@function columnStringWidth($string, $multiple) {
+@function column-string-width($string, $multiple) {
   @return 1rem;
 }
 
-@function columnWidth($breakpoint, $first, $last, $i, $columnAmount) {
+@function column-width($breakpoint, $first, $last, $i, $columnAmount) {
   $columnSize: 100 / map-get($breakpoint, columns) * $i *
     map-get($breakpoint, columns) / $columnAmount;
   $margin: 0;
@@ -74,10 +77,11 @@
   @if map-get($breakpoint, margin) {
     $margin: map-get($breakpoint, margin) * 2;
   }
-  @if (map-get($breakpoint, margin) != null and
-map-get($breakpoint, margin) != 0) {
+  @if (
+    map-get($breakpoint, margin) != null and map-get($breakpoint, margin) != 0
+  ) {
     $columnSize: calc(
-       (#{100vw} - #{$margin}) * #{roundDecimal($i / $columnAmount, 3, floor)}
+      (#{100vw} - #{$margin}) * #{round-decimal($i / $columnAmount, 3, floor)}
     );
     $type: "";
   }
@@ -85,24 +89,24 @@ map-get($breakpoint, margin) != 0) {
   @return #{$columnSize}#{$type};
 }
 
-@function isSameBreakpoint($a, $b) {
+@function is-same-breakpoint($a, $b) {
   @return map-get($a, breakpoint) == map-get($b, breakpoint);
 }
 
 // _decimal.scss | MIT License | gist.github.com/terkel/4373420
-@function roundDecimal ($number, $digits: 0, $mode: round) {
+@function round-decimal($number, $digits: 0, $mode: round) {
   $n: 1;
   // $number must be a number
   @if type-of($number) != number {
-    @warn '#{ $number } is not a number.';
+    @warn "#{ $number } is not a number.";
     @return $number;
   }
   // $digits must be a unitless number
   @if type-of($digits) != number {
-    @warn '#{ $digits } is not a number.';
+    @warn "#{ $digits } is not a number.";
     @return $number;
   } @else if not unitless($digits) {
-    @warn '#{ $digits } has a unit.';
+    @warn "#{ $digits } has a unit.";
     @return $number;
   }
   @for $i from 1 through $digits {
@@ -115,14 +119,14 @@ map-get($breakpoint, margin) != 0) {
   } @else if $mode == floor {
     @return floor($number * $n) / $n;
   } @else {
-    @warn '#{ $mode } is undefined keyword.';
+    @warn "#{ $mode } is undefined keyword.";
     @return $number;
   }
 }
 
 /// String to number converter
 /// @author Hugo Giraudel
-@function stringToNumber($value) {
+@function string-to-number($value) {
   @if type-of($value) == "number" {
     @return $value;
   } @else if type-of($value) != "string" {
@@ -148,7 +152,7 @@ map-get($breakpoint, margin) != 0) {
   @for $i from if($minus, 2, 1) through str-length($value) {
     $character: str-slice($value, $i, $i);
 
-    @if not (index(map-keys($numbers), $character) or $character == ".") {
+    @if not(index(map-keys($numbers), $character) or $character == ".") {
       @return to-length(if($minus, -$result, $result), str-slice($value, $i));
     }
 
@@ -163,4 +167,16 @@ map-get($breakpoint, margin) != 0) {
   }
 
   @return if($minus, -$result, $result);
+}
+
+/// Traverse maps and retrieve deeply nested values: https://css-tricks.com/snippets/sass/deep-getset-maps/
+/// @author Hugo Giraudel
+/// @param {Map} $map A sass map and any number of keys.
+/// @param {*} $keys Nested values.
+/// @return Nested values or nested map.
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
 }
