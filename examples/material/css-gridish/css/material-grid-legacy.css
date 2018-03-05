@@ -245,7 +245,7 @@ body {
     --material-height-28: 14rem;
     --material-height-29: 14.5rem; } }
 
-@media (min-width: 37.5rem) {
+@media screen and (min-width: 37.5rem) {
   .material-grid__height--small--0 {
     height: 0; }
   .material-grid__height-fixed--small--1 {
@@ -409,7 +409,7 @@ body {
       .material-grid.material-grid--fluid-rows {
         grid-auto-rows: 12.5vw; } } }
 
-@media (min-width: 64rem) {
+@media screen and (min-width: 64rem) {
   .material-grid__height--medium--0 {
     height: 0; }
   .material-grid__height-fixed--medium--1 {
@@ -480,197 +480,197 @@ body {
   .material-grid__col--medium--0--only {
     display: none; }
   .material-grid__col--xsmall--1 {
-    max-width: calc( 120rem / 4 * 1);
+    max-width: 30rem;
     min-width: 25vw;
     width: 25vw;
     grid-column: span 3; }
   .material-grid__height-fluid--xsmall--1 {
     height: 25vw;
-    max-height: calc( 120rem / 4 * 1); }
+    max-height: 30rem; }
   .material-grid__col--xsmall--2 {
-    max-width: calc( 120rem / 4 * 2);
+    max-width: 60rem;
     min-width: 50vw;
     width: 50vw;
     grid-column: span 6; }
   .material-grid__height-fluid--xsmall--2 {
     height: 50vw;
-    max-height: calc( 120rem / 4 * 2); }
+    max-height: 60rem; }
   .material-grid__col--xsmall--3 {
-    max-width: calc( 120rem / 4 * 3);
+    max-width: 90rem;
     min-width: 75vw;
     width: 75vw;
     grid-column: span 9; }
   .material-grid__height-fluid--xsmall--3 {
     height: 75vw;
-    max-height: calc( 120rem / 4 * 3); }
+    max-height: 90rem; }
   .material-grid__col--xsmall--4 {
-    max-width: calc( 120rem / 4 * 4);
+    max-width: 120rem;
     min-width: 100vw;
     width: 100vw;
     grid-column: span 12; }
   .material-grid__height-fluid--xsmall--4 {
     height: 100vw;
-    max-height: calc( 120rem / 4 * 4); }
+    max-height: 120rem; }
   .material-grid__col--small--1 {
-    max-width: calc( 120rem / 8 * 1);
+    max-width: 15rem;
     min-width: 12.5vw;
     width: 12.5vw;
     grid-column: span 1.5; }
   .material-grid__height-fluid--small--1 {
     height: 12.5vw;
-    max-height: calc( 120rem / 8 * 1); }
+    max-height: 15rem; }
   .material-grid__col--small--2 {
-    max-width: calc( 120rem / 8 * 2);
+    max-width: 30rem;
     min-width: 25vw;
     width: 25vw;
     grid-column: span 3; }
   .material-grid__height-fluid--small--2 {
     height: 25vw;
-    max-height: calc( 120rem / 8 * 2); }
+    max-height: 30rem; }
   .material-grid__col--small--3 {
-    max-width: calc( 120rem / 8 * 3);
+    max-width: 45rem;
     min-width: 37.5vw;
     width: 37.5vw;
     grid-column: span 4.5; }
   .material-grid__height-fluid--small--3 {
     height: 37.5vw;
-    max-height: calc( 120rem / 8 * 3); }
+    max-height: 45rem; }
   .material-grid__col--small--4 {
-    max-width: calc( 120rem / 8 * 4);
+    max-width: 60rem;
     min-width: 50vw;
     width: 50vw;
     grid-column: span 6; }
   .material-grid__height-fluid--small--4 {
     height: 50vw;
-    max-height: calc( 120rem / 8 * 4); }
+    max-height: 60rem; }
   .material-grid__col--small--5 {
-    max-width: calc( 120rem / 8 * 5);
+    max-width: 75rem;
     min-width: 62.5vw;
     width: 62.5vw;
     grid-column: span 7.5; }
   .material-grid__height-fluid--small--5 {
     height: 62.5vw;
-    max-height: calc( 120rem / 8 * 5); }
+    max-height: 75rem; }
   .material-grid__col--small--6 {
-    max-width: calc( 120rem / 8 * 6);
+    max-width: 90rem;
     min-width: 75vw;
     width: 75vw;
     grid-column: span 9; }
   .material-grid__height-fluid--small--6 {
     height: 75vw;
-    max-height: calc( 120rem / 8 * 6); }
+    max-height: 90rem; }
   .material-grid__col--small--7 {
-    max-width: calc( 120rem / 8 * 7);
+    max-width: 105rem;
     min-width: 87.5vw;
     width: 87.5vw;
     grid-column: span 10.5; }
   .material-grid__height-fluid--small--7 {
     height: 87.5vw;
-    max-height: calc( 120rem / 8 * 7); }
+    max-height: 105rem; }
   .material-grid__col--small--8 {
-    max-width: calc( 120rem / 8 * 8);
+    max-width: 120rem;
     min-width: 100vw;
     width: 100vw;
     grid-column: span 12; }
   .material-grid__height-fluid--small--8 {
     height: 100vw;
-    max-height: calc( 120rem / 8 * 8); }
+    max-height: 120rem; }
   .material-grid__col--medium--1 {
-    max-width: calc( 120rem / 12 * 1);
+    max-width: 10rem;
     min-width: 8.33333vw;
     width: 8.33333vw;
     grid-column: span 1; }
   .material-grid__height-fluid--medium--1 {
     height: 8.33333vw;
-    max-height: calc( 120rem / 12 * 1); }
+    max-height: 10rem; }
   .material-grid__col--medium--2 {
-    max-width: calc( 120rem / 12 * 2);
+    max-width: 20rem;
     min-width: 16.66667vw;
     width: 16.66667vw;
     grid-column: span 2; }
   .material-grid__height-fluid--medium--2 {
     height: 16.66667vw;
-    max-height: calc( 120rem / 12 * 2); }
+    max-height: 20rem; }
   .material-grid__col--medium--3 {
-    max-width: calc( 120rem / 12 * 3);
+    max-width: 30rem;
     min-width: 25vw;
     width: 25vw;
     grid-column: span 3; }
   .material-grid__height-fluid--medium--3 {
     height: 25vw;
-    max-height: calc( 120rem / 12 * 3); }
+    max-height: 30rem; }
   .material-grid__col--medium--4 {
-    max-width: calc( 120rem / 12 * 4);
+    max-width: 40rem;
     min-width: 33.33333vw;
     width: 33.33333vw;
     grid-column: span 4; }
   .material-grid__height-fluid--medium--4 {
     height: 33.33333vw;
-    max-height: calc( 120rem / 12 * 4); }
+    max-height: 40rem; }
   .material-grid__col--medium--5 {
-    max-width: calc( 120rem / 12 * 5);
+    max-width: 50rem;
     min-width: 41.66667vw;
     width: 41.66667vw;
     grid-column: span 5; }
   .material-grid__height-fluid--medium--5 {
     height: 41.66667vw;
-    max-height: calc( 120rem / 12 * 5); }
+    max-height: 50rem; }
   .material-grid__col--medium--6 {
-    max-width: calc( 120rem / 12 * 6);
+    max-width: 60rem;
     min-width: 50vw;
     width: 50vw;
     grid-column: span 6; }
   .material-grid__height-fluid--medium--6 {
     height: 50vw;
-    max-height: calc( 120rem / 12 * 6); }
+    max-height: 60rem; }
   .material-grid__col--medium--7 {
-    max-width: calc( 120rem / 12 * 7);
+    max-width: 70rem;
     min-width: 58.33333vw;
     width: 58.33333vw;
     grid-column: span 7; }
   .material-grid__height-fluid--medium--7 {
     height: 58.33333vw;
-    max-height: calc( 120rem / 12 * 7); }
+    max-height: 70rem; }
   .material-grid__col--medium--8 {
-    max-width: calc( 120rem / 12 * 8);
+    max-width: 80rem;
     min-width: 66.66667vw;
     width: 66.66667vw;
     grid-column: span 8; }
   .material-grid__height-fluid--medium--8 {
     height: 66.66667vw;
-    max-height: calc( 120rem / 12 * 8); }
+    max-height: 80rem; }
   .material-grid__col--medium--9 {
-    max-width: calc( 120rem / 12 * 9);
+    max-width: 90rem;
     min-width: 75vw;
     width: 75vw;
     grid-column: span 9; }
   .material-grid__height-fluid--medium--9 {
     height: 75vw;
-    max-height: calc( 120rem / 12 * 9); }
+    max-height: 90rem; }
   .material-grid__col--medium--10 {
-    max-width: calc( 120rem / 12 * 10);
+    max-width: 100rem;
     min-width: 83.33333vw;
     width: 83.33333vw;
     grid-column: span 10; }
   .material-grid__height-fluid--medium--10 {
     height: 83.33333vw;
-    max-height: calc( 120rem / 12 * 10); }
+    max-height: 100rem; }
   .material-grid__col--medium--11 {
-    max-width: calc( 120rem / 12 * 11);
+    max-width: 110rem;
     min-width: 91.66667vw;
     width: 91.66667vw;
     grid-column: span 11; }
   .material-grid__height-fluid--medium--11 {
     height: 91.66667vw;
-    max-height: calc( 120rem / 12 * 11); }
+    max-height: 110rem; }
   .material-grid__col--medium--12 {
-    max-width: calc( 120rem / 12 * 12);
+    max-width: 120rem;
     min-width: 100vw;
     width: 100vw;
     grid-column: span 12; }
   .material-grid__height-fluid--medium--12 {
     height: 100vw;
-    max-height: calc( 120rem / 12 * 12); }
+    max-height: 120rem; }
   .material-padding {
     padding: calc(2rem / 2); }
   .material-padding--bottom {
@@ -695,7 +695,7 @@ body {
       .material-grid.material-grid--fluid-rows {
         grid-auto-rows: 8.33333vw; } } }
 
-@media (min-width: 120rem) {
+@media screen and (min-width: 120rem) {
   .material-grid__col--xsmall--0--only {
     display: block; }
   .material-grid__col--small--0--only {
@@ -727,11 +727,11 @@ body {
     padding-top: calc(2rem / 2); }
   @supports (display: grid) {
     .material-grid {
-      grid-template-columns: repeat(auto-fill, calc( 120rem / 12)); }
+      grid-template-columns: repeat(auto-fill, 10rem); }
       .material-grid.material-grid--fixed-columns {
         grid-template-columns: repeat(auto-fill, 10rem); }
       .material-grid.material-grid--fluid-rows {
-        grid-auto-rows: calc( 120rem / 12); } } }
+        grid-auto-rows: 10rem; } } }
 
 @supports (display: grid) {
   .material-grid > * {

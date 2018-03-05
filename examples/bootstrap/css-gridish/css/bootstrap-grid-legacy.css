@@ -151,124 +151,124 @@ body {
   display: none; }
 
 .bootstrap-grid__col--sm--1 {
-  max-width: calc( 100rem / 12 * 1);
+  max-width: 8.33333rem;
   min-width: 8.33333vw;
   width: 8.33333vw;
   grid-column: span 1; }
 
 .bootstrap-grid__height-fluid--sm--1 {
   height: 8.33333vw;
-  max-height: calc( 100rem / 12 * 1); }
+  max-height: 8.33333rem; }
 
 .bootstrap-grid__col--sm--2 {
-  max-width: calc( 100rem / 12 * 2);
+  max-width: 16.66667rem;
   min-width: 16.66667vw;
   width: 16.66667vw;
   grid-column: span 2; }
 
 .bootstrap-grid__height-fluid--sm--2 {
   height: 16.66667vw;
-  max-height: calc( 100rem / 12 * 2); }
+  max-height: 16.66667rem; }
 
 .bootstrap-grid__col--sm--3 {
-  max-width: calc( 100rem / 12 * 3);
+  max-width: 25rem;
   min-width: 25vw;
   width: 25vw;
   grid-column: span 3; }
 
 .bootstrap-grid__height-fluid--sm--3 {
   height: 25vw;
-  max-height: calc( 100rem / 12 * 3); }
+  max-height: 25rem; }
 
 .bootstrap-grid__col--sm--4 {
-  max-width: calc( 100rem / 12 * 4);
+  max-width: 33.33333rem;
   min-width: 33.33333vw;
   width: 33.33333vw;
   grid-column: span 4; }
 
 .bootstrap-grid__height-fluid--sm--4 {
   height: 33.33333vw;
-  max-height: calc( 100rem / 12 * 4); }
+  max-height: 33.33333rem; }
 
 .bootstrap-grid__col--sm--5 {
-  max-width: calc( 100rem / 12 * 5);
+  max-width: 41.66667rem;
   min-width: 41.66667vw;
   width: 41.66667vw;
   grid-column: span 5; }
 
 .bootstrap-grid__height-fluid--sm--5 {
   height: 41.66667vw;
-  max-height: calc( 100rem / 12 * 5); }
+  max-height: 41.66667rem; }
 
 .bootstrap-grid__col--sm--6 {
-  max-width: calc( 100rem / 12 * 6);
+  max-width: 50rem;
   min-width: 50vw;
   width: 50vw;
   grid-column: span 6; }
 
 .bootstrap-grid__height-fluid--sm--6 {
   height: 50vw;
-  max-height: calc( 100rem / 12 * 6); }
+  max-height: 50rem; }
 
 .bootstrap-grid__col--sm--7 {
-  max-width: calc( 100rem / 12 * 7);
+  max-width: 58.33333rem;
   min-width: 58.33333vw;
   width: 58.33333vw;
   grid-column: span 7; }
 
 .bootstrap-grid__height-fluid--sm--7 {
   height: 58.33333vw;
-  max-height: calc( 100rem / 12 * 7); }
+  max-height: 58.33333rem; }
 
 .bootstrap-grid__col--sm--8 {
-  max-width: calc( 100rem / 12 * 8);
+  max-width: 66.66667rem;
   min-width: 66.66667vw;
   width: 66.66667vw;
   grid-column: span 8; }
 
 .bootstrap-grid__height-fluid--sm--8 {
   height: 66.66667vw;
-  max-height: calc( 100rem / 12 * 8); }
+  max-height: 66.66667rem; }
 
 .bootstrap-grid__col--sm--9 {
-  max-width: calc( 100rem / 12 * 9);
+  max-width: 75rem;
   min-width: 75vw;
   width: 75vw;
   grid-column: span 9; }
 
 .bootstrap-grid__height-fluid--sm--9 {
   height: 75vw;
-  max-height: calc( 100rem / 12 * 9); }
+  max-height: 75rem; }
 
 .bootstrap-grid__col--sm--10 {
-  max-width: calc( 100rem / 12 * 10);
+  max-width: 83.33333rem;
   min-width: 83.33333vw;
   width: 83.33333vw;
   grid-column: span 10; }
 
 .bootstrap-grid__height-fluid--sm--10 {
   height: 83.33333vw;
-  max-height: calc( 100rem / 12 * 10); }
+  max-height: 83.33333rem; }
 
 .bootstrap-grid__col--sm--11 {
-  max-width: calc( 100rem / 12 * 11);
+  max-width: 91.66667rem;
   min-width: 91.66667vw;
   width: 91.66667vw;
   grid-column: span 11; }
 
 .bootstrap-grid__height-fluid--sm--11 {
   height: 91.66667vw;
-  max-height: calc( 100rem / 12 * 11); }
+  max-height: 91.66667rem; }
 
 .bootstrap-grid__col--sm--12 {
-  max-width: calc( 100rem / 12 * 12);
+  max-width: 100rem;
   min-width: 100vw;
   width: 100vw;
   grid-column: span 12; }
 
 .bootstrap-grid__height-fluid--sm--12 {
   height: 100vw;
-  max-height: calc( 100rem / 12 * 12); }
+  max-height: 100rem; }
 
 .bootstrap-padding {
   padding: calc(30px / 2); }
@@ -333,7 +333,7 @@ body {
     --bootstrap-height-28: 28rem;
     --bootstrap-height-29: 29rem; } }
 
-@media (min-width: 100rem) {
+@media screen and (min-width: 100rem) {
   .bootstrap-grid__col--sm--0--only {
     display: block; }
   [class*="bootstrap-grid__col--xl--"] {
@@ -361,11 +361,11 @@ body {
     padding-top: calc(30px / 2); }
   @supports (display: grid) {
     .bootstrap-grid {
-      grid-template-columns: repeat(auto-fill, calc( 100rem / 12)); }
+      grid-template-columns: repeat(auto-fill, 8.33333rem); }
       .bootstrap-grid.bootstrap-grid--fixed-columns {
         grid-template-columns: repeat(auto-fill, 8.33333rem); }
       .bootstrap-grid.bootstrap-grid--fluid-rows {
-        grid-auto-rows: calc( 100rem / 12); } } }
+        grid-auto-rows: 8.33333rem; } } }
 
 @supports (display: grid) {
   .bootstrap-grid > * {

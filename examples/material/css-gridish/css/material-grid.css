@@ -120,7 +120,7 @@ body {
   --material-height-28: 14rem;
   --material-height-29: 14.5rem; }
 
-@media (min-width: 37.5rem) {
+@media screen and (min-width: 37.5rem) {
   .material-grid__col--xsmall--0--only {
     display: block; }
   [class*="material-grid__col--small--"] {
@@ -175,7 +175,7 @@ body {
     .material-grid.material-grid--fluid-rows {
       grid-auto-rows: 12.5vw; } }
 
-@media (min-width: 64rem) {
+@media screen and (min-width: 64rem) {
   .material-grid__col--xsmall--0--only {
     display: block; }
   .material-grid__col--small--0--only {
@@ -256,7 +256,7 @@ body {
     .material-grid.material-grid--fluid-rows {
       grid-auto-rows: 8.33333vw; } }
 
-@media (min-width: 120rem) {
+@media screen and (min-width: 120rem) {
   .material-grid__col--xsmall--0--only {
     display: block; }
   .material-grid__col--small--0--only {
@@ -285,8 +285,8 @@ body {
     padding-bottom: calc(2rem / 2);
     padding-top: calc(2rem / 2); }
   .material-grid {
-    grid-template-columns: repeat(auto-fill, calc( 120rem / 12)); }
+    grid-template-columns: repeat(auto-fill, 10rem); }
     .material-grid.material-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 10rem); }
     .material-grid.material-grid--fluid-rows {
-      grid-auto-rows: calc( 120rem / 12); } }
+      grid-auto-rows: 10rem; } }
