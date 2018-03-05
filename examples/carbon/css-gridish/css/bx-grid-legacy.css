@@ -358,7 +358,7 @@ body {
     --bx-height-28: 14rem;
     --bx-height-29: 14.5rem; } }
 
-@media (min-width: 100rem) {
+@media screen and (min-width: 100rem) {
   .bx-grid__col--sm--0--only {
     display: block; }
   [class*="bx-grid__col--xxl--"] {

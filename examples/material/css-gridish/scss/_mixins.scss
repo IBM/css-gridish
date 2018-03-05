@@ -1,14 +1,3 @@
-// Enclose content in appropiate media query
-@mixin grid-breakpoint-wrapper($breakpoint, $first) {
-  @if is-same-breakpoint($breakpoint, $first) {
-    @content;
-  } @else {
-    @media (min-width: map-get($breakpoint, breakpoint) * 1rem) {
-      @content;
-    }
-  }
-}
-
 // Set the width of a grid’s column
 @mixin grid-columns($breakpoint, $first, $breakpointName) {
   @if (map-get($breakpoint, columns) != null) {
@@ -37,9 +26,9 @@
 }
 
 // Generate variables for commonly used rows
-@mixin grid-heights-fixed($rows, $rowHeight) {
+@mixin grid-heights-fixed($rows) {
   @for $i from 1 to $rows {
-    --#{$prefix}-height-#{$i}: $i * $rowHeight * 1rem;
+    --#{$prefix}-height-#{$i}: get-fixed-size($i);
   }
 }
 
@@ -109,7 +98,7 @@
 }
 
 // Set the height of an item for legacy grid
-@mixin grid-legacy-heights($name, $rows, $rowHeight) {
+@mixin grid-legacy-heights($name, $rows) {
   .#{$prefix}-grid__height--#{$name}--0 {
     height: 0;
   }
@@ -243,10 +232,10 @@
 }
 
 // Use all CSS Variable mixins
-@mixin grid-variables($breakpoint, $first, $rows, $rowHeight) {
+@mixin grid-variables($breakpoint, $first, $rows) {
   @if is-same-breakpoint($breakpoint, $first) {
     :root {
-      @include grid-heights-fixed($rows, $rowHeight);
+      @include grid-heights-fixed($rows);
     }
   }
 }

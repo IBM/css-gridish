@@ -91,10 +91,10 @@ body {
 }
 
 @each $name, $breakpoint in $allBreakpoints {
-  @include grid-breakpoint-wrapper($breakpoint, $first) {
+  @include media-query($name) {
     @if $includeFlexFallback {
       @if is-same-breakpoint($breakpoint, $last) == false {
-        @include grid-legacy-heights($name, $rows, $rowHeight);
+        @include grid-legacy-heights($name, $rows);
       }
     }
 
@@ -107,7 +107,7 @@ body {
         display: grid;
         grid-auto-rows: minmax($rowHeight * 1rem, min-content);
       }
-      @include grid-variables($breakpoint, $first, $rows, $rowHeight);
+      @include grid-variables($breakpoint, $first, $rows);
     }
   }
 }

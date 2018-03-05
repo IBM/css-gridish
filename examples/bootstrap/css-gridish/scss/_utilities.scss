@@ -102,7 +102,12 @@
 /// Utility for declaring mobile-first media queries.
 /// @param {String} $breakpointName The name of the breakpoint to set its width value to media query.
 @mixin media-query($breakpointName) {
-  @media screen and (min-width: #{get-breakpoint-value($breakpointName)}) {
+  $breakpointValue: get-breakpoint-value($breakpointName);
+  @if $breakpointValue == map-get($first, breakpoint) {
     @content;
+  } @else {
+    @media screen and (min-width: #{$breakpointValue}) {
+      @content;
+    }
   }
 }

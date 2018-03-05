@@ -144,7 +144,7 @@ body {
   --bootstrap-height-28: 28rem;
   --bootstrap-height-29: 29rem; }
 
-@media (min-width: 100rem) {
+@media screen and (min-width: 100rem) {
   .bootstrap-grid__col--sm--0--only {
     display: block; }
   [class*="bootstrap-grid__col--xl--"] {
