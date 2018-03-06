@@ -146,48 +146,106 @@
 
 // Set the width of a grid’s margin
 // and allow for a child to break out of the grid’s margin
-@mixin grid-margin($breakpoint, $last) {
-  @if map-get($breakpoint, margin) != null {
-    $margin: #{map-get($breakpoint, margin)};
+@mixin grid-margin($breakpoint, $name) {
+  $nameToUse: $name;
+  $margin: #{map-get($breakpoint, margin)};
+  $padding: #{map-get($breakpoint, padding)};
+
+  // If last breakpoint, we use the previous breakpoint name
+  // to treat the last breakpoint as the max-width of the previous breakpoint
+  @if is-same-breakpoint($breakpoint, $last) == true {
+    $previousBreakpoint: nth(
+      $allBreakpoints,
+      index(map-keys($allBreakpoints), $name) - 1
+    );
+    $nameToUse: nth($previousBreakpoint, 1);
+  }
+
+  // Undo previous breakpoint’s bleeds and breaks
+  @if is-same-breakpoint($breakpoint, $first) ==
+    false and
+    is-same-breakpoint($breakpoint, $last) ==
+    false
+  {
+    $previousBreakpoint: nth(
+      $allBreakpoints,
+      index(map-keys($allBreakpoints), $name) - 1
+    );
+    $previousName: nth($previousBreakpoint, 1);
+    $previousMargin: map-get(nth($previousBreakpoint, 2), margin);
+
+    @if $previousMargin !=
+      null and
+      $previousMargin !=
+      0 and
+      $previousMargin !=
+      "0"
+    {
+      [class^="#{$prefix}-container__bleed--#{$previousName}"],
+      [class^="#{$prefix}-container__break--#{$previousName}"] {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+
+        &[class^="#{$prefix}-padding"] {
+          padding-left: $padding;
+          padding-right: $padding;
+        }
+      }
+    }
+  }
+
+  @if $margin != null and $margin != 0 and $margin != "0" {
+    $marginPlusPadding: calc(#{$margin} + #{$padding});
+    @if $margin == "0" and $padding == "0" {
+      $marginPlusPadding: 0;
+    } @else if $margin == "0" {
+      $marginPlusPadding: $padding;
+    } @else if $padding == "0" {
+      $marginPlusPadding: $margin;
+    }
 
     .#{$prefix}-container {
+      margin-left: 0;
+      margin-right: 0;
       padding-left: $margin;
       padding-right: $margin;
     }
 
-    .#{$prefix}-grid.#{$prefix}-grid--bleed {
-      @if is-same-breakpoint($breakpoint, $last) {
-        $maxBleed: "(100vw - #{map-get($breakpoint, breakpoint) * 1rem}) / -2";
-        margin-left: calc(#{$maxBleed} - #{$margin});
-        margin-right: calc(#{$maxBleed} - #{$margin});
-        padding-left: calc(#{$maxBleed} * -1 + #{$margin});
-        padding-right: calc(#{$maxBleed} * -1 + #{$margin});
-      } @else {
-        margin-left: -#{$margin};
-        margin-right: -#{$margin};
-        padding-left: $margin;
-        padding-right: $margin;
-      }
-      width: 100vw;
-    }
-
-    .#{$prefix}-grid--bleed--left {
-      padding-left: $margin;
+    .#{$prefix}-container__bleed--#{$nameToUse},
+    .#{$prefix}-container__bleed--#{$nameToUse}--left,
+    .#{$prefix}-container__break--#{$nameToUse},
+    .#{$prefix}-container__break--#{$nameToUse}--left {
       margin-left: -#{$margin};
     }
 
-    .#{$prefix}-grid--bleed--right {
-      padding-right: $margin;
+    .#{$prefix}-container__bleed--#{$nameToUse},
+    .#{$prefix}-container__bleed--#{$nameToUse}--right,
+    .#{$prefix}-container__break--#{$nameToUse},
+    .#{$prefix}-container__break--#{$nameToUse}--right {
       margin-right: -#{$margin};
     }
 
-    @include grid-legacy-wrapper($includeFlexFallback) {
-      .#{$prefix}-grid__break--left {
-        margin-left: -#{$margin};
-      }
+    .#{$prefix}-container__bleed--#{$nameToUse},
+    .#{$prefix}-container__bleed--#{$nameToUse}--left {
+      padding-left: $margin;
 
-      .#{$prefix}-grid__break--right {
-        margin-right: -#{$margin};
+      &.#{$prefix}-padding,
+      &.#{$prefix}-padding--horizontal,
+      &.#{$prefix}-padding--left {
+        padding-left: $marginPlusPadding;
+      }
+    }
+
+    .#{$prefix}-container__bleed--#{$nameToUse},
+    .#{$prefix}-container__bleed--#{$nameToUse}--right {
+      padding-right: $margin;
+
+      &.#{$prefix}-padding,
+      &.#{$prefix}-padding--horizontal,
+      &.#{$prefix}-padding--right {
+        padding-right: $marginPlusPadding;
       }
     }
   }

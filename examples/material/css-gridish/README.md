@@ -66,12 +66,13 @@ If you are new to CSS Grid, please try [learning the basics](https://www.google.
 | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
 | `.material-container`                          | Container element of whole page for proper margin and max-width (can be used on body tag ) |
 | `.material-container--[left, right]`            | Align the container element to the left or right side                                      |
+| `.material-container__bleed--[xsmall, small, medium]`                         | Extend the background color of a container child into the container margin on both sides starting at a specific breakpoint        |
+| `.material-container__bleed--[xsmall, small, medium]--[left, right]`           | Extend the background color of a grid into the container margin on one side at a specific breakpoint           |
+| `.material-container__break--[xsmall, small, medium]`                         | Child of container element should ignore grid’s margin at a specific breakpoint. Not supported for legacy.        |
+| `.material-container__break--[xsmall, small, medium]--[left, right]`           | Child of container element should ignore grid’s margin on one side at a specific breakpoint. Not supported for legacy.                              |
 | `.material-grid`                               | Use anytime you want to apply CSS Grid Layout, including as embedded subgrids              |
-| `.material-grid--bleed`                         | To extend the background color of a grid into the margin of the body on both sides         |
-| `.material-grid--bleed--[left, right]`           | To extend the background color of a grid into the margin of the body on one side           |
 | `.material-grid--fixed-columns`                         | Switch grid’s column widths to fixed instead of fluid                                       |
 | `.material-grid--fluid-rows`                         | Switch grid’s row height to match the width of a column                                        |
-| `.material-grid__break--[left, right]`           | Direct child of container element should ignore grid’s margin. Not supported for legacy.                              |
 | `.material-padding`                            | Add one unit of padding to element on all sides                                            |
 | `.material-padding--[bottom, left, right, top]` | Add one unit of padding to element on one side                                             |
 | `.material-padding--[horizontal, vertical]`     | Add one unit of padding to element on two sides                                            |

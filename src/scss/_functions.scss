@@ -8,10 +8,7 @@
       $cleanBreakpoints,
       (
         $name:
-          map-merge(
-            $breakpoint,
-            (padding: calc(#{map-get($breakpoint, gutter)} / 2))
-          )
+          map-merge($breakpoint, (padding: map-get($breakpoint, gutter) / 2))
       )
     );
   }

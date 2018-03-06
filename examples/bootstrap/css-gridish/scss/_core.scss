@@ -100,8 +100,8 @@ body {
 
     @include grid-legacy-zeros($breakpoint, $allBreakpoints, $name);
     @include grid-legacy-columns($breakpoint, $last, $name, $allBreakpoints);
-    @include grid-margin($breakpoint, $last);
     @include grid-padding($breakpoint);
+    @include grid-margin($breakpoint, $name);
     @include grid-legacy-wrapper($includeFlexFallback) {
       @include grid-columns($breakpoint, $first, $name) {
         display: grid;
