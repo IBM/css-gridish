@@ -86,17 +86,18 @@
 ///   }
 /// }
 @function get-fixed-size($fixedUnit) {
-  $rowHeight: map-get($grid-values, "rowHeight");
+  // Derive the base unit from the current row height of the grid
+  $baseline: map-get($grid-values, "rowHeight");
 
-  @if ($rowHeight == null or type-of($rowHeight) != "number") {
-    @error "The rowHeight in $grid-values needs be a valid number. Please check your grid configuration.";
+  @if ($baseline == null or type-of($baseline) != "number") {
+    @error "The baseline in $grid-values needs be a valid number. Please check your grid configuration.";
   }
 
   @if ($fixedUnit == null or type-of($fixedUnit) != "number") {
     @error "The provided fixed value `#{$fixedUnit}` to get-fixed-size() needs to be a valid number greater than 0.";
   }
 
-  @return $fixedUnit * $rowHeight * 1rem;
+  @return $fixedUnit * $baseline * 1rem;
 }
 
 /// Utility for declaring mobile-first media queries.
