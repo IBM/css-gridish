@@ -54,94 +54,123 @@ body {
     height: 100%; } }
 
 .bx-grid__height--sm--0 {
-  height: 0; }
+  min-height: 0; }
 
-.bx-grid__height-fixed--sm--1 {
-  height: 0.5rem; }
+.bx-grid__height--sm--1 {
+  grid-row: span 1;
+  min-height: 0.5rem; }
 
-.bx-grid__height-fixed--sm--2 {
-  height: 1rem; }
+.bx-grid__height--sm--2 {
+  grid-row: span 2;
+  min-height: 1rem; }
 
-.bx-grid__height-fixed--sm--3 {
-  height: 1.5rem; }
+.bx-grid__height--sm--3 {
+  grid-row: span 3;
+  min-height: 1.5rem; }
 
-.bx-grid__height-fixed--sm--4 {
-  height: 2rem; }
+.bx-grid__height--sm--4 {
+  grid-row: span 4;
+  min-height: 2rem; }
 
-.bx-grid__height-fixed--sm--5 {
-  height: 2.5rem; }
+.bx-grid__height--sm--5 {
+  grid-row: span 5;
+  min-height: 2.5rem; }
 
-.bx-grid__height-fixed--sm--6 {
-  height: 3rem; }
+.bx-grid__height--sm--6 {
+  grid-row: span 6;
+  min-height: 3rem; }
 
-.bx-grid__height-fixed--sm--7 {
-  height: 3.5rem; }
+.bx-grid__height--sm--7 {
+  grid-row: span 7;
+  min-height: 3.5rem; }
 
-.bx-grid__height-fixed--sm--8 {
-  height: 4rem; }
+.bx-grid__height--sm--8 {
+  grid-row: span 8;
+  min-height: 4rem; }
 
-.bx-grid__height-fixed--sm--9 {
-  height: 4.5rem; }
+.bx-grid__height--sm--9 {
+  grid-row: span 9;
+  min-height: 4.5rem; }
 
-.bx-grid__height-fixed--sm--10 {
-  height: 5rem; }
+.bx-grid__height--sm--10 {
+  grid-row: span 10;
+  min-height: 5rem; }
 
-.bx-grid__height-fixed--sm--11 {
-  height: 5.5rem; }
+.bx-grid__height--sm--11 {
+  grid-row: span 11;
+  min-height: 5.5rem; }
 
-.bx-grid__height-fixed--sm--12 {
-  height: 6rem; }
+.bx-grid__height--sm--12 {
+  grid-row: span 12;
+  min-height: 6rem; }
 
-.bx-grid__height-fixed--sm--13 {
-  height: 6.5rem; }
+.bx-grid__height--sm--13 {
+  grid-row: span 13;
+  min-height: 6.5rem; }
 
-.bx-grid__height-fixed--sm--14 {
-  height: 7rem; }
+.bx-grid__height--sm--14 {
+  grid-row: span 14;
+  min-height: 7rem; }
 
-.bx-grid__height-fixed--sm--15 {
-  height: 7.5rem; }
+.bx-grid__height--sm--15 {
+  grid-row: span 15;
+  min-height: 7.5rem; }
 
-.bx-grid__height-fixed--sm--16 {
-  height: 8rem; }
+.bx-grid__height--sm--16 {
+  grid-row: span 16;
+  min-height: 8rem; }
 
-.bx-grid__height-fixed--sm--17 {
-  height: 8.5rem; }
+.bx-grid__height--sm--17 {
+  grid-row: span 17;
+  min-height: 8.5rem; }
 
-.bx-grid__height-fixed--sm--18 {
-  height: 9rem; }
+.bx-grid__height--sm--18 {
+  grid-row: span 18;
+  min-height: 9rem; }
 
-.bx-grid__height-fixed--sm--19 {
-  height: 9.5rem; }
+.bx-grid__height--sm--19 {
+  grid-row: span 19;
+  min-height: 9.5rem; }
 
-.bx-grid__height-fixed--sm--20 {
-  height: 10rem; }
+.bx-grid__height--sm--20 {
+  grid-row: span 20;
+  min-height: 10rem; }
 
-.bx-grid__height-fixed--sm--21 {
-  height: 10.5rem; }
+.bx-grid__height--sm--21 {
+  grid-row: span 21;
+  min-height: 10.5rem; }
 
-.bx-grid__height-fixed--sm--22 {
-  height: 11rem; }
+.bx-grid__height--sm--22 {
+  grid-row: span 22;
+  min-height: 11rem; }
 
-.bx-grid__height-fixed--sm--23 {
-  height: 11.5rem; }
+.bx-grid__height--sm--23 {
+  grid-row: span 23;
+  min-height: 11.5rem; }
 
-.bx-grid__height-fixed--sm--24 {
-  height: 12rem; }
+.bx-grid__height--sm--24 {
+  grid-row: span 24;
+  min-height: 12rem; }
 
-.bx-grid__height-fixed--sm--25 {
-  height: 12.5rem; }
+.bx-grid__height--sm--25 {
+  grid-row: span 25;
+  min-height: 12.5rem; }
 
-.bx-grid__height-fixed--sm--26 {
-  height: 13rem; }
+.bx-grid__height--sm--26 {
+  grid-row: span 26;
+  min-height: 13rem; }
 
-.bx-grid__height-fixed--sm--27 {
-  height: 13.5rem; }
+.bx-grid__height--sm--27 {
+  grid-row: span 27;
+  min-height: 13.5rem; }
 
-.bx-grid__height-fixed--sm--28 {
-  height: 14rem; }
+.bx-grid__height--sm--28 {
+  grid-row: span 28;
+  min-height: 14rem; }
 
-.bx-grid__height-fixed--sm--29 {
-  height: 14.5rem; }
+.bx-grid__height--sm--29 {
+  grid-row: span 29;
+  min-height: 14.5rem; }
 
 [class*="bx-grid__col--sm--"] {
   display: block; }
@@ -156,8 +185,10 @@ body {
   width: calc( (100vw - 10vw) * 0.08333);
   grid-column: span 1; }
 
-.bx-grid__height-fluid--sm--1 {
-  height: calc( (100vw - 10vw) * 0.08333);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--1 {
+  grid-row: span 1;
+  min-height: calc( (100vw - 10vw) * 0.08333);
   max-height: calc( (100rem - 10vw) * 0.08333); }
 
 .bx-grid__col--sm--2 {
@@ -166,8 +197,10 @@ body {
   width: calc( (100vw - 10vw) * 0.16667);
   grid-column: span 2; }
 
-.bx-grid__height-fluid--sm--2 {
-  height: calc( (100vw - 10vw) * 0.16667);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--2 {
+  grid-row: span 2;
+  min-height: calc( (100vw - 10vw) * 0.16667);
   max-height: calc( (100rem - 10vw) * 0.16667); }
 
 .bx-grid__col--sm--3 {
@@ -176,8 +209,10 @@ body {
   width: calc( (100vw - 10vw) * 0.25);
   grid-column: span 3; }
 
-.bx-grid__height-fluid--sm--3 {
-  height: calc( (100vw - 10vw) * 0.25);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--3 {
+  grid-row: span 3;
+  min-height: calc( (100vw - 10vw) * 0.25);
   max-height: calc( (100rem - 10vw) * 0.25); }
 
 .bx-grid__col--sm--4 {
@@ -186,8 +221,10 @@ body {
   width: calc( (100vw - 10vw) * 0.33333);
   grid-column: span 4; }
 
-.bx-grid__height-fluid--sm--4 {
-  height: calc( (100vw - 10vw) * 0.33333);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--4 {
+  grid-row: span 4;
+  min-height: calc( (100vw - 10vw) * 0.33333);
   max-height: calc( (100rem - 10vw) * 0.33333); }
 
 .bx-grid__col--sm--5 {
@@ -196,8 +233,10 @@ body {
   width: calc( (100vw - 10vw) * 0.41667);
   grid-column: span 5; }
 
-.bx-grid__height-fluid--sm--5 {
-  height: calc( (100vw - 10vw) * 0.41667);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--5 {
+  grid-row: span 5;
+  min-height: calc( (100vw - 10vw) * 0.41667);
   max-height: calc( (100rem - 10vw) * 0.41667); }
 
 .bx-grid__col--sm--6 {
@@ -206,8 +245,10 @@ body {
   width: calc( (100vw - 10vw) * 0.5);
   grid-column: span 6; }
 
-.bx-grid__height-fluid--sm--6 {
-  height: calc( (100vw - 10vw) * 0.5);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--6 {
+  grid-row: span 6;
+  min-height: calc( (100vw - 10vw) * 0.5);
   max-height: calc( (100rem - 10vw) * 0.5); }
 
 .bx-grid__col--sm--7 {
@@ -216,8 +257,10 @@ body {
   width: calc( (100vw - 10vw) * 0.58333);
   grid-column: span 7; }
 
-.bx-grid__height-fluid--sm--7 {
-  height: calc( (100vw - 10vw) * 0.58333);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--7 {
+  grid-row: span 7;
+  min-height: calc( (100vw - 10vw) * 0.58333);
   max-height: calc( (100rem - 10vw) * 0.58333); }
 
 .bx-grid__col--sm--8 {
@@ -226,8 +269,10 @@ body {
   width: calc( (100vw - 10vw) * 0.66667);
   grid-column: span 8; }
 
-.bx-grid__height-fluid--sm--8 {
-  height: calc( (100vw - 10vw) * 0.66667);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--8 {
+  grid-row: span 8;
+  min-height: calc( (100vw - 10vw) * 0.66667);
   max-height: calc( (100rem - 10vw) * 0.66667); }
 
 .bx-grid__col--sm--9 {
@@ -236,8 +281,10 @@ body {
   width: calc( (100vw - 10vw) * 0.75);
   grid-column: span 9; }
 
-.bx-grid__height-fluid--sm--9 {
-  height: calc( (100vw - 10vw) * 0.75);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--9 {
+  grid-row: span 9;
+  min-height: calc( (100vw - 10vw) * 0.75);
   max-height: calc( (100rem - 10vw) * 0.75); }
 
 .bx-grid__col--sm--10 {
@@ -246,8 +293,10 @@ body {
   width: calc( (100vw - 10vw) * 0.83333);
   grid-column: span 10; }
 
-.bx-grid__height-fluid--sm--10 {
-  height: calc( (100vw - 10vw) * 0.83333);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--10 {
+  grid-row: span 10;
+  min-height: calc( (100vw - 10vw) * 0.83333);
   max-height: calc( (100rem - 10vw) * 0.83333); }
 
 .bx-grid__col--sm--11 {
@@ -256,8 +305,10 @@ body {
   width: calc( (100vw - 10vw) * 0.91667);
   grid-column: span 11; }
 
-.bx-grid__height-fluid--sm--11 {
-  height: calc( (100vw - 10vw) * 0.91667);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--11 {
+  grid-row: span 11;
+  min-height: calc( (100vw - 10vw) * 0.91667);
   max-height: calc( (100rem - 10vw) * 0.91667); }
 
 .bx-grid__col--sm--12 {
@@ -266,8 +317,10 @@ body {
   width: calc( (100vw - 10vw) * 1);
   grid-column: span 12; }
 
-.bx-grid__height-fluid--sm--12 {
-  height: calc( (100vw - 10vw) * 1);
+.bx-grid--fluid-rows
+> .bx-grid__height--sm--12 {
+  grid-row: span 12;
+  min-height: calc( (100vw - 10vw) * 1);
   max-height: calc( (100rem - 10vw) * 1); }
 
 .bx-padding {

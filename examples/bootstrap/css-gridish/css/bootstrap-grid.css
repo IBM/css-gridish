@@ -38,6 +38,96 @@ body {
   .bootstrap-grid > * {
     height: 100%; } }
 
+.bootstrap-grid__height--sm--0 {
+  min-height: 0; }
+
+.bootstrap-grid__height--sm--1 {
+  grid-row: span 1; }
+
+.bootstrap-grid__height--sm--2 {
+  grid-row: span 2; }
+
+.bootstrap-grid__height--sm--3 {
+  grid-row: span 3; }
+
+.bootstrap-grid__height--sm--4 {
+  grid-row: span 4; }
+
+.bootstrap-grid__height--sm--5 {
+  grid-row: span 5; }
+
+.bootstrap-grid__height--sm--6 {
+  grid-row: span 6; }
+
+.bootstrap-grid__height--sm--7 {
+  grid-row: span 7; }
+
+.bootstrap-grid__height--sm--8 {
+  grid-row: span 8; }
+
+.bootstrap-grid__height--sm--9 {
+  grid-row: span 9; }
+
+.bootstrap-grid__height--sm--10 {
+  grid-row: span 10; }
+
+.bootstrap-grid__height--sm--11 {
+  grid-row: span 11; }
+
+.bootstrap-grid__height--sm--12 {
+  grid-row: span 12; }
+
+.bootstrap-grid__height--sm--13 {
+  grid-row: span 13; }
+
+.bootstrap-grid__height--sm--14 {
+  grid-row: span 14; }
+
+.bootstrap-grid__height--sm--15 {
+  grid-row: span 15; }
+
+.bootstrap-grid__height--sm--16 {
+  grid-row: span 16; }
+
+.bootstrap-grid__height--sm--17 {
+  grid-row: span 17; }
+
+.bootstrap-grid__height--sm--18 {
+  grid-row: span 18; }
+
+.bootstrap-grid__height--sm--19 {
+  grid-row: span 19; }
+
+.bootstrap-grid__height--sm--20 {
+  grid-row: span 20; }
+
+.bootstrap-grid__height--sm--21 {
+  grid-row: span 21; }
+
+.bootstrap-grid__height--sm--22 {
+  grid-row: span 22; }
+
+.bootstrap-grid__height--sm--23 {
+  grid-row: span 23; }
+
+.bootstrap-grid__height--sm--24 {
+  grid-row: span 24; }
+
+.bootstrap-grid__height--sm--25 {
+  grid-row: span 25; }
+
+.bootstrap-grid__height--sm--26 {
+  grid-row: span 26; }
+
+.bootstrap-grid__height--sm--27 {
+  grid-row: span 27; }
+
+.bootstrap-grid__height--sm--28 {
+  grid-row: span 28; }
+
+.bootstrap-grid__height--sm--29 {
+  grid-row: span 29; }
+
 [class*="bootstrap-grid__col--sm--"] {
   display: block; }
 
@@ -48,38 +138,86 @@ body {
 .bootstrap-grid__col--sm--1 {
   grid-column: span 1; }
 
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--1 {
+  grid-row: span 1; }
+
 .bootstrap-grid__col--sm--2 {
   grid-column: span 2; }
+
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--2 {
+  grid-row: span 2; }
 
 .bootstrap-grid__col--sm--3 {
   grid-column: span 3; }
 
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--3 {
+  grid-row: span 3; }
+
 .bootstrap-grid__col--sm--4 {
   grid-column: span 4; }
+
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--4 {
+  grid-row: span 4; }
 
 .bootstrap-grid__col--sm--5 {
   grid-column: span 5; }
 
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--5 {
+  grid-row: span 5; }
+
 .bootstrap-grid__col--sm--6 {
   grid-column: span 6; }
+
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--6 {
+  grid-row: span 6; }
 
 .bootstrap-grid__col--sm--7 {
   grid-column: span 7; }
 
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--7 {
+  grid-row: span 7; }
+
 .bootstrap-grid__col--sm--8 {
   grid-column: span 8; }
+
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--8 {
+  grid-row: span 8; }
 
 .bootstrap-grid__col--sm--9 {
   grid-column: span 9; }
 
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--9 {
+  grid-row: span 9; }
+
 .bootstrap-grid__col--sm--10 {
   grid-column: span 10; }
+
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--10 {
+  grid-row: span 10; }
 
 .bootstrap-grid__col--sm--11 {
   grid-column: span 11; }
 
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--11 {
+  grid-row: span 11; }
+
 .bootstrap-grid__col--sm--12 {
   grid-column: span 12; }
+
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--12 {
+  grid-row: span 12; }
 
 .bootstrap-padding {
   padding: 15px; }

@@ -54,94 +54,123 @@ body {
     height: 100%; } }
 
 .bootstrap-grid__height--sm--0 {
-  height: 0; }
+  min-height: 0; }
 
-.bootstrap-grid__height-fixed--sm--1 {
-  height: 1rem; }
+.bootstrap-grid__height--sm--1 {
+  grid-row: span 1;
+  min-height: 1rem; }
 
-.bootstrap-grid__height-fixed--sm--2 {
-  height: 2rem; }
+.bootstrap-grid__height--sm--2 {
+  grid-row: span 2;
+  min-height: 2rem; }
 
-.bootstrap-grid__height-fixed--sm--3 {
-  height: 3rem; }
+.bootstrap-grid__height--sm--3 {
+  grid-row: span 3;
+  min-height: 3rem; }
 
-.bootstrap-grid__height-fixed--sm--4 {
-  height: 4rem; }
+.bootstrap-grid__height--sm--4 {
+  grid-row: span 4;
+  min-height: 4rem; }
 
-.bootstrap-grid__height-fixed--sm--5 {
-  height: 5rem; }
+.bootstrap-grid__height--sm--5 {
+  grid-row: span 5;
+  min-height: 5rem; }
 
-.bootstrap-grid__height-fixed--sm--6 {
-  height: 6rem; }
+.bootstrap-grid__height--sm--6 {
+  grid-row: span 6;
+  min-height: 6rem; }
 
-.bootstrap-grid__height-fixed--sm--7 {
-  height: 7rem; }
+.bootstrap-grid__height--sm--7 {
+  grid-row: span 7;
+  min-height: 7rem; }
 
-.bootstrap-grid__height-fixed--sm--8 {
-  height: 8rem; }
+.bootstrap-grid__height--sm--8 {
+  grid-row: span 8;
+  min-height: 8rem; }
 
-.bootstrap-grid__height-fixed--sm--9 {
-  height: 9rem; }
+.bootstrap-grid__height--sm--9 {
+  grid-row: span 9;
+  min-height: 9rem; }
 
-.bootstrap-grid__height-fixed--sm--10 {
-  height: 10rem; }
+.bootstrap-grid__height--sm--10 {
+  grid-row: span 10;
+  min-height: 10rem; }
 
-.bootstrap-grid__height-fixed--sm--11 {
-  height: 11rem; }
+.bootstrap-grid__height--sm--11 {
+  grid-row: span 11;
+  min-height: 11rem; }
 
-.bootstrap-grid__height-fixed--sm--12 {
-  height: 12rem; }
+.bootstrap-grid__height--sm--12 {
+  grid-row: span 12;
+  min-height: 12rem; }
 
-.bootstrap-grid__height-fixed--sm--13 {
-  height: 13rem; }
+.bootstrap-grid__height--sm--13 {
+  grid-row: span 13;
+  min-height: 13rem; }
 
-.bootstrap-grid__height-fixed--sm--14 {
-  height: 14rem; }
+.bootstrap-grid__height--sm--14 {
+  grid-row: span 14;
+  min-height: 14rem; }
 
-.bootstrap-grid__height-fixed--sm--15 {
-  height: 15rem; }
+.bootstrap-grid__height--sm--15 {
+  grid-row: span 15;
+  min-height: 15rem; }
 
-.bootstrap-grid__height-fixed--sm--16 {
-  height: 16rem; }
+.bootstrap-grid__height--sm--16 {
+  grid-row: span 16;
+  min-height: 16rem; }
 
-.bootstrap-grid__height-fixed--sm--17 {
-  height: 17rem; }
+.bootstrap-grid__height--sm--17 {
+  grid-row: span 17;
+  min-height: 17rem; }
 
-.bootstrap-grid__height-fixed--sm--18 {
-  height: 18rem; }
+.bootstrap-grid__height--sm--18 {
+  grid-row: span 18;
+  min-height: 18rem; }
 
-.bootstrap-grid__height-fixed--sm--19 {
-  height: 19rem; }
+.bootstrap-grid__height--sm--19 {
+  grid-row: span 19;
+  min-height: 19rem; }
 
-.bootstrap-grid__height-fixed--sm--20 {
-  height: 20rem; }
+.bootstrap-grid__height--sm--20 {
+  grid-row: span 20;
+  min-height: 20rem; }
 
-.bootstrap-grid__height-fixed--sm--21 {
-  height: 21rem; }
+.bootstrap-grid__height--sm--21 {
+  grid-row: span 21;
+  min-height: 21rem; }
 
-.bootstrap-grid__height-fixed--sm--22 {
-  height: 22rem; }
+.bootstrap-grid__height--sm--22 {
+  grid-row: span 22;
+  min-height: 22rem; }
 
-.bootstrap-grid__height-fixed--sm--23 {
-  height: 23rem; }
+.bootstrap-grid__height--sm--23 {
+  grid-row: span 23;
+  min-height: 23rem; }
 
-.bootstrap-grid__height-fixed--sm--24 {
-  height: 24rem; }
+.bootstrap-grid__height--sm--24 {
+  grid-row: span 24;
+  min-height: 24rem; }
 
-.bootstrap-grid__height-fixed--sm--25 {
-  height: 25rem; }
+.bootstrap-grid__height--sm--25 {
+  grid-row: span 25;
+  min-height: 25rem; }
 
-.bootstrap-grid__height-fixed--sm--26 {
-  height: 26rem; }
+.bootstrap-grid__height--sm--26 {
+  grid-row: span 26;
+  min-height: 26rem; }
 
-.bootstrap-grid__height-fixed--sm--27 {
-  height: 27rem; }
+.bootstrap-grid__height--sm--27 {
+  grid-row: span 27;
+  min-height: 27rem; }
 
-.bootstrap-grid__height-fixed--sm--28 {
-  height: 28rem; }
+.bootstrap-grid__height--sm--28 {
+  grid-row: span 28;
+  min-height: 28rem; }
 
-.bootstrap-grid__height-fixed--sm--29 {
-  height: 29rem; }
+.bootstrap-grid__height--sm--29 {
+  grid-row: span 29;
+  min-height: 29rem; }
 
 [class*="bootstrap-grid__col--sm--"] {
   display: block; }
@@ -156,8 +185,10 @@ body {
   width: 8.33333vw;
   grid-column: span 1; }
 
-.bootstrap-grid__height-fluid--sm--1 {
-  height: 8.33333vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--1 {
+  grid-row: span 1;
+  min-height: 8.33333vw;
   max-height: 8.33333rem; }
 
 .bootstrap-grid__col--sm--2 {
@@ -166,8 +197,10 @@ body {
   width: 16.66667vw;
   grid-column: span 2; }
 
-.bootstrap-grid__height-fluid--sm--2 {
-  height: 16.66667vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--2 {
+  grid-row: span 2;
+  min-height: 16.66667vw;
   max-height: 16.66667rem; }
 
 .bootstrap-grid__col--sm--3 {
@@ -176,8 +209,10 @@ body {
   width: 25vw;
   grid-column: span 3; }
 
-.bootstrap-grid__height-fluid--sm--3 {
-  height: 25vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--3 {
+  grid-row: span 3;
+  min-height: 25vw;
   max-height: 25rem; }
 
 .bootstrap-grid__col--sm--4 {
@@ -186,8 +221,10 @@ body {
   width: 33.33333vw;
   grid-column: span 4; }
 
-.bootstrap-grid__height-fluid--sm--4 {
-  height: 33.33333vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--4 {
+  grid-row: span 4;
+  min-height: 33.33333vw;
   max-height: 33.33333rem; }
 
 .bootstrap-grid__col--sm--5 {
@@ -196,8 +233,10 @@ body {
   width: 41.66667vw;
   grid-column: span 5; }
 
-.bootstrap-grid__height-fluid--sm--5 {
-  height: 41.66667vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--5 {
+  grid-row: span 5;
+  min-height: 41.66667vw;
   max-height: 41.66667rem; }
 
 .bootstrap-grid__col--sm--6 {
@@ -206,8 +245,10 @@ body {
   width: 50vw;
   grid-column: span 6; }
 
-.bootstrap-grid__height-fluid--sm--6 {
-  height: 50vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--6 {
+  grid-row: span 6;
+  min-height: 50vw;
   max-height: 50rem; }
 
 .bootstrap-grid__col--sm--7 {
@@ -216,8 +257,10 @@ body {
   width: 58.33333vw;
   grid-column: span 7; }
 
-.bootstrap-grid__height-fluid--sm--7 {
-  height: 58.33333vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--7 {
+  grid-row: span 7;
+  min-height: 58.33333vw;
   max-height: 58.33333rem; }
 
 .bootstrap-grid__col--sm--8 {
@@ -226,8 +269,10 @@ body {
   width: 66.66667vw;
   grid-column: span 8; }
 
-.bootstrap-grid__height-fluid--sm--8 {
-  height: 66.66667vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--8 {
+  grid-row: span 8;
+  min-height: 66.66667vw;
   max-height: 66.66667rem; }
 
 .bootstrap-grid__col--sm--9 {
@@ -236,8 +281,10 @@ body {
   width: 75vw;
   grid-column: span 9; }
 
-.bootstrap-grid__height-fluid--sm--9 {
-  height: 75vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--9 {
+  grid-row: span 9;
+  min-height: 75vw;
   max-height: 75rem; }
 
 .bootstrap-grid__col--sm--10 {
@@ -246,8 +293,10 @@ body {
   width: 83.33333vw;
   grid-column: span 10; }
 
-.bootstrap-grid__height-fluid--sm--10 {
-  height: 83.33333vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--10 {
+  grid-row: span 10;
+  min-height: 83.33333vw;
   max-height: 83.33333rem; }
 
 .bootstrap-grid__col--sm--11 {
@@ -256,8 +305,10 @@ body {
   width: 91.66667vw;
   grid-column: span 11; }
 
-.bootstrap-grid__height-fluid--sm--11 {
-  height: 91.66667vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--11 {
+  grid-row: span 11;
+  min-height: 91.66667vw;
   max-height: 91.66667rem; }
 
 .bootstrap-grid__col--sm--12 {
@@ -266,8 +317,10 @@ body {
   width: 100vw;
   grid-column: span 12; }
 
-.bootstrap-grid__height-fluid--sm--12 {
-  height: 100vw;
+.bootstrap-grid--fluid-rows
+> .bootstrap-grid__height--sm--12 {
+  grid-row: span 12;
+  min-height: 100vw;
   max-height: 100rem; }
 
 .bootstrap-padding {

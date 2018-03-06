@@ -29,32 +29,17 @@
 
     .nav {
       background: #ececec;
-      grid-row-start: span 6;
     }
 
     .nav__item {
       align-items: center;
       align-self: center;
       display: flex;
-      grid-row-start: span 6;
       height: 100%;
-    }
-
-    .nav__item--link {
-      grid-row-start: span 6;
-    }
-
-    .aside {
-      grid-row-start: 7;
     }
 
     .aside__item {
       border-left: 1px solid #ececec;
-    }
-
-    .aside__item,
-    .aside__description {
-      grid-row-start: span 4;
     }
 
     .aside__item,
@@ -68,14 +53,6 @@
       border-top: 1px solid #ececec;
     }
 
-    .main__title {
-      grid-row: span 10;
-    }
-
-    .main__cards__card {
-      grid-row: span 2;
-    }
-
     .main__cards__card * {
       width: 100%;
     }
@@ -86,23 +63,23 @@
       }
 
       .aside__item:nth-child(2) {
-        grid-row: 11 / span 4;
+        grid-row-start: 11;
       }
 
       .aside__item:nth-child(3) {
-        grid-row: 15 / span 4;
+        grid-row-start: 12;
       }
 
       .aside__item:nth-child(4) {
-        grid-row: 19 / span 4;
+        grid-row-start: 13;
       }
 
       .aside__item:nth-child(5) {
-        grid-row: 23 / span 4;
+        grid-row-start: 14;
       }
 
       .aside__description {
-        grid-row: 27 / span 4;
+        grid-row-start: 18;
       }
 
       .main {
@@ -136,32 +113,32 @@
 </head>
 
 <body class="material-container material-grid">
-  <nav class="material-grid material-container__bleed material-grid__height-fixed--xsmall--6 nav">
-    <p class="material-padding material-grid__col--xsmall--1 material-grid__col--small--3 material-grid__col--medium--3 nav__item">
+  <nav class="material-grid material-container__bleed material-grid__height--xsmall--4 nav">
+    <p class="material-padding material-grid__col--xsmall--1 material-grid__col--small--3 material-grid__col--medium--3 material-grid__height--xsmall--4 nav__item">
       <strong>Page Title</strong>
     </p>
-    <p class="material-padding material-grid__col--xsmall--1 material-grid__col--small--1 material-grid__col--medium--1 nav__item nav__item--link">
+    <p class="material-padding material-grid__col--xsmall--1 material-grid__col--small--1 material-grid__col--medium--1 material-grid__height--xsmall--4 nav__item nav__item--link">
       Link
     </p>
-    <p class="material-padding material-grid__col--xsmall--1 material-grid__col--small--1 material-grid__col--medium--1 nav__item nav__item--link">
+    <p class="material-padding material-grid__col--xsmall--1 material-grid__col--small--1 material-grid__col--medium--1 material-grid__height--xsmall--4 nav__item nav__item--link">
       Link
     </p>
-    <p class="material-padding material-grid__col--xsmall--1 material-grid__col--small--1 material-grid__col--medium--1 nav__item nav__item--link">
+    <p class="material-padding material-grid__col--xsmall--1 material-grid__col--small--1 material-grid__col--medium--1 material-grid__height--xsmall--4 nav__item nav__item--link">
       Link
     </p>
   </nav>
-  <div class="material-grid__col--xsmall--0 material-grid__col--small--8 material-grid__height-fixed--xsmall--4 not-grid"></div>
+  <div class="material-grid__col--xsmall--0 material-grid__col--small--8 material-grid__height--xsmall--4 not-grid"></div>
   <aside class="material-grid material-grid__col--small--3 material-grid__col--medium--3 aside">
-    <div class="material-grid__col--xsmall--0 material-grid__col--small--2 material-grid__height-fixed--small--10 not-grid"></div>
-    <p class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fixed--xsmall--6 aside__item">
+    <div class="material-grid__col--xsmall--0 material-grid__col--small--2 material-grid__height--small--10 not-grid"></div>
+    <p class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--4 aside__item">
       Sidelink</p>
-    <p class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fixed--xsmall--6 aside__item">
+    <p class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--4 aside__item">
       Sidelink</p>
-    <p class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fixed--xsmall--6 aside__item">
+    <p class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--4 aside__item">
       Sidelink</p>
-    <p class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fixed--xsmall--6 aside__item">
+    <p class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--4 aside__item">
       Sidelink</p>
-    <p class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fixed--xsmall--16 aside__description">
+    <p class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--16 aside__description">
       <span class="material-padding--right">This example looks identical on modern browsers supporting CSS Grid to those that only support CSS Flexbox. Learn more
         about
         <a href="https://github.com/ibm/css-gridish">CSS Gridish.</a>
@@ -169,37 +146,37 @@
     </p>
   </aside>
   <main class="material-grid material-grid__col--small--5 material-grid__col--medium--9 main">
-    <h2 class="material-padding material-grid__height-fixed--xsmall--10 main__title">Cards</h2>
+    <h2 class="material-padding material-grid__height--xsmall--10 main__title">Cards</h2>
     <div class="material-grid material-grid--fluid-rows main__cards">
-      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fluid--xsmall--2 material-grid__height-fluid--small--2 material-grid__height-fluid--medium--2 main__cards__card">
+      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--2 material-grid__height--small--2 material-grid__height--medium--2 main__cards__card">
         <h3>Card Title</h3>
         <p>Card subtitle or description goes here.</p>
       </section>
-      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fluid--xsmall--2 material-grid__height-fluid--small--2 material-grid__height-fluid--medium--2 main__cards__card">
+      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--2 material-grid__height--small--2 material-grid__height--medium--2 main__cards__card">
         <h3>Card Title</h3>
         <p>Card subtitle or description goes here.</p>
       </section>
-      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fluid--xsmall--2 material-grid__height-fluid--small--2 material-grid__height-fluid--medium--2 main__cards__card">
+      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--2 material-grid__height--small--2 material-grid__height--medium--2 main__cards__card">
         <h3>Card Title</h3>
         <p>Card subtitle or description goes here.</p>
       </section>
-      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fluid--xsmall--2 material-grid__height-fluid--small--2 material-grid__height-fluid--medium--2 main__cards__card">
+      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--2 material-grid__height--small--2 material-grid__height--medium--2 main__cards__card">
         <h3>Card Title</h3>
         <p>Card subtitle or description goes here.</p>
       </section>
-      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fluid--xsmall--2 material-grid__height-fluid--small--2 material-grid__height-fluid--medium--2 main__cards__card">
+      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--2 material-grid__height--small--2 material-grid__height--medium--2 main__cards__card">
         <h3>Card Title</h3>
         <p>Card subtitle or description goes here.</p>
       </section>
-      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fluid--xsmall--2 material-grid__height-fluid--small--2 material-grid__height-fluid--medium--2 main__cards__card">
+      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--2 material-grid__height--small--2 material-grid__height--medium--2 main__cards__card">
         <h3>Card Title</h3>
         <p>Card subtitle or description goes here.</p>
       </section>
-      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fluid--xsmall--2 material-grid__height-fluid--small--2 material-grid__height-fluid--medium--2 main__cards__card">
+      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--2 material-grid__height--small--2 material-grid__height--medium--2 main__cards__card">
         <h3>Card Title</h3>
         <p>Card subtitle or description goes here.</p>
       </section>
-      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height-fluid--xsmall--2 material-grid__height-fluid--small--2 material-grid__height-fluid--medium--2 main__cards__card">
+      <section class="material-padding material-grid__col--small--2 material-grid__col--medium--2 material-grid__height--xsmall--2 material-grid__height--small--2 material-grid__height--medium--2 main__cards__card">
         <h3>Card Title</h3>
         <p>Card subtitle or description goes here.</p>
       </section>

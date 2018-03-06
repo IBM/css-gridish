@@ -70,13 +70,14 @@
               min-width: $columnSize;
               width: $columnSize;
             }
-
             grid-column: span #{$columnMultiplier};
           }
 
-          @if $includeFlexFallback {
-            .#{$prefix}-grid__height-fluid--#{$currentName}--#{$i} {
-              height: $columnSize;
+          .#{$prefix}-grid--fluid-rows
+            > .#{$prefix}-grid__height--#{$currentName}--#{$i} {
+            grid-row: span $i;
+            @if $includeFlexFallback {
+              min-height: $columnSize;
               // If second-to-last media query, apply max-height instead of remaking classes in last media query
               @if $isSecondToLast {
                 max-height: $maxColumnSize;
@@ -100,11 +101,14 @@
 // Set the height of an item for legacy grid
 @mixin grid-legacy-heights($name, $rows) {
   .#{$prefix}-grid__height--#{$name}--0 {
-    height: 0;
+    min-height: 0;
   }
   @for $i from 1 to $rows {
-    .#{$prefix}-grid__height-fixed--#{$name}--#{$i} {
-      height: get-fixed-size($i);
+    .#{$prefix}-grid__height--#{$name}--#{$i} {
+      grid-row: span $i;
+      @if $includeFlexFallback {
+        min-height: get-fixed-size($i);
+      }
     }
   }
 }

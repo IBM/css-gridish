@@ -92,12 +92,9 @@ body {
 
 @each $name, $breakpoint in $allBreakpoints {
   @include media-query($name) {
-    @if $includeFlexFallback {
-      @if is-same-breakpoint($breakpoint, $last) == false {
-        @include grid-legacy-heights($name, $rows);
-      }
+    @if is-same-breakpoint($breakpoint, $last) == false {
+      @include grid-legacy-heights($name, $rows);
     }
-
     @include grid-legacy-zeros($breakpoint, $allBreakpoints, $name);
     @include grid-legacy-columns($breakpoint, $last, $name, $allBreakpoints);
     @include grid-padding($breakpoint);
