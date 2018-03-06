@@ -544,18 +544,18 @@ body {
         padding-right: calc(5vw + 0.625rem); } } }
 
 @supports (display: grid) {
-  .bx-grid > * {
-    height: initial;
-    min-height: initial;
+  .bx-grid > *,
+  .bx-grid > [class*="bx-grid__col--"] {
     min-width: initial;
-    max-height: initial;
     max-width: initial;
     width: initial; }
-    .bx-grid > *.bx-grid {
+    .bx-grid > *.bx-grid,
+    .bx-grid > [class*="bx-grid__col--"].bx-grid {
       display: grid; }
-  [class*="bx-grid__height-"] {
+  .bx-grid > [class*="bx-grid__height--"] {
     height: unset;
-    max-height: unset; } }
+    max-height: unset;
+    min-height: initial; } }
 
 .bx-grid > script {
   display: none; }

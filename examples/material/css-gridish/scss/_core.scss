@@ -86,12 +86,12 @@ body {
 @each $name, $breakpoint in $allBreakpoints {
   @include media-query($name) {
     @if is-same-breakpoint($breakpoint, $last) == false {
-      @include grid-legacy-heights($name, $rows);
+      @include grid-legacy-heights($name);
     }
-    @include grid-legacy-zeros($breakpoint, $allBreakpoints, $name);
+    @include grid-legacy-zeros($breakpoint, $name);
     @include grid-padding($breakpoint);
-    @include grid($breakpoint, $first, $name);
-    @include grid-legacy-columns($breakpoint, $last, $name, $allBreakpoints);
+    @include grid($breakpoint, $name);
+    @include grid-legacy-columns($breakpoint, $name);
 
     // Wrap all bleed/break classes and css variables in a CSS Grid support query
     @include grid-legacy-wrapper($includeFlexFallback) {

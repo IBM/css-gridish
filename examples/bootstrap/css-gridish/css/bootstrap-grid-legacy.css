@@ -471,18 +471,18 @@ body {
     min-width: 0; } }
 
 @supports (display: grid) {
-  .bootstrap-grid > * {
-    height: initial;
-    min-height: initial;
+  .bootstrap-grid > *,
+  .bootstrap-grid > [class*="bootstrap-grid__col--"] {
     min-width: initial;
-    max-height: initial;
     max-width: initial;
     width: initial; }
-    .bootstrap-grid > *.bootstrap-grid {
+    .bootstrap-grid > *.bootstrap-grid,
+    .bootstrap-grid > [class*="bootstrap-grid__col--"].bootstrap-grid {
       display: grid; }
-  [class*="bootstrap-grid__height-"] {
+  .bootstrap-grid > [class*="bootstrap-grid__height--"] {
     height: unset;
-    max-height: unset; } }
+    max-height: unset;
+    min-height: initial; } }
 
 .bootstrap-grid > script {
   display: none; }

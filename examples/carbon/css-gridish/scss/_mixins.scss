@@ -1,5 +1,5 @@
 // Set the width of a grid’s column
-@mixin grid($breakpoint, $first, $breakpointName) {
+@mixin grid($breakpoint, $breakpointName) {
   @if (map-get($breakpoint, columns) != null) {
     $columnSize: get-fluid-size($breakpointName, 1);
 
@@ -39,12 +39,12 @@
 }
 
 // Set the width of a grid’s column for legacy grid
-@mixin grid-legacy-columns($breakpoint, $last, $name, $breakpoints) {
+@mixin grid-legacy-columns($breakpoint, $name) {
   // Do not make class if last media query
   @if is-same-breakpoint($breakpoint, $last) == false {
     // Loop each breakpoint to insert previous breakpoint classes inside this breakpoint’s media query
     // Ex: Make sure .yourPrefix-grid__col--sm--2 has correct sizes in the lg media query
-    @each $currentName, $currentBreakpoint in $breakpoints {
+    @each $currentName, $currentBreakpoint in $allBreakpoints {
       // Check if current breakpoint is not bigger than current media query
       @if map-get($breakpoint, breakpoint) >=
         map-get($currentBreakpoint, breakpoint)
@@ -59,11 +59,11 @@
 
           $isSecondToLast: is-same-breakpoint(
             $breakpoint,
-            nth(nth($breakpoints, length($breakpoints) - 1), 2)
+            nth(nth($allBreakpoints, length($allBreakpoints) - 1), 2)
           );
 
           $maxColumnSize: get-fluid-size(
-            nth(nth($breakpoints, length($breakpoints)), 1),
+            nth(nth($allBreakpoints, length($allBreakpoints)), 1),
             $columnMultiplier
           );
 
@@ -111,7 +111,7 @@
 }
 
 // Set the height of an item for legacy grid
-@mixin grid-legacy-heights($name, $rows) {
+@mixin grid-legacy-heights($name) {
   .#{$prefix}-grid__height--#{$name}--0 {
     height: 0;
     min-height: 0;
@@ -139,10 +139,10 @@
 }
 
 // Generate all classes for 0 and 0-only displaying, including custom breakpoints if they exist
-@mixin grid-legacy-zeros($breakpoint, $breakpoints, $name) {
+@mixin grid-legacy-zeros($breakpoint, $name) {
   // Undo previous breakpoint’s 0--only class
-  @for $i from length($breakpoints) * -1 through -1 {
-    $currentBreakpoint: nth($breakpoints, $i);
+  @for $i from length($allBreakpoints) * -1 through -1 {
+    $currentBreakpoint: nth($allBreakpoints, $i);
     @if map-get(nth($currentBreakpoint, 2), breakpoint) <
       map-get($breakpoint, breakpoint)
     {

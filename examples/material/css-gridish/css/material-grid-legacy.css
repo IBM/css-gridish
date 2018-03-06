@@ -1069,18 +1069,18 @@ body {
     min-width: 0; } }
 
 @supports (display: grid) {
-  .material-grid > * {
-    height: initial;
-    min-height: initial;
+  .material-grid > *,
+  .material-grid > [class*="material-grid__col--"] {
     min-width: initial;
-    max-height: initial;
     max-width: initial;
     width: initial; }
-    .material-grid > *.material-grid {
+    .material-grid > *.material-grid,
+    .material-grid > [class*="material-grid__col--"].material-grid {
       display: grid; }
-  [class*="material-grid__height-"] {
+  .material-grid > [class*="material-grid__height--"] {
     height: unset;
-    max-height: unset; } }
+    max-height: unset;
+    min-height: initial; } }
 
 .material-grid > script {
   display: none; }

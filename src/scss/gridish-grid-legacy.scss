@@ -2,11 +2,9 @@ $includeFlexFallback: true;
 @import "core.scss";
 
 @supports (display: grid) {
-  .#{$prefix}-grid > * {
-    height: initial;
-    min-height: initial;
+  .#{$prefix}-grid > *,
+  .#{$prefix}-grid > [class*="#{$prefix}-grid__col--"] {
     min-width: initial;
-    max-height: initial;
     max-width: initial;
     width: initial;
 
@@ -15,9 +13,10 @@ $includeFlexFallback: true;
     }
   }
 
-  [class*="#{$prefix}-grid__height-"] {
+  .#{$prefix}-grid > [class*="#{$prefix}-grid__height--"] {
     height: unset;
     max-height: unset;
+    min-height: initial;
   }
 }
 
