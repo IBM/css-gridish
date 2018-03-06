@@ -72,6 +72,79 @@ The config file is where all of your design system specs live. See this [example
 
 The first breakpoint min-width media query is not used to save kilobytes, but we recommend stating it anyways for future artboard-making tools.
 
+## Utility Mixin and Functions
+
+Gridish has several utility SCSS functions and a mixin to help you add sizing to elements and components within your grid by using your own grid configuration.
+
+
+### Media Query Mixin
+You can use the media query mixin to use breakpoints you've defined.
+
+**Example SCSS**
+```scss
+button {
+  @include media-query('sm') {
+    border: 2px solid hotpink;
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    border: 2px solid hotpink;
+  }
+}
+```
+
+Moreover, can then **combine this mixin with the functions below** to construct media queries that set fluid and fixed sizes based on your grid configuration.
+
+### Get a Fluid Size
+Use the `get-fluid-size()` SCSS function to calculate a fluid width based on: (1) a defined breakpoints, and (2) a number of columns to span, relative to the number of available columns for the given breakpoint.
+
+**Example SCSS**
+```scss
+@media screen and (min-width: 20rem) {
+  button {
+    @include media-query('sm') {
+      max-width: get-fluid-size('sm', 1);
+    }
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    max-width: 25vw;
+  }
+}
+```
+
+### Get a Fixed Size
+Use the `get-fixed-size()` SCSS function to calculate a fixed size based on a number of fixed nondimensional units multiplied by the base value from the current row height of the grid (`$rowHeight`);
+
+**Example SCSS**
+```scss
+button {
+  @include media-query('sm') {
+    max-width: get-fixed-size(10);
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    max-width: 5rem;
+  }
+}
+```
+
+
 ## Legacy support
 
 If you are supporting browsers that lack [CSS Grid Layout support](https://developer.mozilla.org/en-US/docs/Web/CSS/grid#Browser_compatibility), you can use `css-gridish/yourPrefix-legacy.min.css` and the legacy classes detailed in the `README.md`. With the legacy file and classes, the browsers that do not support the final CSS Grid Legacy spec will fallback to a CSS Flexbox alternative. The CSS Flexbox alternative supports embedded subgrids that still reflect the overall grid system’s column structure.
