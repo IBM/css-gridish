@@ -109,6 +109,78 @@ We provide the fixed height variables for items that are not direct children of 
 }
 ```
 
+## Utility Mixin and Functions
+
+Gridish has several utility SCSS functions and a mixin to help you add sizing to elements and components within your grid by using your own grid configuration.
+
+
+### Media Query Mixin
+You can use the media query mixin to use breakpoints you've defined.
+
+**Example SCSS**
+```scss
+button {
+  @include media-query('sm') {
+    border: 2px solid hotpink;
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    border: 2px solid hotpink;
+  }
+}
+```
+
+Moreover, can then **combine this mixin with the functions below** to construct media queries that set fluid and fixed sizes based on your grid configuration.
+
+### Get a Fluid Size
+Use the `get-fluid-size()` SCSS function to calculate a fluid width based on: (1) a defined breakpoints, and (2) a number of columns to span, relative to the number of available columns for the given breakpoint.
+
+**Example SCSS**
+```scss
+@media screen and (min-width: 20rem) {
+  button {
+    @include media-query('sm') {
+      max-width: get-fluid-size('sm', 1);
+    }
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    max-width: 25vw;
+  }
+}
+```
+
+### Get a Fixed Size
+Use the `get-fixed-size()` SCSS function to calculate a fixed size based on a number of fixed nondimensional units multiplied by the base value from the current row height of the grid (`$rowHeight`);
+
+**Example SCSS**
+```scss
+button {
+  @include media-query('sm') {
+    max-width: get-fixed-size(10);
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    max-width: 5rem;
+  }
+}
+```
+
 ## FAQs
 
 ### Why does none of the CSS Grid code use `grid-gap` for gutters?
