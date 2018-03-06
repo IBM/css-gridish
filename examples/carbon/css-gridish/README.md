@@ -64,10 +64,10 @@ If you are new to CSS Grid, please try [learning the basics](https://www.google.
 | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
 | `.bx-container`                          | Container element of whole page for proper margin and max-width (can be used on body tag ) |
 | `.bx-container--[left, right]`            | Align the container element to the left or right side                                      |
-| `.bx-container__bleed--[sm]`                         | Extend the background color of a container child into the container margin on both sides starting at a specific breakpoint        |
-| `.bx-container__bleed--[sm]--[left, right]`           | Extend the background color of a grid into the container margin on one side at a specific breakpoint           |
-| `.bx-container__break--[sm]`                         | Child of container element should ignore grid’s margin at a specific breakpoint. Not supported for legacy.        |
-| `.bx-container__break--[sm]--[left, right]`           | Child of container element should ignore grid’s margin on one side at a specific breakpoint. Not supported for legacy.                              |
+| `.bx-container__bleed--[sm]`                         | Extend the background color of a container child into the container margin on both sides starting at a specific breakpoint (CSS Grid browsers only)        |
+| `.bx-container__bleed--[sm]--[left, right]`           | Extend the background color of a grid into the container margin on one side at a specific breakpoint (CSS Grid browsers only)           |
+| `.bx-container__break--[sm]`                         | Child of container element should ignore grid’s margin at a specific breakpoint (CSS Grid browsers only)       |
+| `.bx-container__break--[sm]--[left, right]`           | Child of container element should ignore grid’s margin on one side at a specific breakpoint (CSS Grid browsers only)                             |
 | `.bx-grid`                               | Use anytime you want to apply CSS Grid Layout, including as embedded subgrids              |
 | `.bx-grid--fixed-columns`                         | Switch grid’s column widths to fixed instead of fluid                                       |
 | `.bx-grid--fluid-rows`                         | Switch grid’s row height to match the width of a column                                        |

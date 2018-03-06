@@ -9,6 +9,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 120rem;
+  overflow-x: hidden;
   width: 100vw; }
 
 .material-container--left {
@@ -24,8 +25,7 @@ body {
   flex-wrap: wrap;
   position: relative; }
   .material-grid > * {
-    box-sizing: border-box;
-    grid-column: span 100; }
+    box-sizing: border-box; }
     .material-grid > * :last-child,
     .material-grid > * :last-child > :last-child,
     .material-grid > * :last-child > :last-child > :last-child {
@@ -38,7 +38,39 @@ body {
   .material-grid > * {
     height: 100%; } }
 
+:root {
+  --material-height-1: 0.5rem;
+  --material-height-2: 1rem;
+  --material-height-3: 1.5rem;
+  --material-height-4: 2rem;
+  --material-height-5: 2.5rem;
+  --material-height-6: 3rem;
+  --material-height-7: 3.5rem;
+  --material-height-8: 4rem;
+  --material-height-9: 4.5rem;
+  --material-height-10: 5rem;
+  --material-height-11: 5.5rem;
+  --material-height-12: 6rem;
+  --material-height-13: 6.5rem;
+  --material-height-14: 7rem;
+  --material-height-15: 7.5rem;
+  --material-height-16: 8rem;
+  --material-height-17: 8.5rem;
+  --material-height-18: 9rem;
+  --material-height-19: 9.5rem;
+  --material-height-20: 10rem;
+  --material-height-21: 10.5rem;
+  --material-height-22: 11rem;
+  --material-height-23: 11.5rem;
+  --material-height-24: 12rem;
+  --material-height-25: 12.5rem;
+  --material-height-26: 13rem;
+  --material-height-27: 13.5rem;
+  --material-height-28: 14rem;
+  --material-height-29: 14.5rem; }
+
 .material-grid__height--xsmall--0 {
+  height: 0;
   min-height: 0; }
 
 .material-grid__height--xsmall--1 {
@@ -135,34 +167,6 @@ body {
 .material-grid__col--xsmall--0--only {
   display: none; }
 
-.material-grid__col--xsmall--1 {
-  grid-column: span 1; }
-
-.material-grid--fluid-rows
-> .material-grid__height--xsmall--1 {
-  grid-row: span 1; }
-
-.material-grid__col--xsmall--2 {
-  grid-column: span 2; }
-
-.material-grid--fluid-rows
-> .material-grid__height--xsmall--2 {
-  grid-row: span 2; }
-
-.material-grid__col--xsmall--3 {
-  grid-column: span 3; }
-
-.material-grid--fluid-rows
-> .material-grid__height--xsmall--3 {
-  grid-row: span 3; }
-
-.material-grid__col--xsmall--4 {
-  grid-column: span 4; }
-
-.material-grid--fluid-rows
-> .material-grid__height--xsmall--4 {
-  grid-row: span 4; }
-
 .material-padding {
   padding: 0.5rem; }
 
@@ -187,47 +191,54 @@ body {
   padding-top: 0.5rem; }
 
 .material-grid {
-  display: grid;
   grid-auto-rows: minmax(0.5rem, min-content);
   grid-template-columns: repeat(auto-fill, 25vw); }
   .material-grid.material-grid--fixed-columns {
     grid-template-columns: repeat(auto-fill, 5.625rem); }
   .material-grid.material-grid--fluid-rows {
     grid-auto-rows: 25vw; }
+  .material-grid > * {
+    grid-column: span 4; }
 
-:root {
-  --material-height-1: 0.5rem;
-  --material-height-2: 1rem;
-  --material-height-3: 1.5rem;
-  --material-height-4: 2rem;
-  --material-height-5: 2.5rem;
-  --material-height-6: 3rem;
-  --material-height-7: 3.5rem;
-  --material-height-8: 4rem;
-  --material-height-9: 4.5rem;
-  --material-height-10: 5rem;
-  --material-height-11: 5.5rem;
-  --material-height-12: 6rem;
-  --material-height-13: 6.5rem;
-  --material-height-14: 7rem;
-  --material-height-15: 7.5rem;
-  --material-height-16: 8rem;
-  --material-height-17: 8.5rem;
-  --material-height-18: 9rem;
-  --material-height-19: 9.5rem;
-  --material-height-20: 10rem;
-  --material-height-21: 10.5rem;
-  --material-height-22: 11rem;
-  --material-height-23: 11.5rem;
-  --material-height-24: 12rem;
-  --material-height-25: 12.5rem;
-  --material-height-26: 13rem;
-  --material-height-27: 13.5rem;
-  --material-height-28: 14rem;
-  --material-height-29: 14.5rem; }
+.material-grid__col--xsmall--1 {
+  grid-column: span 1; }
+  .material-grid__col--xsmall--1.material-grid > *:not([class*="material-grid__col"]) {
+    grid-column: span 1; }
+
+.material-grid--fluid-rows
+> .material-grid__height--xsmall--1 {
+  grid-row: span 1; }
+
+.material-grid__col--xsmall--2 {
+  grid-column: span 2; }
+  .material-grid__col--xsmall--2.material-grid > *:not([class*="material-grid__col"]) {
+    grid-column: span 2; }
+
+.material-grid--fluid-rows
+> .material-grid__height--xsmall--2 {
+  grid-row: span 2; }
+
+.material-grid__col--xsmall--3 {
+  grid-column: span 3; }
+  .material-grid__col--xsmall--3.material-grid > *:not([class*="material-grid__col"]) {
+    grid-column: span 3; }
+
+.material-grid--fluid-rows
+> .material-grid__height--xsmall--3 {
+  grid-row: span 3; }
+
+.material-grid__col--xsmall--4 {
+  grid-column: span 4; }
+  .material-grid__col--xsmall--4.material-grid > *:not([class*="material-grid__col"]) {
+    grid-column: span 4; }
+
+.material-grid--fluid-rows
+> .material-grid__height--xsmall--4 {
+  grid-row: span 4; }
 
 @media screen and (min-width: 37.5rem) {
   .material-grid__height--small--0 {
+    height: 0;
     min-height: 0; }
   .material-grid__height--small--1 {
     grid-row: span 1; }
@@ -294,66 +305,6 @@ body {
   .material-grid__col--small--0,
   .material-grid__col--small--0--only {
     display: none; }
-  .material-grid__col--xsmall--1 {
-    grid-column: span 2; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--1 {
-    grid-row: span 1; }
-  .material-grid__col--xsmall--2 {
-    grid-column: span 4; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--2 {
-    grid-row: span 2; }
-  .material-grid__col--xsmall--3 {
-    grid-column: span 6; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--3 {
-    grid-row: span 3; }
-  .material-grid__col--xsmall--4 {
-    grid-column: span 8; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--4 {
-    grid-row: span 4; }
-  .material-grid__col--small--1 {
-    grid-column: span 1; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--1 {
-    grid-row: span 1; }
-  .material-grid__col--small--2 {
-    grid-column: span 2; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--2 {
-    grid-row: span 2; }
-  .material-grid__col--small--3 {
-    grid-column: span 3; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--3 {
-    grid-row: span 3; }
-  .material-grid__col--small--4 {
-    grid-column: span 4; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--4 {
-    grid-row: span 4; }
-  .material-grid__col--small--5 {
-    grid-column: span 5; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--5 {
-    grid-row: span 5; }
-  .material-grid__col--small--6 {
-    grid-column: span 6; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--6 {
-    grid-row: span 6; }
-  .material-grid__col--small--7 {
-    grid-column: span 7; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--7 {
-    grid-row: span 7; }
-  .material-grid__col--small--8 {
-    grid-column: span 8; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--8 {
-    grid-row: span 8; }
   .material-padding {
     padding: 0.5rem; }
   .material-padding--bottom {
@@ -375,10 +326,97 @@ body {
     .material-grid.material-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 4.6875rem); }
     .material-grid.material-grid--fluid-rows {
-      grid-auto-rows: 12.5vw; } }
+      grid-auto-rows: 12.5vw; }
+    .material-grid > * {
+      grid-column: span 8; }
+  .material-grid__col--xsmall--1 {
+    grid-column: span 2; }
+    .material-grid__col--xsmall--1.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 1; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--1 {
+    grid-row: span 1; }
+  .material-grid__col--xsmall--2 {
+    grid-column: span 4; }
+    .material-grid__col--xsmall--2.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 2; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--2 {
+    grid-row: span 2; }
+  .material-grid__col--xsmall--3 {
+    grid-column: span 6; }
+    .material-grid__col--xsmall--3.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 3; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--3 {
+    grid-row: span 3; }
+  .material-grid__col--xsmall--4 {
+    grid-column: span 8; }
+    .material-grid__col--xsmall--4.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 4; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--4 {
+    grid-row: span 4; }
+  .material-grid__col--small--1 {
+    grid-column: span 1; }
+    .material-grid__col--small--1.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 1; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--1 {
+    grid-row: span 1; }
+  .material-grid__col--small--2 {
+    grid-column: span 2; }
+    .material-grid__col--small--2.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 2; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--2 {
+    grid-row: span 2; }
+  .material-grid__col--small--3 {
+    grid-column: span 3; }
+    .material-grid__col--small--3.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 3; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--3 {
+    grid-row: span 3; }
+  .material-grid__col--small--4 {
+    grid-column: span 4; }
+    .material-grid__col--small--4.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 4; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--4 {
+    grid-row: span 4; }
+  .material-grid__col--small--5 {
+    grid-column: span 5; }
+    .material-grid__col--small--5.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 5; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--5 {
+    grid-row: span 5; }
+  .material-grid__col--small--6 {
+    grid-column: span 6; }
+    .material-grid__col--small--6.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 6; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--6 {
+    grid-row: span 6; }
+  .material-grid__col--small--7 {
+    grid-column: span 7; }
+    .material-grid__col--small--7.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 7; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--7 {
+    grid-row: span 7; }
+  .material-grid__col--small--8 {
+    grid-column: span 8; }
+    .material-grid__col--small--8.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 8; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--8 {
+    grid-row: span 8; } }
 
 @media screen and (min-width: 64rem) {
   .material-grid__height--medium--0 {
+    height: 0;
     min-height: 0; }
   .material-grid__height--medium--1 {
     grid-row: span 1; }
@@ -447,126 +485,6 @@ body {
   .material-grid__col--medium--0,
   .material-grid__col--medium--0--only {
     display: none; }
-  .material-grid__col--xsmall--1 {
-    grid-column: span 3; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--1 {
-    grid-row: span 1; }
-  .material-grid__col--xsmall--2 {
-    grid-column: span 6; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--2 {
-    grid-row: span 2; }
-  .material-grid__col--xsmall--3 {
-    grid-column: span 9; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--3 {
-    grid-row: span 3; }
-  .material-grid__col--xsmall--4 {
-    grid-column: span 12; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--4 {
-    grid-row: span 4; }
-  .material-grid__col--small--1 {
-    grid-column: span 1.5; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--1 {
-    grid-row: span 1; }
-  .material-grid__col--small--2 {
-    grid-column: span 3; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--2 {
-    grid-row: span 2; }
-  .material-grid__col--small--3 {
-    grid-column: span 4.5; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--3 {
-    grid-row: span 3; }
-  .material-grid__col--small--4 {
-    grid-column: span 6; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--4 {
-    grid-row: span 4; }
-  .material-grid__col--small--5 {
-    grid-column: span 7.5; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--5 {
-    grid-row: span 5; }
-  .material-grid__col--small--6 {
-    grid-column: span 9; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--6 {
-    grid-row: span 6; }
-  .material-grid__col--small--7 {
-    grid-column: span 10.5; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--7 {
-    grid-row: span 7; }
-  .material-grid__col--small--8 {
-    grid-column: span 12; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--8 {
-    grid-row: span 8; }
-  .material-grid__col--medium--1 {
-    grid-column: span 1; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--1 {
-    grid-row: span 1; }
-  .material-grid__col--medium--2 {
-    grid-column: span 2; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--2 {
-    grid-row: span 2; }
-  .material-grid__col--medium--3 {
-    grid-column: span 3; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--3 {
-    grid-row: span 3; }
-  .material-grid__col--medium--4 {
-    grid-column: span 4; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--4 {
-    grid-row: span 4; }
-  .material-grid__col--medium--5 {
-    grid-column: span 5; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--5 {
-    grid-row: span 5; }
-  .material-grid__col--medium--6 {
-    grid-column: span 6; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--6 {
-    grid-row: span 6; }
-  .material-grid__col--medium--7 {
-    grid-column: span 7; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--7 {
-    grid-row: span 7; }
-  .material-grid__col--medium--8 {
-    grid-column: span 8; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--8 {
-    grid-row: span 8; }
-  .material-grid__col--medium--9 {
-    grid-column: span 9; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--9 {
-    grid-row: span 9; }
-  .material-grid__col--medium--10 {
-    grid-column: span 10; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--10 {
-    grid-row: span 10; }
-  .material-grid__col--medium--11 {
-    grid-column: span 11; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--11 {
-    grid-row: span 11; }
-  .material-grid__col--medium--12 {
-    grid-column: span 12; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--12 {
-    grid-row: span 12; }
   .material-padding {
     padding: 1rem; }
   .material-padding--bottom {
@@ -584,11 +502,181 @@ body {
     padding-bottom: 1rem;
     padding-top: 1rem; }
   .material-grid {
-    grid-template-columns: repeat(auto-fill, 8.33333vw); }
+    grid-template-columns: repeat(auto-fill, 8.3vw); }
     .material-grid.material-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 5.33333rem); }
     .material-grid.material-grid--fluid-rows {
-      grid-auto-rows: 8.33333vw; } }
+      grid-auto-rows: 8.3vw; }
+    .material-grid > * {
+      grid-column: span 12; }
+  .material-grid__col--xsmall--1 {
+    grid-column: span 3; }
+    .material-grid__col--xsmall--1.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 1; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--1 {
+    grid-row: span 1; }
+  .material-grid__col--xsmall--2 {
+    grid-column: span 6; }
+    .material-grid__col--xsmall--2.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 2; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--2 {
+    grid-row: span 2; }
+  .material-grid__col--xsmall--3 {
+    grid-column: span 9; }
+    .material-grid__col--xsmall--3.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 3; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--3 {
+    grid-row: span 3; }
+  .material-grid__col--xsmall--4 {
+    grid-column: span 12; }
+    .material-grid__col--xsmall--4.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 4; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--4 {
+    grid-row: span 4; }
+  .material-grid__col--small--1 {
+    grid-column: span 1.5; }
+    .material-grid__col--small--1.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 1; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--1 {
+    grid-row: span 1; }
+  .material-grid__col--small--2 {
+    grid-column: span 3; }
+    .material-grid__col--small--2.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 2; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--2 {
+    grid-row: span 2; }
+  .material-grid__col--small--3 {
+    grid-column: span 4.5; }
+    .material-grid__col--small--3.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 3; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--3 {
+    grid-row: span 3; }
+  .material-grid__col--small--4 {
+    grid-column: span 6; }
+    .material-grid__col--small--4.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 4; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--4 {
+    grid-row: span 4; }
+  .material-grid__col--small--5 {
+    grid-column: span 7.5; }
+    .material-grid__col--small--5.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 5; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--5 {
+    grid-row: span 5; }
+  .material-grid__col--small--6 {
+    grid-column: span 9; }
+    .material-grid__col--small--6.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 6; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--6 {
+    grid-row: span 6; }
+  .material-grid__col--small--7 {
+    grid-column: span 10.5; }
+    .material-grid__col--small--7.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 7; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--7 {
+    grid-row: span 7; }
+  .material-grid__col--small--8 {
+    grid-column: span 12; }
+    .material-grid__col--small--8.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 8; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--8 {
+    grid-row: span 8; }
+  .material-grid__col--medium--1 {
+    grid-column: span 1; }
+    .material-grid__col--medium--1.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 1; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--1 {
+    grid-row: span 1; }
+  .material-grid__col--medium--2 {
+    grid-column: span 2; }
+    .material-grid__col--medium--2.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 2; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--2 {
+    grid-row: span 2; }
+  .material-grid__col--medium--3 {
+    grid-column: span 3; }
+    .material-grid__col--medium--3.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 3; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--3 {
+    grid-row: span 3; }
+  .material-grid__col--medium--4 {
+    grid-column: span 4; }
+    .material-grid__col--medium--4.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 4; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--4 {
+    grid-row: span 4; }
+  .material-grid__col--medium--5 {
+    grid-column: span 5; }
+    .material-grid__col--medium--5.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 5; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--5 {
+    grid-row: span 5; }
+  .material-grid__col--medium--6 {
+    grid-column: span 6; }
+    .material-grid__col--medium--6.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 6; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--6 {
+    grid-row: span 6; }
+  .material-grid__col--medium--7 {
+    grid-column: span 7; }
+    .material-grid__col--medium--7.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 7; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--7 {
+    grid-row: span 7; }
+  .material-grid__col--medium--8 {
+    grid-column: span 8; }
+    .material-grid__col--medium--8.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 8; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--8 {
+    grid-row: span 8; }
+  .material-grid__col--medium--9 {
+    grid-column: span 9; }
+    .material-grid__col--medium--9.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 9; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--9 {
+    grid-row: span 9; }
+  .material-grid__col--medium--10 {
+    grid-column: span 10; }
+    .material-grid__col--medium--10.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 10; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--10 {
+    grid-row: span 10; }
+  .material-grid__col--medium--11 {
+    grid-column: span 11; }
+    .material-grid__col--medium--11.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 11; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--11 {
+    grid-row: span 11; }
+  .material-grid__col--medium--12 {
+    grid-column: span 12; }
+    .material-grid__col--medium--12.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 12; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--12 {
+    grid-row: span 12; } }
 
 @media screen and (min-width: 120rem) {
   .material-grid__col--xsmall--0--only {
@@ -619,8 +707,8 @@ body {
     padding-bottom: 1rem;
     padding-top: 1rem; }
   .material-grid {
-    grid-template-columns: repeat(auto-fill, 10rem); }
+    grid-template-columns: repeat(auto-fill, 9.96rem); }
     .material-grid.material-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 10rem); }
     .material-grid.material-grid--fluid-rows {
-      grid-auto-rows: 10rem; } }
+      grid-auto-rows: 9.96rem; } }

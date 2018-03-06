@@ -60,14 +60,14 @@
     $container: map-get($breakpoint, breakpoint) * 1rem;
   }
 
+  $multiplier: round-decimal($columnSpan / $columnTotal, 3, floor);
+
   // For IE, we can't have a 0 in the $fluidWidth calc().
   @if ($margin == 0) {
-    @return $container * $columnSpan / $columnTotal;
+    @return $container * $multiplier;
   }
 
-  @return calc(
-    (#{$container} - #{$margin * 2}) * #{$columnSpan / $columnTotal}
-  );
+  @return calc((#{$container} - #{$margin * 2}) * #{$multiplier});
 }
 
 /// Function gets a calculated rem value for a fixed size.
