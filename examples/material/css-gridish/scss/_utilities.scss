@@ -71,7 +71,7 @@
 }
 
 /// Function gets a calculated rem value for a fixed size.
-/// @param {Number} $fixedUnit Fixed nondimensional units.
+/// @param {Number} $unitQuantity Fixed nondimensional units.
 /// @return {Length} A calculated rem value.
 /// @example scss
 /// button {
@@ -85,19 +85,19 @@
 ///     max-width: 5rem;
 ///   }
 /// }
-@function get-fixed-size($fixedUnit) {
+@function get-fixed-size($unitQuantity) {
   // Derive the base unit from the current row height of the grid
-  $baseline: map-get($grid-values, "rowHeight");
-
-  @if ($baseline == null or type-of($baseline) != "number") {
-    @error "The baseline in $grid-values needs be a valid number. Please check your grid configuration.";
-  }
+  $fixedUnit: map-get($grid-values, "rowHeight");
 
   @if ($fixedUnit == null or type-of($fixedUnit) != "number") {
-    @error "The provided fixed value `#{$fixedUnit}` to get-fixed-size() needs to be a valid number greater than 0.";
+    @error "The rowHeight in $grid-values needs be a valid number. Please check your grid configuration.";
   }
 
-  @return $fixedUnit * $baseline * 1rem;
+  @if ($unitQuantity == null or type-of($unitQuantity) != "number") {
+    @error "The provided fixed value `#{$unitQuantity}` to get-fixed-size() needs to be a valid number greater than 0.";
+  }
+
+  @return $unitQuantity * $fixedUnit * 1rem;
 }
 
 /// Utility for declaring mobile-first media queries.
