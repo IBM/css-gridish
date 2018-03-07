@@ -1,7 +1,7 @@
 @import "values";
 
 $prefix: gridish !default;
-@if map-get($grid-values, "prefix") {
+@if map-get($grid-values, "prefix") and $prefix == "gridish" {
   $prefix: map-get($grid-values, "prefix");
 }
 $extraBreakpoints: () !default;
@@ -12,5 +12,15 @@ $includeFlexFallback: false !default;
 $rowHeight: map-get($grid-values, "rowHeight");
 $rows: map-get($grid-values, "rows");
 $extraArtboards: map-get($grid-values, "extraArtboards");
-$allBreakpoints: all-breakpoints($breakpoints, $extraBreakpoints, $first, $last);
-$breakpointsAndArtboards: all-breakpoints($breakpoints, $extraArtboards, $first, $last);
+$allBreakpoints: all-breakpoints(
+  $breakpoints,
+  $extraBreakpoints,
+  $first,
+  $last
+);
+$breakpointsAndArtboards: all-breakpoints(
+  $breakpoints,
+  $extraArtboards,
+  $first,
+  $last
+);
