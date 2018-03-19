@@ -261,17 +261,17 @@ body {
 
 .bootstrap-grid {
   grid-auto-rows: minmax(1rem, min-content);
-  grid-template-columns: repeat(auto-fill, 8.3vw); }
+  grid-template-columns: repeat(auto-fill, 8.33vw); }
   .bootstrap-grid.bootstrap-grid--fixed-columns {
     grid-template-columns: repeat(auto-fill, 3rem); }
   .bootstrap-grid.bootstrap-grid--fluid-rows {
-    grid-auto-rows: 8.3vw; }
+    grid-auto-rows: 8.33vw; }
   .bootstrap-grid > * {
     grid-column: span 12; }
 
 .bootstrap-grid__col--sm--1 {
-  max-width: 8.3rem;
-  width: 8.3vw;
+  max-width: 8.33rem;
+  width: 8.33vw;
   grid-column: span 1; }
   .bootstrap-grid__col--sm--1.bootstrap-grid > *:not([class*="bootstrap-grid__col"]) {
     grid-column: span 1; }
@@ -279,13 +279,13 @@ body {
 .bootstrap-grid--fluid-rows
 > .bootstrap-grid__height--sm--1 {
   grid-row: span 1;
-  height: 8.3vw;
-  min-height: 8.3vw;
-  max-height: 8.3rem; }
+  height: 8.33vw;
+  min-height: 8.33vw;
+  max-height: 8.33rem; }
 
 .bootstrap-grid__col--sm--2 {
-  max-width: 16.6rem;
-  width: 16.6vw;
+  max-width: 16.66rem;
+  width: 16.66vw;
   grid-column: span 2; }
   .bootstrap-grid__col--sm--2.bootstrap-grid > *:not([class*="bootstrap-grid__col"]) {
     grid-column: span 2; }
@@ -293,9 +293,9 @@ body {
 .bootstrap-grid--fluid-rows
 > .bootstrap-grid__height--sm--2 {
   grid-row: span 2;
-  height: 16.6vw;
-  min-height: 16.6vw;
-  max-height: 16.6rem; }
+  height: 16.66vw;
+  min-height: 16.66vw;
+  max-height: 16.66rem; }
 
 .bootstrap-grid__col--sm--3 {
   max-width: 25rem;
@@ -312,8 +312,8 @@ body {
   max-height: 25rem; }
 
 .bootstrap-grid__col--sm--4 {
-  max-width: 33.3rem;
-  width: 33.3vw;
+  max-width: 33.33rem;
+  width: 33.33vw;
   grid-column: span 4; }
   .bootstrap-grid__col--sm--4.bootstrap-grid > *:not([class*="bootstrap-grid__col"]) {
     grid-column: span 4; }
@@ -321,13 +321,13 @@ body {
 .bootstrap-grid--fluid-rows
 > .bootstrap-grid__height--sm--4 {
   grid-row: span 4;
-  height: 33.3vw;
-  min-height: 33.3vw;
-  max-height: 33.3rem; }
+  height: 33.33vw;
+  min-height: 33.33vw;
+  max-height: 33.33rem; }
 
 .bootstrap-grid__col--sm--5 {
-  max-width: 41.6rem;
-  width: 41.6vw;
+  max-width: 41.66rem;
+  width: 41.66vw;
   grid-column: span 5; }
   .bootstrap-grid__col--sm--5.bootstrap-grid > *:not([class*="bootstrap-grid__col"]) {
     grid-column: span 5; }
@@ -335,9 +335,9 @@ body {
 .bootstrap-grid--fluid-rows
 > .bootstrap-grid__height--sm--5 {
   grid-row: span 5;
-  height: 41.6vw;
-  min-height: 41.6vw;
-  max-height: 41.6rem; }
+  height: 41.66vw;
+  min-height: 41.66vw;
+  max-height: 41.66rem; }
 
 .bootstrap-grid__col--sm--6 {
   max-width: 50rem;
@@ -354,8 +354,8 @@ body {
   max-height: 50rem; }
 
 .bootstrap-grid__col--sm--7 {
-  max-width: 58.3rem;
-  width: 58.3vw;
+  max-width: 58.33rem;
+  width: 58.33vw;
   grid-column: span 7; }
   .bootstrap-grid__col--sm--7.bootstrap-grid > *:not([class*="bootstrap-grid__col"]) {
     grid-column: span 7; }
@@ -363,13 +363,13 @@ body {
 .bootstrap-grid--fluid-rows
 > .bootstrap-grid__height--sm--7 {
   grid-row: span 7;
-  height: 58.3vw;
-  min-height: 58.3vw;
-  max-height: 58.3rem; }
+  height: 58.33vw;
+  min-height: 58.33vw;
+  max-height: 58.33rem; }
 
 .bootstrap-grid__col--sm--8 {
-  max-width: 66.6rem;
-  width: 66.6vw;
+  max-width: 66.66rem;
+  width: 66.66vw;
   grid-column: span 8; }
   .bootstrap-grid__col--sm--8.bootstrap-grid > *:not([class*="bootstrap-grid__col"]) {
     grid-column: span 8; }
@@ -377,9 +377,9 @@ body {
 .bootstrap-grid--fluid-rows
 > .bootstrap-grid__height--sm--8 {
   grid-row: span 8;
-  height: 66.6vw;
-  min-height: 66.6vw;
-  max-height: 66.6rem; }
+  height: 66.66vw;
+  min-height: 66.66vw;
+  max-height: 66.66rem; }
 
 .bootstrap-grid__col--sm--9 {
   max-width: 75rem;
@@ -396,8 +396,8 @@ body {
   max-height: 75rem; }
 
 .bootstrap-grid__col--sm--10 {
-  max-width: 83.3rem;
-  width: 83.3vw;
+  max-width: 83.33rem;
+  width: 83.33vw;
   grid-column: span 10; }
   .bootstrap-grid__col--sm--10.bootstrap-grid > *:not([class*="bootstrap-grid__col"]) {
     grid-column: span 10; }
@@ -405,13 +405,13 @@ body {
 .bootstrap-grid--fluid-rows
 > .bootstrap-grid__height--sm--10 {
   grid-row: span 10;
-  height: 83.3vw;
-  min-height: 83.3vw;
-  max-height: 83.3rem; }
+  height: 83.33vw;
+  min-height: 83.33vw;
+  max-height: 83.33rem; }
 
 .bootstrap-grid__col--sm--11 {
-  max-width: 91.6rem;
-  width: 91.6vw;
+  max-width: 91.66rem;
+  width: 91.66vw;
   grid-column: span 11; }
   .bootstrap-grid__col--sm--11.bootstrap-grid > *:not([class*="bootstrap-grid__col"]) {
     grid-column: span 11; }
@@ -419,9 +419,9 @@ body {
 .bootstrap-grid--fluid-rows
 > .bootstrap-grid__height--sm--11 {
   grid-row: span 11;
-  height: 91.6vw;
-  min-height: 91.6vw;
-  max-height: 91.6rem; }
+  height: 91.66vw;
+  min-height: 91.66vw;
+  max-height: 91.66rem; }
 
 .bootstrap-grid__col--sm--12 {
   max-width: 100rem;
@@ -462,11 +462,11 @@ body {
     padding-bottom: 15px;
     padding-top: 15px; }
   .bootstrap-grid {
-    grid-template-columns: repeat(auto-fill, 8.3rem); }
+    grid-template-columns: repeat(auto-fill, 8.33rem); }
     .bootstrap-grid.bootstrap-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 8.33333rem); }
     .bootstrap-grid.bootstrap-grid--fluid-rows {
-      grid-auto-rows: 8.3rem; }
+      grid-auto-rows: 8.33rem; }
   [class*="bootstrap-grid__col--"] {
     min-width: 0; } }
 

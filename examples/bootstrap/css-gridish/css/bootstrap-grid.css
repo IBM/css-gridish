@@ -192,11 +192,11 @@ body {
 
 .bootstrap-grid {
   grid-auto-rows: minmax(1rem, min-content);
-  grid-template-columns: repeat(auto-fill, 8.3vw); }
+  grid-template-columns: repeat(auto-fill, 8.33vw); }
   .bootstrap-grid.bootstrap-grid--fixed-columns {
     grid-template-columns: repeat(auto-fill, 3rem); }
   .bootstrap-grid.bootstrap-grid--fluid-rows {
-    grid-auto-rows: 8.3vw; }
+    grid-auto-rows: 8.33vw; }
   .bootstrap-grid > * {
     grid-column: span 12; }
 
@@ -333,8 +333,8 @@ body {
     padding-bottom: 15px;
     padding-top: 15px; }
   .bootstrap-grid {
-    grid-template-columns: repeat(auto-fill, 8.3rem); }
+    grid-template-columns: repeat(auto-fill, 8.33rem); }
     .bootstrap-grid.bootstrap-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 8.33333rem); }
     .bootstrap-grid.bootstrap-grid--fluid-rows {
-      grid-auto-rows: 8.3rem; } }
+      grid-auto-rows: 8.33rem; } }

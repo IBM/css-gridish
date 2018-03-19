@@ -735,11 +735,11 @@ body {
     padding-bottom: 1rem;
     padding-top: 1rem; }
   .material-grid {
-    grid-template-columns: repeat(auto-fill, 8.3vw); }
+    grid-template-columns: repeat(auto-fill, 8.33vw); }
     .material-grid.material-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 5.33333rem); }
     .material-grid.material-grid--fluid-rows {
-      grid-auto-rows: 8.3vw; }
+      grid-auto-rows: 8.33vw; }
     .material-grid > * {
       grid-column: span 12; }
   .material-grid__col--xsmall--1 {
@@ -887,29 +887,29 @@ body {
     min-height: 100vw;
     max-height: 120rem; }
   .material-grid__col--medium--1 {
-    max-width: 9.96rem;
-    width: 8.3vw;
+    max-width: 9.996rem;
+    width: 8.33vw;
     grid-column: span 1; }
     .material-grid__col--medium--1.material-grid > *:not([class*="material-grid__col"]) {
       grid-column: span 1; }
   .material-grid--fluid-rows
 > .material-grid__height--medium--1 {
     grid-row: span 1;
-    height: 8.3vw;
-    min-height: 8.3vw;
-    max-height: 9.96rem; }
+    height: 8.33vw;
+    min-height: 8.33vw;
+    max-height: 9.996rem; }
   .material-grid__col--medium--2 {
-    max-width: 19.92rem;
-    width: 16.6vw;
+    max-width: 19.992rem;
+    width: 16.66vw;
     grid-column: span 2; }
     .material-grid__col--medium--2.material-grid > *:not([class*="material-grid__col"]) {
       grid-column: span 2; }
   .material-grid--fluid-rows
 > .material-grid__height--medium--2 {
     grid-row: span 2;
-    height: 16.6vw;
-    min-height: 16.6vw;
-    max-height: 19.92rem; }
+    height: 16.66vw;
+    min-height: 16.66vw;
+    max-height: 19.992rem; }
   .material-grid__col--medium--3 {
     max-width: 30rem;
     width: 25vw;
@@ -923,29 +923,29 @@ body {
     min-height: 25vw;
     max-height: 30rem; }
   .material-grid__col--medium--4 {
-    max-width: 39.96rem;
-    width: 33.3vw;
+    max-width: 39.996rem;
+    width: 33.33vw;
     grid-column: span 4; }
     .material-grid__col--medium--4.material-grid > *:not([class*="material-grid__col"]) {
       grid-column: span 4; }
   .material-grid--fluid-rows
 > .material-grid__height--medium--4 {
     grid-row: span 4;
-    height: 33.3vw;
-    min-height: 33.3vw;
-    max-height: 39.96rem; }
+    height: 33.33vw;
+    min-height: 33.33vw;
+    max-height: 39.996rem; }
   .material-grid__col--medium--5 {
-    max-width: 49.92rem;
-    width: 41.6vw;
+    max-width: 49.992rem;
+    width: 41.66vw;
     grid-column: span 5; }
     .material-grid__col--medium--5.material-grid > *:not([class*="material-grid__col"]) {
       grid-column: span 5; }
   .material-grid--fluid-rows
 > .material-grid__height--medium--5 {
     grid-row: span 5;
-    height: 41.6vw;
-    min-height: 41.6vw;
-    max-height: 49.92rem; }
+    height: 41.66vw;
+    min-height: 41.66vw;
+    max-height: 49.992rem; }
   .material-grid__col--medium--6 {
     max-width: 60rem;
     width: 50vw;
@@ -959,29 +959,29 @@ body {
     min-height: 50vw;
     max-height: 60rem; }
   .material-grid__col--medium--7 {
-    max-width: 69.96rem;
-    width: 58.3vw;
+    max-width: 69.996rem;
+    width: 58.33vw;
     grid-column: span 7; }
     .material-grid__col--medium--7.material-grid > *:not([class*="material-grid__col"]) {
       grid-column: span 7; }
   .material-grid--fluid-rows
 > .material-grid__height--medium--7 {
     grid-row: span 7;
-    height: 58.3vw;
-    min-height: 58.3vw;
-    max-height: 69.96rem; }
+    height: 58.33vw;
+    min-height: 58.33vw;
+    max-height: 69.996rem; }
   .material-grid__col--medium--8 {
-    max-width: 79.92rem;
-    width: 66.6vw;
+    max-width: 79.992rem;
+    width: 66.66vw;
     grid-column: span 8; }
     .material-grid__col--medium--8.material-grid > *:not([class*="material-grid__col"]) {
       grid-column: span 8; }
   .material-grid--fluid-rows
 > .material-grid__height--medium--8 {
     grid-row: span 8;
-    height: 66.6vw;
-    min-height: 66.6vw;
-    max-height: 79.92rem; }
+    height: 66.66vw;
+    min-height: 66.66vw;
+    max-height: 79.992rem; }
   .material-grid__col--medium--9 {
     max-width: 90rem;
     width: 75vw;
@@ -995,29 +995,29 @@ body {
     min-height: 75vw;
     max-height: 90rem; }
   .material-grid__col--medium--10 {
-    max-width: 99.96rem;
-    width: 83.3vw;
+    max-width: 99.996rem;
+    width: 83.33vw;
     grid-column: span 10; }
     .material-grid__col--medium--10.material-grid > *:not([class*="material-grid__col"]) {
       grid-column: span 10; }
   .material-grid--fluid-rows
 > .material-grid__height--medium--10 {
     grid-row: span 10;
-    height: 83.3vw;
-    min-height: 83.3vw;
-    max-height: 99.96rem; }
+    height: 83.33vw;
+    min-height: 83.33vw;
+    max-height: 99.996rem; }
   .material-grid__col--medium--11 {
-    max-width: 109.92rem;
-    width: 91.6vw;
+    max-width: 109.992rem;
+    width: 91.66vw;
     grid-column: span 11; }
     .material-grid__col--medium--11.material-grid > *:not([class*="material-grid__col"]) {
       grid-column: span 11; }
   .material-grid--fluid-rows
 > .material-grid__height--medium--11 {
     grid-row: span 11;
-    height: 91.6vw;
-    min-height: 91.6vw;
-    max-height: 109.92rem; }
+    height: 91.66vw;
+    min-height: 91.66vw;
+    max-height: 109.992rem; }
   .material-grid__col--medium--12 {
     max-width: 120rem;
     width: 100vw;
@@ -1060,11 +1060,11 @@ body {
     padding-bottom: 1rem;
     padding-top: 1rem; }
   .material-grid {
-    grid-template-columns: repeat(auto-fill, 9.96rem); }
+    grid-template-columns: repeat(auto-fill, 9.996rem); }
     .material-grid.material-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 10rem); }
     .material-grid.material-grid--fluid-rows {
-      grid-auto-rows: 9.96rem; }
+      grid-auto-rows: 9.996rem; }
   [class*="material-grid__col--"] {
     min-width: 0; } }
 

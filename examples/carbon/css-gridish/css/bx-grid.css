@@ -192,11 +192,11 @@ body {
 
 .bx-grid {
   grid-auto-rows: minmax(0.5rem, min-content);
-  grid-template-columns: repeat(auto-fill, calc((100vw - 10vw) * 0.083)); }
+  grid-template-columns: repeat(auto-fill, calc((100vw - 10vw) * 0.0833)); }
   .bx-grid.bx-grid--fixed-columns {
     grid-template-columns: repeat(auto-fill, 1.66667rem); }
   .bx-grid.bx-grid--fluid-rows {
-    grid-auto-rows: calc((100vw - 10vw) * 0.083); }
+    grid-auto-rows: calc((100vw - 10vw) * 0.0833); }
   .bx-grid > * {
     grid-column: span 12; }
 
@@ -375,11 +375,11 @@ body {
     padding-bottom: 0.625rem;
     padding-top: 0.625rem; }
   .bx-grid {
-    grid-template-columns: repeat(auto-fill, calc((100rem - 10vw) * 0.083)); }
+    grid-template-columns: repeat(auto-fill, calc((100rem - 10vw) * 0.0833)); }
     .bx-grid.bx-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 8.33333rem); }
     .bx-grid.bx-grid--fluid-rows {
-      grid-auto-rows: calc((100rem - 10vw) * 0.083); }
+      grid-auto-rows: calc((100rem - 10vw) * 0.0833); }
   .bx-container {
     margin-left: auto;
     margin-right: auto;

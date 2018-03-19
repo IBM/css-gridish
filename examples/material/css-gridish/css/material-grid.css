@@ -502,11 +502,11 @@ body {
     padding-bottom: 1rem;
     padding-top: 1rem; }
   .material-grid {
-    grid-template-columns: repeat(auto-fill, 8.3vw); }
+    grid-template-columns: repeat(auto-fill, 8.33vw); }
     .material-grid.material-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 5.33333rem); }
     .material-grid.material-grid--fluid-rows {
-      grid-auto-rows: 8.3vw; }
+      grid-auto-rows: 8.33vw; }
     .material-grid > * {
       grid-column: span 12; }
   .material-grid__col--xsmall--1 {
@@ -707,8 +707,8 @@ body {
     padding-bottom: 1rem;
     padding-top: 1rem; }
   .material-grid {
-    grid-template-columns: repeat(auto-fill, 9.96rem); }
+    grid-template-columns: repeat(auto-fill, 9.996rem); }
     .material-grid.material-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 10rem); }
     .material-grid.material-grid--fluid-rows {
-      grid-auto-rows: 9.96rem; } }
+      grid-auto-rows: 9.996rem; } }

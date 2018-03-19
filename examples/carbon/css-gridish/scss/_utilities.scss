@@ -60,7 +60,7 @@
     $container: map-get($breakpoint, breakpoint) * 1rem;
   }
 
-  $multiplier: round-decimal($columnSpan / $columnTotal, 3, floor);
+  $multiplier: round-decimal($columnSpan / $columnTotal, 4, floor);
 
   // For IE, we can't have a 0 in the $fluidWidth calc().
   @if ($margin == 0) {
