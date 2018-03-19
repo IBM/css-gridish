@@ -1,0 +1,114 @@
+@import "functions";
+@import "values";
+@import "variables";
+
+/// Function returns the value for a given breakpoint.
+/// @param {String} $breakpointName Breakpoint name.
+/// @return {Length} The breakpoint value in rems.
+@function get-breakpoint-value($breakpointName) {
+  $breakpointValue: map-deep-get(
+    $breakpointsAndArtboards,
+    $breakpointName,
+    "breakpoint"
+  );
+
+  @return $breakpointValue * 1rem;
+}
+
+/// Returns a calc() expression that represents a fluid width at a given breakpoint.
+/// @param {String} $breakpointName A valid breakpoint.
+/// @param {Number} $columnSpan The number of columns to span across.
+/// @return {Length} A calc() expression representing fluid width.
+/// @example scss
+/// @media screen and (min-width: 20rem) {
+/// button {
+///   @include media-query('sm') {
+///     max-width: get-fluid-size('sm', 1);
+///   }
+/// }
+/// @output css
+/// @media screen and (min-width: 20rem) {
+///   button {
+///     max-width: 25vw;
+///   }
+/// }
+@function get-fluid-size($breakpointName, $columnSpan) {
+  $breakpoint: map-get($breakpointsAndArtboards, $breakpointName);
+
+  @if ($breakpoint == null or type-of($breakpoint) != "map") {
+    @error "The provided breakpoint `#{$breakpointName}` is not a valid breakpoint found in breakpoints or extraArtboards in $grid-values. Please double-check your grid configuration.";
+  }
+
+  $columnTotal: map-get($breakpoint, columns);
+  $margin: map-get($breakpoint, margin);
+
+  @if ($columnTotal == null or type-of($columnTotal) != "number") {
+    @error "The provided breakpoint `#{$breakpointName}` needs to have a total number of columns set in $grid-values. Please double-check your grid configuration.";
+  }
+
+  @if ($columnSpan == null or type-of($columnSpan) != "number") {
+    @error "The number of columns to span for the breakpoint `#{$breakpointName}` must be a valid number. The provided column span value `#{$columnSpan}` is not a number";
+  }
+
+  @if ($columnSpan > $columnTotal or $columnSpan <= 0) {
+    @error "The number of columns to span for the breakpoint `#{$breakpointName}` must be greater than 0 and less than or equal to the total number of columns for this breakpoint. The provided column value `#{$columnSpan}` does not meet this criteria";
+  }
+
+  $container: 100vw;
+  // Last breakpoint is a max-width and should be a fixed number
+  @if is-same-breakpoint($breakpoint, $last) {
+    $container: map-get($breakpoint, breakpoint) * 1rem;
+  }
+
+  $multiplier: round-decimal($columnSpan / $columnTotal, 4, floor);
+
+  // For IE, we can't have a 0 in the $fluidWidth calc().
+  @if ($margin == 0) {
+    @return $container * $multiplier;
+  }
+
+  @return calc((#{$container} - #{$margin * 2}) * #{$multiplier});
+}
+
+/// Function gets a calculated rem value for a fixed size.
+/// @param {Number} $unitQuantity Fixed nondimensional units.
+/// @return {Length} A calculated rem value.
+/// @example scss
+/// button {
+///   @include media-query('sm') {
+///     max-width: get-fixed-size(10);
+///   }
+/// }
+/// @output css
+/// @media screen and (min-width: 20rem) {
+///   button {
+///     max-width: 5rem;
+///   }
+/// }
+@function get-fixed-size($unitQuantity) {
+  // Derive the base unit from the current row height of the grid
+  $fixedUnit: map-get($grid-values, "rowHeight");
+
+  @if ($fixedUnit == null or type-of($fixedUnit) != "number") {
+    @error "The rowHeight in $grid-values needs be a valid number. Please check your grid configuration.";
+  }
+
+  @if ($unitQuantity == null or type-of($unitQuantity) != "number") {
+    @error "The provided fixed value `#{$unitQuantity}` to get-fixed-size() needs to be a valid number greater than 0.";
+  }
+
+  @return $unitQuantity * $fixedUnit * 1rem;
+}
+
+/// Utility for declaring mobile-first media queries.
+/// @param {String} $breakpointName The name of the breakpoint to set its width value to media query.
+@mixin media-query($breakpointName) {
+  $breakpointValue: get-breakpoint-value($breakpointName);
+  @if $breakpointValue == map-get($first, breakpoint) {
+    @content;
+  } @else {
+    @media screen and (min-width: #{$breakpointValue}) {
+      @content;
+    }
+  }
+}

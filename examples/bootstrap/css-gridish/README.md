@@ -19,9 +19,9 @@ The Chrome extension uses the same shortcuts. To set the extension up:
 
 ## Legacy Support
 
-If you have no need to support browsers like IE 11 and Edge <15, please use `css/bootstrap-grid.min.css` and ignore the legacy classes below for efficiency’s sake.
+If you have no need to support browsers like IE 11 and Edge <15, please use `css/bootstrap-grid.min.css`. This will omit the CSS Flexbox fallback from your code.
 
-If you are supporting browsers that lack [CSS Grid Layout support](https://developer.mozilla.org/en-US/docs/Web/CSS/grid#Browser_compatibility), you can use `css/bootstrap-grid-legacy.min.css` and the legacy classes below. With the legacy file and classes, the browsers that do not support the final CSS Grid Legacy spec will fallback to a flexbox alternative. The flexbox alternative supports embedded subgrids that still reflect the overall grid system’s column structure.
+If you are supporting browsers that lack [CSS Grid Layout support](https://developer.mozilla.org/en-US/docs/Web/CSS/grid#Browser_compatibility), you can use `css/bootstrap-grid-legacy.min.css` and the legacy classes below. With the legacy file, the browsers that do not support the final CSS Grid Legacy spec will fallback to a flexbox alternative. The flexbox alternative supports embedded subgrids that still reflect the overall grid system’s column structure.
 
 ### Transitioning from Legacy
 
@@ -64,36 +64,25 @@ If you are new to CSS Grid, please try [learning the basics](https://www.google.
 | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
 | `.bootstrap-container`                          | Container element of whole page for proper margin and max-width (can be used on body tag ) |
 | `.bootstrap-container--[left, right]`            | Align the container element to the left or right side                                      |
+| `.bootstrap-container__bleed--[sm]`                         | Extend the background color of a container child into the container margin on both sides starting at a specific breakpoint (CSS Grid browsers only)        |
+| `.bootstrap-container__bleed--[sm]--[left, right]`           | Extend the background color of a grid into the container margin on one side at a specific breakpoint (CSS Grid browsers only)           |
+| `.bootstrap-container__break--[sm]`                         | Child of container element should ignore grid’s margin at a specific breakpoint (CSS Grid browsers only)       |
+| `.bootstrap-container__break--[sm]--[left, right]`           | Child of container element should ignore grid’s margin on one side at a specific breakpoint (CSS Grid browsers only)                             |
 | `.bootstrap-grid`                               | Use anytime you want to apply CSS Grid Layout, including as embedded subgrids              |
-| `.bootstrap-grid--bleed`                         | To extend the background color of a grid into the margin of the body on both sides         |
-| `.bootstrap-grid--bleed--[left, right]`           | To extend the background color of a grid into the margin of the body on one side           |
 | `.bootstrap-grid--fixed-columns`                         | Switch grid’s column widths to fixed instead of fluid                                       |
 | `.bootstrap-grid--fluid-rows`                         | Switch grid’s row height to match the width of a column                                        |
-| `.bootstrap-grid__break--[left, right]`           | Direct child of container element should ignore grid’s margin. Not supported for legacy.                              |
 | `.bootstrap-padding`                            | Add one unit of padding to element on all sides                                            |
 | `.bootstrap-padding--[bottom, left, right, top]` | Add one unit of padding to element on one side                                             |
 | `.bootstrap-padding--[horizontal, vertical]`     | Add one unit of padding to element on two sides                                            |
-
-By default, the grid code uses fluid columns and fixed rows. You can switch both aspects with `.bootstrap-grid--fixed-columns` and `.bootstrap-grid--fluid-rows`.
-
-### Legacy
-
-The following classes are only necessary if supporting browsers that do not have [CSS Grid Layout support](https://developer.mozilla.org/en-US/docs/Web/CSS/grid#Browser_compatibility). The previous classes are also necessary for modern browsers.
-
-Please remember that the classes below have no affect on browsers that have [CSS Grid Layout support](https://developer.mozilla.org/en-US/docs/Web/CSS/grid#Browser_compatibility).
-
-| Class Name                                | Purpose                                                                                    |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
 | `.bootstrap-grid__col--sm--[1-12]`                          | Set the width out of 12 columns for an item in the grid starting at the sm breakpoint |
 | `.bootstrap-grid__col--[sm]--0`                          | Do not display item at a specific breakpoint, but display at the next breakpoint with columns specified |
 | `.bootstrap-grid__col--[sm]--0--only`                          | Do not display item only at specific breakpoint |
-| `.bootstrap-grid__height-fixed--[sm]--[1-30]`                          | Set the min-height based on an interval of 15px for an item starting at the breakpoint specified |
-| `.bootstrap-grid__height-fluid--sm--[1-12]`                          | Set the min-height on the width of 1-12 columns for an item starting at the sm breakpoint |
+| `.bootstrap-grid__height--[sm]--[1-30]`                          | Set the min-height based on an interval of 15px for an item starting at the breakpoint specified |
 | `.bootstrap-grid__height--[sm]--0`                          | Reset the min-height for an item starting at the specified breakpoint |
 
-The legacy `.bootstrap-grid__height-fixed--[sm]--[1-30]` class follows the numbering system as described in our height variables](#Fixed Height).
+By default, the grid code uses fluid columns and fixed rows. You can switch both aspects with `.bootstrap-grid--fixed-columns` and `.bootstrap-grid--fluid-rows`. When switching to fluid rows, the rows will scale across breakpoints just like `col` classes and only supports quantities up to the amount of columns in that breakpoint.
 
-If you follow the instructions above for custom breakpoints, all of these legacy classes will generate with a version for each custom breakpoint too. For example, adding the custom breakpoint of `35` will create `.bootstrap-grid__col--35--1` and `.bootstrap-grid__height-fixed--35--1`. Since that custom breakpoint is right after the previous breakpoint, it will have the same amount of columns and min-height.
+If you follow the instructions above for custom breakpoints, all of the `col` and `height` classes will generate with a version for each custom breakpoint too. For example, adding the custom breakpoint of `whateversize` will create `.bootstrap-grid__col--whateversize--1`. Since that custom breakpoint is right after the previous breakpoint, it will have the same amount of columns and min-height.
 
 ## Variables
 
@@ -120,6 +109,77 @@ We provide the fixed height variables for items that are not direct children of 
 }
 ```
 
+## Mixins and Functions
+
+### Media Query Mixin
+
+You can use the media query mixin to use breakpoints you’ve defined.
+
+**Example SCSS**
+```scss
+button {
+  @include media-query('sm') {
+    border: 2px solid hotpink;
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    border: 2px solid hotpink;
+  }
+}
+```
+
+You can then **combine this mixin with the functions below** to construct media queries that set fluid and fixed sizes based on this grid.
+
+### Get a Fluid Size
+
+Use the `get-fluid-size()` SCSS function to calculate a fluid width based on: (1) a defined breakpoints, and (2) a number of columns to span, relative to the number of available columns for the given breakpoint.
+
+**Example SCSS**
+```scss
+@media screen and (min-width: 20rem) {
+  button {
+    @include media-query('sm') {
+      max-width: get-fluid-size('sm', 1);
+    }
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    max-width: 25vw;
+  }
+}
+```
+
+### Get a Fixed Size
+Use the `get-fixed-size()` SCSS function to calculate a fixed size based on a number of fixed nondimensional units multiplied by the base value from the current row height of the grid (`$rowHeight`);
+
+**Example SCSS**
+```scss
+button {
+  @include media-query('sm') {
+    max-width: get-fixed-size(10);
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    max-width: 5rem;
+  }
+}
+```
+
 ## FAQs
 
 ### Why does none of the CSS Grid code use `grid-gap` for gutters?
@@ -138,7 +198,7 @@ it is difficult for you to write semantic HTML with CSS Grid Layout. We are
 able to take advantage of vw units and the calc function so you can embed 
 `.bootstrap-grid` elements inside of each other and still respect the overall grid design.
 
-### Why are there no row classes for the legacy implementation?
+### Why are there no grouping row classes needed?
 
 Thanks to flexbox’s wrapping functionality, nodes that specify rows are not necessary. Only create a node for a row if it has semantic or accessibility significance. You can keep embedding `.bootstrap-grid` as necessary to accomplish this.
 

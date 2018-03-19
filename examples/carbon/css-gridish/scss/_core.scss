@@ -1,6 +1,7 @@
 @import "functions.scss";
 @import "mixins.scss";
 @import "variables.scss";
+@import "utilities.scss";
 
 html {
   font-size: map-get($grid-values, "rem") * 1px;
@@ -15,18 +16,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: #{map-get($last, breakpoint)}rem;
+  overflow-x: hidden;
   width: 100vw;
-  @if $includeFlexFallback {
-    overflow-x: hidden;
-  }
-}
-
-@if $includeFlexFallback {
-  @supports (display: grid) {
-    .#{$prefix}-container {
-      overflow-x: initial;
-    }
-  }
 }
 
 .#{$prefix}-container--left {
@@ -86,26 +77,25 @@ body {
   }
 }
 
-@each $name, $breakpoint in $allBreakpoints {
-  @include gridBreakpointWrapper($breakpoint, $first) {
-    @if $includeFlexFallback {
-      @include gridLegacyZeros($breakpoint, $allBreakpoints, $name);
-      @include gridLegacyColumns($breakpoint, $first, $last, $name, $allBreakpoints);
-      @if isSameBreakpoint($breakpoint, $last) == false {
-        @include gridLegacyHeights($name, $rows, $rowHeight);
-      }
-    }
+@include grid-legacy-wrapper($includeFlexFallback) {
+  :root {
+    @include grid-heights-fixed($rows);
+  }
+}
 
-    @if (map-has-key($allBreakpoints, $name)) {
-      @include gridMargin($breakpoint, $last);
-      @include gridPadding($breakpoint);
-      @include gridLegacyWrapper($includeFlexFallback) {
-        @include gridColumns($breakpoint, $first, $last) {
-          display: grid;
-          grid-auto-rows: minmax($rowHeight * 1rem, min-content);
-        }
-        @include gridVariables($breakpoint, $first, $rows, $rowHeight);
-      }
+@each $name, $breakpoint in $allBreakpoints {
+  @include media-query($name) {
+    @if is-same-breakpoint($breakpoint, $last) == false {
+      @include grid-legacy-heights($name);
+    }
+    @include grid-legacy-zeros($breakpoint, $name);
+    @include grid-padding($breakpoint);
+    @include grid($breakpoint, $name);
+    @include grid-legacy-columns($breakpoint, $name);
+
+    // Wrap all bleed/break classes and css variables in a CSS Grid support query
+    @include grid-legacy-wrapper($includeFlexFallback) {
+      @include grid-margin($breakpoint, $name);
     }
   }
 }
