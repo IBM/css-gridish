@@ -20,7 +20,6 @@
 /// @param {Number} $columnSpan The number of columns to span across.
 /// @return {Length} A calc() expression representing fluid width.
 /// @example scss
-/// @media screen and (min-width: 20rem) {
 /// button {
 ///   @include media-query('sm') {
 ///     max-width: get-fluid-size('sm', 1);

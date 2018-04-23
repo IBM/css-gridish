@@ -141,11 +141,9 @@ Use the `get-fluid-size()` SCSS function to calculate a fluid width based on: (1
 
 **Example SCSS**
 ```scss
-@media screen and (min-width: 20rem) {
-  button {
-    @include media-query('sm') {
-      max-width: get-fluid-size('sm', 1);
-    }
+button {
+  @include media-query('sm') {
+    max-width: get-fluid-size('sm', 1);
   }
 }
 ```
