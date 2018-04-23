@@ -9,12 +9,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 120rem;
-  width: 100vw;
-  overflow-x: hidden; }
-
-@supports (display: grid) {
-  .material-container {
-    overflow-x: initial; } }
+  overflow-x: hidden;
+  width: 100vw; }
 
 .material-container--left {
   margin-left: 0; }
@@ -30,8 +26,7 @@ body {
   flex-wrap: wrap;
   position: relative; }
   .material-grid > * {
-    box-sizing: border-box;
-    grid-column: span 100; }
+    box-sizing: border-box; }
     .material-grid > * :last-child,
     .material-grid > * :last-child > :last-child,
     .material-grid > * :last-child > :last-child > :last-child {
@@ -53,204 +48,7 @@ body {
   .material-grid > * {
     height: 100%; } }
 
-.material-grid__height--xsmall--0 {
-  min-height: 0; }
-
-.material-grid__height--xsmall--1 {
-  grid-row: span 1;
-  min-height: 0.5rem; }
-
-.material-grid__height--xsmall--2 {
-  grid-row: span 2;
-  min-height: 1rem; }
-
-.material-grid__height--xsmall--3 {
-  grid-row: span 3;
-  min-height: 1.5rem; }
-
-.material-grid__height--xsmall--4 {
-  grid-row: span 4;
-  min-height: 2rem; }
-
-.material-grid__height--xsmall--5 {
-  grid-row: span 5;
-  min-height: 2.5rem; }
-
-.material-grid__height--xsmall--6 {
-  grid-row: span 6;
-  min-height: 3rem; }
-
-.material-grid__height--xsmall--7 {
-  grid-row: span 7;
-  min-height: 3.5rem; }
-
-.material-grid__height--xsmall--8 {
-  grid-row: span 8;
-  min-height: 4rem; }
-
-.material-grid__height--xsmall--9 {
-  grid-row: span 9;
-  min-height: 4.5rem; }
-
-.material-grid__height--xsmall--10 {
-  grid-row: span 10;
-  min-height: 5rem; }
-
-.material-grid__height--xsmall--11 {
-  grid-row: span 11;
-  min-height: 5.5rem; }
-
-.material-grid__height--xsmall--12 {
-  grid-row: span 12;
-  min-height: 6rem; }
-
-.material-grid__height--xsmall--13 {
-  grid-row: span 13;
-  min-height: 6.5rem; }
-
-.material-grid__height--xsmall--14 {
-  grid-row: span 14;
-  min-height: 7rem; }
-
-.material-grid__height--xsmall--15 {
-  grid-row: span 15;
-  min-height: 7.5rem; }
-
-.material-grid__height--xsmall--16 {
-  grid-row: span 16;
-  min-height: 8rem; }
-
-.material-grid__height--xsmall--17 {
-  grid-row: span 17;
-  min-height: 8.5rem; }
-
-.material-grid__height--xsmall--18 {
-  grid-row: span 18;
-  min-height: 9rem; }
-
-.material-grid__height--xsmall--19 {
-  grid-row: span 19;
-  min-height: 9.5rem; }
-
-.material-grid__height--xsmall--20 {
-  grid-row: span 20;
-  min-height: 10rem; }
-
-.material-grid__height--xsmall--21 {
-  grid-row: span 21;
-  min-height: 10.5rem; }
-
-.material-grid__height--xsmall--22 {
-  grid-row: span 22;
-  min-height: 11rem; }
-
-.material-grid__height--xsmall--23 {
-  grid-row: span 23;
-  min-height: 11.5rem; }
-
-.material-grid__height--xsmall--24 {
-  grid-row: span 24;
-  min-height: 12rem; }
-
-.material-grid__height--xsmall--25 {
-  grid-row: span 25;
-  min-height: 12.5rem; }
-
-.material-grid__height--xsmall--26 {
-  grid-row: span 26;
-  min-height: 13rem; }
-
-.material-grid__height--xsmall--27 {
-  grid-row: span 27;
-  min-height: 13.5rem; }
-
-.material-grid__height--xsmall--28 {
-  grid-row: span 28;
-  min-height: 14rem; }
-
-.material-grid__height--xsmall--29 {
-  grid-row: span 29;
-  min-height: 14.5rem; }
-
-[class*="material-grid__col--xsmall--"] {
-  display: block; }
-
-.material-grid__col--xsmall--0,
-.material-grid__col--xsmall--0--only {
-  display: none; }
-
-.material-grid__col--xsmall--1 {
-  min-width: 25vw;
-  width: 25vw;
-  grid-column: span 1; }
-
-.material-grid--fluid-rows
-> .material-grid__height--xsmall--1 {
-  grid-row: span 1;
-  min-height: 25vw; }
-
-.material-grid__col--xsmall--2 {
-  min-width: 50vw;
-  width: 50vw;
-  grid-column: span 2; }
-
-.material-grid--fluid-rows
-> .material-grid__height--xsmall--2 {
-  grid-row: span 2;
-  min-height: 50vw; }
-
-.material-grid__col--xsmall--3 {
-  min-width: 75vw;
-  width: 75vw;
-  grid-column: span 3; }
-
-.material-grid--fluid-rows
-> .material-grid__height--xsmall--3 {
-  grid-row: span 3;
-  min-height: 75vw; }
-
-.material-grid__col--xsmall--4 {
-  min-width: 100vw;
-  width: 100vw;
-  grid-column: span 4; }
-
-.material-grid--fluid-rows
-> .material-grid__height--xsmall--4 {
-  grid-row: span 4;
-  min-height: 100vw; }
-
-.material-padding {
-  padding: 0.5rem; }
-
-.material-padding--bottom {
-  padding-bottom: 0.5rem; }
-
-.material-padding--left {
-  padding-left: 0.5rem; }
-
-.material-padding--right {
-  padding-right: 0.5rem; }
-
-.material-padding--top {
-  padding-top: 0.5rem; }
-
-.material-padding--horizontal {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem; }
-
-.material-padding--vertical {
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem; }
-
 @supports (display: grid) {
-  .material-grid {
-    display: grid;
-    grid-auto-rows: minmax(0.5rem, min-content);
-    grid-template-columns: repeat(auto-fill, 25vw); }
-    .material-grid.material-grid--fixed-columns {
-      grid-template-columns: repeat(auto-fill, 5.625rem); }
-    .material-grid.material-grid--fluid-rows {
-      grid-auto-rows: 25vw; }
   :root {
     --material-height-1: 0.5rem;
     --material-height-2: 1rem;
@@ -282,95 +80,362 @@ body {
     --material-height-28: 14rem;
     --material-height-29: 14.5rem; } }
 
+.material-grid__height--xsmall--0 {
+  height: 0;
+  min-height: 0; }
+
+.material-grid__height--xsmall--1 {
+  grid-row: span 1;
+  height: 0.5rem;
+  min-height: 0.5rem; }
+
+.material-grid__height--xsmall--2 {
+  grid-row: span 2;
+  height: 1rem;
+  min-height: 1rem; }
+
+.material-grid__height--xsmall--3 {
+  grid-row: span 3;
+  height: 1.5rem;
+  min-height: 1.5rem; }
+
+.material-grid__height--xsmall--4 {
+  grid-row: span 4;
+  height: 2rem;
+  min-height: 2rem; }
+
+.material-grid__height--xsmall--5 {
+  grid-row: span 5;
+  height: 2.5rem;
+  min-height: 2.5rem; }
+
+.material-grid__height--xsmall--6 {
+  grid-row: span 6;
+  height: 3rem;
+  min-height: 3rem; }
+
+.material-grid__height--xsmall--7 {
+  grid-row: span 7;
+  height: 3.5rem;
+  min-height: 3.5rem; }
+
+.material-grid__height--xsmall--8 {
+  grid-row: span 8;
+  height: 4rem;
+  min-height: 4rem; }
+
+.material-grid__height--xsmall--9 {
+  grid-row: span 9;
+  height: 4.5rem;
+  min-height: 4.5rem; }
+
+.material-grid__height--xsmall--10 {
+  grid-row: span 10;
+  height: 5rem;
+  min-height: 5rem; }
+
+.material-grid__height--xsmall--11 {
+  grid-row: span 11;
+  height: 5.5rem;
+  min-height: 5.5rem; }
+
+.material-grid__height--xsmall--12 {
+  grid-row: span 12;
+  height: 6rem;
+  min-height: 6rem; }
+
+.material-grid__height--xsmall--13 {
+  grid-row: span 13;
+  height: 6.5rem;
+  min-height: 6.5rem; }
+
+.material-grid__height--xsmall--14 {
+  grid-row: span 14;
+  height: 7rem;
+  min-height: 7rem; }
+
+.material-grid__height--xsmall--15 {
+  grid-row: span 15;
+  height: 7.5rem;
+  min-height: 7.5rem; }
+
+.material-grid__height--xsmall--16 {
+  grid-row: span 16;
+  height: 8rem;
+  min-height: 8rem; }
+
+.material-grid__height--xsmall--17 {
+  grid-row: span 17;
+  height: 8.5rem;
+  min-height: 8.5rem; }
+
+.material-grid__height--xsmall--18 {
+  grid-row: span 18;
+  height: 9rem;
+  min-height: 9rem; }
+
+.material-grid__height--xsmall--19 {
+  grid-row: span 19;
+  height: 9.5rem;
+  min-height: 9.5rem; }
+
+.material-grid__height--xsmall--20 {
+  grid-row: span 20;
+  height: 10rem;
+  min-height: 10rem; }
+
+.material-grid__height--xsmall--21 {
+  grid-row: span 21;
+  height: 10.5rem;
+  min-height: 10.5rem; }
+
+.material-grid__height--xsmall--22 {
+  grid-row: span 22;
+  height: 11rem;
+  min-height: 11rem; }
+
+.material-grid__height--xsmall--23 {
+  grid-row: span 23;
+  height: 11.5rem;
+  min-height: 11.5rem; }
+
+.material-grid__height--xsmall--24 {
+  grid-row: span 24;
+  height: 12rem;
+  min-height: 12rem; }
+
+.material-grid__height--xsmall--25 {
+  grid-row: span 25;
+  height: 12.5rem;
+  min-height: 12.5rem; }
+
+.material-grid__height--xsmall--26 {
+  grid-row: span 26;
+  height: 13rem;
+  min-height: 13rem; }
+
+.material-grid__height--xsmall--27 {
+  grid-row: span 27;
+  height: 13.5rem;
+  min-height: 13.5rem; }
+
+.material-grid__height--xsmall--28 {
+  grid-row: span 28;
+  height: 14rem;
+  min-height: 14rem; }
+
+.material-grid__height--xsmall--29 {
+  grid-row: span 29;
+  height: 14.5rem;
+  min-height: 14.5rem; }
+
+[class*="material-grid__col--xsmall--"] {
+  display: block; }
+
+.material-grid__col--xsmall--0,
+.material-grid__col--xsmall--0--only {
+  display: none; }
+
+.material-padding {
+  padding: 0.5rem; }
+
+.material-padding--bottom {
+  padding-bottom: 0.5rem; }
+
+.material-padding--left {
+  padding-left: 0.5rem; }
+
+.material-padding--right {
+  padding-right: 0.5rem; }
+
+.material-padding--top {
+  padding-top: 0.5rem; }
+
+.material-padding--horizontal {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem; }
+
+.material-padding--vertical {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem; }
+
+.material-grid {
+  grid-auto-rows: minmax(0.5rem, min-content);
+  grid-template-columns: repeat(auto-fill, 25vw); }
+  .material-grid.material-grid--fixed-columns {
+    grid-template-columns: repeat(auto-fill, 5.625rem); }
+  .material-grid.material-grid--fluid-rows {
+    grid-auto-rows: 25vw; }
+  .material-grid > * {
+    grid-column: span 4; }
+
+.material-grid__col--xsmall--1 {
+  width: 25vw;
+  grid-column: span 1; }
+  .material-grid__col--xsmall--1.material-grid > *:not([class*="material-grid__col"]) {
+    grid-column: span 1; }
+
+.material-grid--fluid-rows
+> .material-grid__height--xsmall--1 {
+  grid-row: span 1;
+  height: 25vw;
+  min-height: 25vw; }
+
+.material-grid__col--xsmall--2 {
+  width: 50vw;
+  grid-column: span 2; }
+  .material-grid__col--xsmall--2.material-grid > *:not([class*="material-grid__col"]) {
+    grid-column: span 2; }
+
+.material-grid--fluid-rows
+> .material-grid__height--xsmall--2 {
+  grid-row: span 2;
+  height: 50vw;
+  min-height: 50vw; }
+
+.material-grid__col--xsmall--3 {
+  width: 75vw;
+  grid-column: span 3; }
+  .material-grid__col--xsmall--3.material-grid > *:not([class*="material-grid__col"]) {
+    grid-column: span 3; }
+
+.material-grid--fluid-rows
+> .material-grid__height--xsmall--3 {
+  grid-row: span 3;
+  height: 75vw;
+  min-height: 75vw; }
+
+.material-grid__col--xsmall--4 {
+  width: 100vw;
+  grid-column: span 4; }
+  .material-grid__col--xsmall--4.material-grid > *:not([class*="material-grid__col"]) {
+    grid-column: span 4; }
+
+.material-grid--fluid-rows
+> .material-grid__height--xsmall--4 {
+  grid-row: span 4;
+  height: 100vw;
+  min-height: 100vw; }
+
 @media screen and (min-width: 37.5rem) {
   .material-grid__height--small--0 {
+    height: 0;
     min-height: 0; }
   .material-grid__height--small--1 {
     grid-row: span 1;
+    height: 0.5rem;
     min-height: 0.5rem; }
   .material-grid__height--small--2 {
     grid-row: span 2;
+    height: 1rem;
     min-height: 1rem; }
   .material-grid__height--small--3 {
     grid-row: span 3;
+    height: 1.5rem;
     min-height: 1.5rem; }
   .material-grid__height--small--4 {
     grid-row: span 4;
+    height: 2rem;
     min-height: 2rem; }
   .material-grid__height--small--5 {
     grid-row: span 5;
+    height: 2.5rem;
     min-height: 2.5rem; }
   .material-grid__height--small--6 {
     grid-row: span 6;
+    height: 3rem;
     min-height: 3rem; }
   .material-grid__height--small--7 {
     grid-row: span 7;
+    height: 3.5rem;
     min-height: 3.5rem; }
   .material-grid__height--small--8 {
     grid-row: span 8;
+    height: 4rem;
     min-height: 4rem; }
   .material-grid__height--small--9 {
     grid-row: span 9;
+    height: 4.5rem;
     min-height: 4.5rem; }
   .material-grid__height--small--10 {
     grid-row: span 10;
+    height: 5rem;
     min-height: 5rem; }
   .material-grid__height--small--11 {
     grid-row: span 11;
+    height: 5.5rem;
     min-height: 5.5rem; }
   .material-grid__height--small--12 {
     grid-row: span 12;
+    height: 6rem;
     min-height: 6rem; }
   .material-grid__height--small--13 {
     grid-row: span 13;
+    height: 6.5rem;
     min-height: 6.5rem; }
   .material-grid__height--small--14 {
     grid-row: span 14;
+    height: 7rem;
     min-height: 7rem; }
   .material-grid__height--small--15 {
     grid-row: span 15;
+    height: 7.5rem;
     min-height: 7.5rem; }
   .material-grid__height--small--16 {
     grid-row: span 16;
+    height: 8rem;
     min-height: 8rem; }
   .material-grid__height--small--17 {
     grid-row: span 17;
+    height: 8.5rem;
     min-height: 8.5rem; }
   .material-grid__height--small--18 {
     grid-row: span 18;
+    height: 9rem;
     min-height: 9rem; }
   .material-grid__height--small--19 {
     grid-row: span 19;
+    height: 9.5rem;
     min-height: 9.5rem; }
   .material-grid__height--small--20 {
     grid-row: span 20;
+    height: 10rem;
     min-height: 10rem; }
   .material-grid__height--small--21 {
     grid-row: span 21;
+    height: 10.5rem;
     min-height: 10.5rem; }
   .material-grid__height--small--22 {
     grid-row: span 22;
+    height: 11rem;
     min-height: 11rem; }
   .material-grid__height--small--23 {
     grid-row: span 23;
+    height: 11.5rem;
     min-height: 11.5rem; }
   .material-grid__height--small--24 {
     grid-row: span 24;
+    height: 12rem;
     min-height: 12rem; }
   .material-grid__height--small--25 {
     grid-row: span 25;
+    height: 12.5rem;
     min-height: 12.5rem; }
   .material-grid__height--small--26 {
     grid-row: span 26;
+    height: 13rem;
     min-height: 13rem; }
   .material-grid__height--small--27 {
     grid-row: span 27;
+    height: 13.5rem;
     min-height: 13.5rem; }
   .material-grid__height--small--28 {
     grid-row: span 28;
+    height: 14rem;
     min-height: 14rem; }
   .material-grid__height--small--29 {
     grid-row: span 29;
+    height: 14.5rem;
     min-height: 14.5rem; }
   .material-grid__col--xsmall--0--only {
     display: block; }
@@ -379,102 +444,6 @@ body {
   .material-grid__col--small--0,
   .material-grid__col--small--0--only {
     display: none; }
-  .material-grid__col--xsmall--1 {
-    min-width: 25vw;
-    width: 25vw;
-    grid-column: span 2; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--1 {
-    grid-row: span 1;
-    min-height: 25vw; }
-  .material-grid__col--xsmall--2 {
-    min-width: 50vw;
-    width: 50vw;
-    grid-column: span 4; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--2 {
-    grid-row: span 2;
-    min-height: 50vw; }
-  .material-grid__col--xsmall--3 {
-    min-width: 75vw;
-    width: 75vw;
-    grid-column: span 6; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--3 {
-    grid-row: span 3;
-    min-height: 75vw; }
-  .material-grid__col--xsmall--4 {
-    min-width: 100vw;
-    width: 100vw;
-    grid-column: span 8; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--4 {
-    grid-row: span 4;
-    min-height: 100vw; }
-  .material-grid__col--small--1 {
-    min-width: 12.5vw;
-    width: 12.5vw;
-    grid-column: span 1; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--1 {
-    grid-row: span 1;
-    min-height: 12.5vw; }
-  .material-grid__col--small--2 {
-    min-width: 25vw;
-    width: 25vw;
-    grid-column: span 2; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--2 {
-    grid-row: span 2;
-    min-height: 25vw; }
-  .material-grid__col--small--3 {
-    min-width: 37.5vw;
-    width: 37.5vw;
-    grid-column: span 3; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--3 {
-    grid-row: span 3;
-    min-height: 37.5vw; }
-  .material-grid__col--small--4 {
-    min-width: 50vw;
-    width: 50vw;
-    grid-column: span 4; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--4 {
-    grid-row: span 4;
-    min-height: 50vw; }
-  .material-grid__col--small--5 {
-    min-width: 62.5vw;
-    width: 62.5vw;
-    grid-column: span 5; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--5 {
-    grid-row: span 5;
-    min-height: 62.5vw; }
-  .material-grid__col--small--6 {
-    min-width: 75vw;
-    width: 75vw;
-    grid-column: span 6; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--6 {
-    grid-row: span 6;
-    min-height: 75vw; }
-  .material-grid__col--small--7 {
-    min-width: 87.5vw;
-    width: 87.5vw;
-    grid-column: span 7; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--7 {
-    grid-row: span 7;
-    min-height: 87.5vw; }
-  .material-grid__col--small--8 {
-    min-width: 100vw;
-    width: 100vw;
-    grid-column: span 8; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--8 {
-    grid-row: span 8;
-    min-height: 100vw; }
   .material-padding {
     padding: 0.5rem; }
   .material-padding--bottom {
@@ -491,103 +460,254 @@ body {
   .material-padding--vertical {
     padding-bottom: 0.5rem;
     padding-top: 0.5rem; }
-  @supports (display: grid) {
-    .material-grid {
-      grid-template-columns: repeat(auto-fill, 12.5vw); }
-      .material-grid.material-grid--fixed-columns {
-        grid-template-columns: repeat(auto-fill, 4.6875rem); }
-      .material-grid.material-grid--fluid-rows {
-        grid-auto-rows: 12.5vw; } } }
+  .material-grid {
+    grid-template-columns: repeat(auto-fill, 12.5vw); }
+    .material-grid.material-grid--fixed-columns {
+      grid-template-columns: repeat(auto-fill, 4.6875rem); }
+    .material-grid.material-grid--fluid-rows {
+      grid-auto-rows: 12.5vw; }
+    .material-grid > * {
+      grid-column: span 8; }
+  .material-grid__col--xsmall--1 {
+    width: 25vw;
+    grid-column: span 2; }
+    .material-grid__col--xsmall--1.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 1; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--1 {
+    grid-row: span 1;
+    height: 25vw;
+    min-height: 25vw; }
+  .material-grid__col--xsmall--2 {
+    width: 50vw;
+    grid-column: span 4; }
+    .material-grid__col--xsmall--2.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 2; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--2 {
+    grid-row: span 2;
+    height: 50vw;
+    min-height: 50vw; }
+  .material-grid__col--xsmall--3 {
+    width: 75vw;
+    grid-column: span 6; }
+    .material-grid__col--xsmall--3.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 3; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--3 {
+    grid-row: span 3;
+    height: 75vw;
+    min-height: 75vw; }
+  .material-grid__col--xsmall--4 {
+    width: 100vw;
+    grid-column: span 8; }
+    .material-grid__col--xsmall--4.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 4; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--4 {
+    grid-row: span 4;
+    height: 100vw;
+    min-height: 100vw; }
+  .material-grid__col--small--1 {
+    width: 12.5vw;
+    grid-column: span 1; }
+    .material-grid__col--small--1.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 1; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--1 {
+    grid-row: span 1;
+    height: 12.5vw;
+    min-height: 12.5vw; }
+  .material-grid__col--small--2 {
+    width: 25vw;
+    grid-column: span 2; }
+    .material-grid__col--small--2.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 2; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--2 {
+    grid-row: span 2;
+    height: 25vw;
+    min-height: 25vw; }
+  .material-grid__col--small--3 {
+    width: 37.5vw;
+    grid-column: span 3; }
+    .material-grid__col--small--3.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 3; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--3 {
+    grid-row: span 3;
+    height: 37.5vw;
+    min-height: 37.5vw; }
+  .material-grid__col--small--4 {
+    width: 50vw;
+    grid-column: span 4; }
+    .material-grid__col--small--4.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 4; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--4 {
+    grid-row: span 4;
+    height: 50vw;
+    min-height: 50vw; }
+  .material-grid__col--small--5 {
+    width: 62.5vw;
+    grid-column: span 5; }
+    .material-grid__col--small--5.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 5; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--5 {
+    grid-row: span 5;
+    height: 62.5vw;
+    min-height: 62.5vw; }
+  .material-grid__col--small--6 {
+    width: 75vw;
+    grid-column: span 6; }
+    .material-grid__col--small--6.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 6; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--6 {
+    grid-row: span 6;
+    height: 75vw;
+    min-height: 75vw; }
+  .material-grid__col--small--7 {
+    width: 87.5vw;
+    grid-column: span 7; }
+    .material-grid__col--small--7.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 7; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--7 {
+    grid-row: span 7;
+    height: 87.5vw;
+    min-height: 87.5vw; }
+  .material-grid__col--small--8 {
+    width: 100vw;
+    grid-column: span 8; }
+    .material-grid__col--small--8.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 8; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--8 {
+    grid-row: span 8;
+    height: 100vw;
+    min-height: 100vw; } }
 
 @media screen and (min-width: 64rem) {
   .material-grid__height--medium--0 {
+    height: 0;
     min-height: 0; }
   .material-grid__height--medium--1 {
     grid-row: span 1;
+    height: 0.5rem;
     min-height: 0.5rem; }
   .material-grid__height--medium--2 {
     grid-row: span 2;
+    height: 1rem;
     min-height: 1rem; }
   .material-grid__height--medium--3 {
     grid-row: span 3;
+    height: 1.5rem;
     min-height: 1.5rem; }
   .material-grid__height--medium--4 {
     grid-row: span 4;
+    height: 2rem;
     min-height: 2rem; }
   .material-grid__height--medium--5 {
     grid-row: span 5;
+    height: 2.5rem;
     min-height: 2.5rem; }
   .material-grid__height--medium--6 {
     grid-row: span 6;
+    height: 3rem;
     min-height: 3rem; }
   .material-grid__height--medium--7 {
     grid-row: span 7;
+    height: 3.5rem;
     min-height: 3.5rem; }
   .material-grid__height--medium--8 {
     grid-row: span 8;
+    height: 4rem;
     min-height: 4rem; }
   .material-grid__height--medium--9 {
     grid-row: span 9;
+    height: 4.5rem;
     min-height: 4.5rem; }
   .material-grid__height--medium--10 {
     grid-row: span 10;
+    height: 5rem;
     min-height: 5rem; }
   .material-grid__height--medium--11 {
     grid-row: span 11;
+    height: 5.5rem;
     min-height: 5.5rem; }
   .material-grid__height--medium--12 {
     grid-row: span 12;
+    height: 6rem;
     min-height: 6rem; }
   .material-grid__height--medium--13 {
     grid-row: span 13;
+    height: 6.5rem;
     min-height: 6.5rem; }
   .material-grid__height--medium--14 {
     grid-row: span 14;
+    height: 7rem;
     min-height: 7rem; }
   .material-grid__height--medium--15 {
     grid-row: span 15;
+    height: 7.5rem;
     min-height: 7.5rem; }
   .material-grid__height--medium--16 {
     grid-row: span 16;
+    height: 8rem;
     min-height: 8rem; }
   .material-grid__height--medium--17 {
     grid-row: span 17;
+    height: 8.5rem;
     min-height: 8.5rem; }
   .material-grid__height--medium--18 {
     grid-row: span 18;
+    height: 9rem;
     min-height: 9rem; }
   .material-grid__height--medium--19 {
     grid-row: span 19;
+    height: 9.5rem;
     min-height: 9.5rem; }
   .material-grid__height--medium--20 {
     grid-row: span 20;
+    height: 10rem;
     min-height: 10rem; }
   .material-grid__height--medium--21 {
     grid-row: span 21;
+    height: 10.5rem;
     min-height: 10.5rem; }
   .material-grid__height--medium--22 {
     grid-row: span 22;
+    height: 11rem;
     min-height: 11rem; }
   .material-grid__height--medium--23 {
     grid-row: span 23;
+    height: 11.5rem;
     min-height: 11.5rem; }
   .material-grid__height--medium--24 {
     grid-row: span 24;
+    height: 12rem;
     min-height: 12rem; }
   .material-grid__height--medium--25 {
     grid-row: span 25;
+    height: 12.5rem;
     min-height: 12.5rem; }
   .material-grid__height--medium--26 {
     grid-row: span 26;
+    height: 13rem;
     min-height: 13rem; }
   .material-grid__height--medium--27 {
     grid-row: span 27;
+    height: 13.5rem;
     min-height: 13.5rem; }
   .material-grid__height--medium--28 {
     grid-row: span 28;
+    height: 14rem;
     min-height: 14rem; }
   .material-grid__height--medium--29 {
     grid-row: span 29;
+    height: 14.5rem;
     min-height: 14.5rem; }
   .material-grid__col--xsmall--0--only {
     display: block; }
@@ -598,246 +718,6 @@ body {
   .material-grid__col--medium--0,
   .material-grid__col--medium--0--only {
     display: none; }
-  .material-grid__col--xsmall--1 {
-    max-width: 30rem;
-    min-width: 25vw;
-    width: 25vw;
-    grid-column: span 3; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--1 {
-    grid-row: span 1;
-    min-height: 25vw;
-    max-height: 30rem; }
-  .material-grid__col--xsmall--2 {
-    max-width: 60rem;
-    min-width: 50vw;
-    width: 50vw;
-    grid-column: span 6; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--2 {
-    grid-row: span 2;
-    min-height: 50vw;
-    max-height: 60rem; }
-  .material-grid__col--xsmall--3 {
-    max-width: 90rem;
-    min-width: 75vw;
-    width: 75vw;
-    grid-column: span 9; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--3 {
-    grid-row: span 3;
-    min-height: 75vw;
-    max-height: 90rem; }
-  .material-grid__col--xsmall--4 {
-    max-width: 120rem;
-    min-width: 100vw;
-    width: 100vw;
-    grid-column: span 12; }
-  .material-grid--fluid-rows
-> .material-grid__height--xsmall--4 {
-    grid-row: span 4;
-    min-height: 100vw;
-    max-height: 120rem; }
-  .material-grid__col--small--1 {
-    max-width: 15rem;
-    min-width: 12.5vw;
-    width: 12.5vw;
-    grid-column: span 1.5; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--1 {
-    grid-row: span 1;
-    min-height: 12.5vw;
-    max-height: 15rem; }
-  .material-grid__col--small--2 {
-    max-width: 30rem;
-    min-width: 25vw;
-    width: 25vw;
-    grid-column: span 3; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--2 {
-    grid-row: span 2;
-    min-height: 25vw;
-    max-height: 30rem; }
-  .material-grid__col--small--3 {
-    max-width: 45rem;
-    min-width: 37.5vw;
-    width: 37.5vw;
-    grid-column: span 4.5; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--3 {
-    grid-row: span 3;
-    min-height: 37.5vw;
-    max-height: 45rem; }
-  .material-grid__col--small--4 {
-    max-width: 60rem;
-    min-width: 50vw;
-    width: 50vw;
-    grid-column: span 6; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--4 {
-    grid-row: span 4;
-    min-height: 50vw;
-    max-height: 60rem; }
-  .material-grid__col--small--5 {
-    max-width: 75rem;
-    min-width: 62.5vw;
-    width: 62.5vw;
-    grid-column: span 7.5; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--5 {
-    grid-row: span 5;
-    min-height: 62.5vw;
-    max-height: 75rem; }
-  .material-grid__col--small--6 {
-    max-width: 90rem;
-    min-width: 75vw;
-    width: 75vw;
-    grid-column: span 9; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--6 {
-    grid-row: span 6;
-    min-height: 75vw;
-    max-height: 90rem; }
-  .material-grid__col--small--7 {
-    max-width: 105rem;
-    min-width: 87.5vw;
-    width: 87.5vw;
-    grid-column: span 10.5; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--7 {
-    grid-row: span 7;
-    min-height: 87.5vw;
-    max-height: 105rem; }
-  .material-grid__col--small--8 {
-    max-width: 120rem;
-    min-width: 100vw;
-    width: 100vw;
-    grid-column: span 12; }
-  .material-grid--fluid-rows
-> .material-grid__height--small--8 {
-    grid-row: span 8;
-    min-height: 100vw;
-    max-height: 120rem; }
-  .material-grid__col--medium--1 {
-    max-width: 10rem;
-    min-width: 8.33333vw;
-    width: 8.33333vw;
-    grid-column: span 1; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--1 {
-    grid-row: span 1;
-    min-height: 8.33333vw;
-    max-height: 10rem; }
-  .material-grid__col--medium--2 {
-    max-width: 20rem;
-    min-width: 16.66667vw;
-    width: 16.66667vw;
-    grid-column: span 2; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--2 {
-    grid-row: span 2;
-    min-height: 16.66667vw;
-    max-height: 20rem; }
-  .material-grid__col--medium--3 {
-    max-width: 30rem;
-    min-width: 25vw;
-    width: 25vw;
-    grid-column: span 3; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--3 {
-    grid-row: span 3;
-    min-height: 25vw;
-    max-height: 30rem; }
-  .material-grid__col--medium--4 {
-    max-width: 40rem;
-    min-width: 33.33333vw;
-    width: 33.33333vw;
-    grid-column: span 4; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--4 {
-    grid-row: span 4;
-    min-height: 33.33333vw;
-    max-height: 40rem; }
-  .material-grid__col--medium--5 {
-    max-width: 50rem;
-    min-width: 41.66667vw;
-    width: 41.66667vw;
-    grid-column: span 5; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--5 {
-    grid-row: span 5;
-    min-height: 41.66667vw;
-    max-height: 50rem; }
-  .material-grid__col--medium--6 {
-    max-width: 60rem;
-    min-width: 50vw;
-    width: 50vw;
-    grid-column: span 6; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--6 {
-    grid-row: span 6;
-    min-height: 50vw;
-    max-height: 60rem; }
-  .material-grid__col--medium--7 {
-    max-width: 70rem;
-    min-width: 58.33333vw;
-    width: 58.33333vw;
-    grid-column: span 7; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--7 {
-    grid-row: span 7;
-    min-height: 58.33333vw;
-    max-height: 70rem; }
-  .material-grid__col--medium--8 {
-    max-width: 80rem;
-    min-width: 66.66667vw;
-    width: 66.66667vw;
-    grid-column: span 8; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--8 {
-    grid-row: span 8;
-    min-height: 66.66667vw;
-    max-height: 80rem; }
-  .material-grid__col--medium--9 {
-    max-width: 90rem;
-    min-width: 75vw;
-    width: 75vw;
-    grid-column: span 9; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--9 {
-    grid-row: span 9;
-    min-height: 75vw;
-    max-height: 90rem; }
-  .material-grid__col--medium--10 {
-    max-width: 100rem;
-    min-width: 83.33333vw;
-    width: 83.33333vw;
-    grid-column: span 10; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--10 {
-    grid-row: span 10;
-    min-height: 83.33333vw;
-    max-height: 100rem; }
-  .material-grid__col--medium--11 {
-    max-width: 110rem;
-    min-width: 91.66667vw;
-    width: 91.66667vw;
-    grid-column: span 11; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--11 {
-    grid-row: span 11;
-    min-height: 91.66667vw;
-    max-height: 110rem; }
-  .material-grid__col--medium--12 {
-    max-width: 120rem;
-    min-width: 100vw;
-    width: 100vw;
-    grid-column: span 12; }
-  .material-grid--fluid-rows
-> .material-grid__height--medium--12 {
-    grid-row: span 12;
-    min-height: 100vw;
-    max-height: 120rem; }
   .material-padding {
     padding: 1rem; }
   .material-padding--bottom {
@@ -854,13 +734,302 @@ body {
   .material-padding--vertical {
     padding-bottom: 1rem;
     padding-top: 1rem; }
-  @supports (display: grid) {
-    .material-grid {
-      grid-template-columns: repeat(auto-fill, 8.33333vw); }
-      .material-grid.material-grid--fixed-columns {
-        grid-template-columns: repeat(auto-fill, 5.33333rem); }
-      .material-grid.material-grid--fluid-rows {
-        grid-auto-rows: 8.33333vw; } } }
+  .material-grid {
+    grid-template-columns: repeat(auto-fill, 8.33vw); }
+    .material-grid.material-grid--fixed-columns {
+      grid-template-columns: repeat(auto-fill, 5.33333rem); }
+    .material-grid.material-grid--fluid-rows {
+      grid-auto-rows: 8.33vw; }
+    .material-grid > * {
+      grid-column: span 12; }
+  .material-grid__col--xsmall--1 {
+    max-width: 30rem;
+    width: 25vw;
+    grid-column: span 3; }
+    .material-grid__col--xsmall--1.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 1; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--1 {
+    grid-row: span 1;
+    height: 25vw;
+    min-height: 25vw;
+    max-height: 30rem; }
+  .material-grid__col--xsmall--2 {
+    max-width: 60rem;
+    width: 50vw;
+    grid-column: span 6; }
+    .material-grid__col--xsmall--2.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 2; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--2 {
+    grid-row: span 2;
+    height: 50vw;
+    min-height: 50vw;
+    max-height: 60rem; }
+  .material-grid__col--xsmall--3 {
+    max-width: 90rem;
+    width: 75vw;
+    grid-column: span 9; }
+    .material-grid__col--xsmall--3.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 3; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--3 {
+    grid-row: span 3;
+    height: 75vw;
+    min-height: 75vw;
+    max-height: 90rem; }
+  .material-grid__col--xsmall--4 {
+    max-width: 120rem;
+    width: 100vw;
+    grid-column: span 12; }
+    .material-grid__col--xsmall--4.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 4; }
+  .material-grid--fluid-rows
+> .material-grid__height--xsmall--4 {
+    grid-row: span 4;
+    height: 100vw;
+    min-height: 100vw;
+    max-height: 120rem; }
+  .material-grid__col--small--1 {
+    max-width: 15rem;
+    width: 12.5vw;
+    grid-column: span 1.5; }
+    .material-grid__col--small--1.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 1; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--1 {
+    grid-row: span 1;
+    height: 12.5vw;
+    min-height: 12.5vw;
+    max-height: 15rem; }
+  .material-grid__col--small--2 {
+    max-width: 30rem;
+    width: 25vw;
+    grid-column: span 3; }
+    .material-grid__col--small--2.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 2; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--2 {
+    grid-row: span 2;
+    height: 25vw;
+    min-height: 25vw;
+    max-height: 30rem; }
+  .material-grid__col--small--3 {
+    max-width: 45rem;
+    width: 37.5vw;
+    grid-column: span 4.5; }
+    .material-grid__col--small--3.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 3; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--3 {
+    grid-row: span 3;
+    height: 37.5vw;
+    min-height: 37.5vw;
+    max-height: 45rem; }
+  .material-grid__col--small--4 {
+    max-width: 60rem;
+    width: 50vw;
+    grid-column: span 6; }
+    .material-grid__col--small--4.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 4; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--4 {
+    grid-row: span 4;
+    height: 50vw;
+    min-height: 50vw;
+    max-height: 60rem; }
+  .material-grid__col--small--5 {
+    max-width: 75rem;
+    width: 62.5vw;
+    grid-column: span 7.5; }
+    .material-grid__col--small--5.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 5; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--5 {
+    grid-row: span 5;
+    height: 62.5vw;
+    min-height: 62.5vw;
+    max-height: 75rem; }
+  .material-grid__col--small--6 {
+    max-width: 90rem;
+    width: 75vw;
+    grid-column: span 9; }
+    .material-grid__col--small--6.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 6; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--6 {
+    grid-row: span 6;
+    height: 75vw;
+    min-height: 75vw;
+    max-height: 90rem; }
+  .material-grid__col--small--7 {
+    max-width: 105rem;
+    width: 87.5vw;
+    grid-column: span 10.5; }
+    .material-grid__col--small--7.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 7; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--7 {
+    grid-row: span 7;
+    height: 87.5vw;
+    min-height: 87.5vw;
+    max-height: 105rem; }
+  .material-grid__col--small--8 {
+    max-width: 120rem;
+    width: 100vw;
+    grid-column: span 12; }
+    .material-grid__col--small--8.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 8; }
+  .material-grid--fluid-rows
+> .material-grid__height--small--8 {
+    grid-row: span 8;
+    height: 100vw;
+    min-height: 100vw;
+    max-height: 120rem; }
+  .material-grid__col--medium--1 {
+    max-width: 9.996rem;
+    width: 8.33vw;
+    grid-column: span 1; }
+    .material-grid__col--medium--1.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 1; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--1 {
+    grid-row: span 1;
+    height: 8.33vw;
+    min-height: 8.33vw;
+    max-height: 9.996rem; }
+  .material-grid__col--medium--2 {
+    max-width: 19.992rem;
+    width: 16.66vw;
+    grid-column: span 2; }
+    .material-grid__col--medium--2.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 2; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--2 {
+    grid-row: span 2;
+    height: 16.66vw;
+    min-height: 16.66vw;
+    max-height: 19.992rem; }
+  .material-grid__col--medium--3 {
+    max-width: 30rem;
+    width: 25vw;
+    grid-column: span 3; }
+    .material-grid__col--medium--3.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 3; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--3 {
+    grid-row: span 3;
+    height: 25vw;
+    min-height: 25vw;
+    max-height: 30rem; }
+  .material-grid__col--medium--4 {
+    max-width: 39.996rem;
+    width: 33.33vw;
+    grid-column: span 4; }
+    .material-grid__col--medium--4.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 4; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--4 {
+    grid-row: span 4;
+    height: 33.33vw;
+    min-height: 33.33vw;
+    max-height: 39.996rem; }
+  .material-grid__col--medium--5 {
+    max-width: 49.992rem;
+    width: 41.66vw;
+    grid-column: span 5; }
+    .material-grid__col--medium--5.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 5; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--5 {
+    grid-row: span 5;
+    height: 41.66vw;
+    min-height: 41.66vw;
+    max-height: 49.992rem; }
+  .material-grid__col--medium--6 {
+    max-width: 60rem;
+    width: 50vw;
+    grid-column: span 6; }
+    .material-grid__col--medium--6.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 6; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--6 {
+    grid-row: span 6;
+    height: 50vw;
+    min-height: 50vw;
+    max-height: 60rem; }
+  .material-grid__col--medium--7 {
+    max-width: 69.996rem;
+    width: 58.33vw;
+    grid-column: span 7; }
+    .material-grid__col--medium--7.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 7; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--7 {
+    grid-row: span 7;
+    height: 58.33vw;
+    min-height: 58.33vw;
+    max-height: 69.996rem; }
+  .material-grid__col--medium--8 {
+    max-width: 79.992rem;
+    width: 66.66vw;
+    grid-column: span 8; }
+    .material-grid__col--medium--8.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 8; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--8 {
+    grid-row: span 8;
+    height: 66.66vw;
+    min-height: 66.66vw;
+    max-height: 79.992rem; }
+  .material-grid__col--medium--9 {
+    max-width: 90rem;
+    width: 75vw;
+    grid-column: span 9; }
+    .material-grid__col--medium--9.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 9; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--9 {
+    grid-row: span 9;
+    height: 75vw;
+    min-height: 75vw;
+    max-height: 90rem; }
+  .material-grid__col--medium--10 {
+    max-width: 99.996rem;
+    width: 83.33vw;
+    grid-column: span 10; }
+    .material-grid__col--medium--10.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 10; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--10 {
+    grid-row: span 10;
+    height: 83.33vw;
+    min-height: 83.33vw;
+    max-height: 99.996rem; }
+  .material-grid__col--medium--11 {
+    max-width: 109.992rem;
+    width: 91.66vw;
+    grid-column: span 11; }
+    .material-grid__col--medium--11.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 11; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--11 {
+    grid-row: span 11;
+    height: 91.66vw;
+    min-height: 91.66vw;
+    max-height: 109.992rem; }
+  .material-grid__col--medium--12 {
+    max-width: 120rem;
+    width: 100vw;
+    grid-column: span 12; }
+    .material-grid__col--medium--12.material-grid > *:not([class*="material-grid__col"]) {
+      grid-column: span 12; }
+  .material-grid--fluid-rows
+> .material-grid__height--medium--12 {
+    grid-row: span 12;
+    height: 100vw;
+    min-height: 100vw;
+    max-height: 120rem; } }
 
 @media screen and (min-width: 120rem) {
   .material-grid__col--xsmall--0--only {
@@ -874,8 +1043,6 @@ body {
   .material-grid__col--xlarge--0,
   .material-grid__col--xlarge--0--only {
     display: none; }
-  [class*="material-grid__col--"] {
-    min-width: 0; }
   .material-padding {
     padding: 1rem; }
   .material-padding--bottom {
@@ -892,24 +1059,28 @@ body {
   .material-padding--vertical {
     padding-bottom: 1rem;
     padding-top: 1rem; }
-  @supports (display: grid) {
-    .material-grid {
+  .material-grid {
+    grid-template-columns: repeat(auto-fill, 9.996rem); }
+    .material-grid.material-grid--fixed-columns {
       grid-template-columns: repeat(auto-fill, 10rem); }
-      .material-grid.material-grid--fixed-columns {
-        grid-template-columns: repeat(auto-fill, 10rem); }
-      .material-grid.material-grid--fluid-rows {
-        grid-auto-rows: 10rem; } } }
+    .material-grid.material-grid--fluid-rows {
+      grid-auto-rows: 9.996rem; }
+  [class*="material-grid__col--"] {
+    min-width: 0; } }
 
 @supports (display: grid) {
-  .material-grid > * {
+  .material-grid > *,
+  .material-grid > [class*="material-grid__col--"] {
     min-width: initial;
     max-width: initial;
     width: initial; }
-    .material-grid > *.material-grid {
+    .material-grid > *.material-grid,
+    .material-grid > [class*="material-grid__col--"].material-grid {
       display: grid; }
-  [class*="material-grid__height-"] {
+  .material-grid > [class*="material-grid__height--"] {
     height: unset;
-    max-height: unset; } }
+    max-height: unset;
+    min-height: initial; } }
 
 .material-grid > script {
   display: none; }

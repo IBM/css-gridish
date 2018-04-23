@@ -60,18 +60,18 @@
     $container: map-get($breakpoint, breakpoint) * 1rem;
   }
 
+  $multiplier: round-decimal($columnSpan / $columnTotal, 4, floor);
+
   // For IE, we can't have a 0 in the $fluidWidth calc().
   @if ($margin == 0) {
-    @return $container * $columnSpan / $columnTotal;
+    @return $container * $multiplier;
   }
 
-  @return calc(
-    (#{$container} - #{$margin * 2}) * #{$columnSpan / $columnTotal}
-  );
+  @return calc((#{$container} - #{$margin * 2}) * #{$multiplier});
 }
 
 /// Function gets a calculated rem value for a fixed size.
-/// @param {Number} $fixedUnit Fixed nondimensional units.
+/// @param {Number} $unitQuantity Fixed nondimensional units.
 /// @return {Length} A calculated rem value.
 /// @example scss
 /// button {
@@ -85,18 +85,19 @@
 ///     max-width: 5rem;
 ///   }
 /// }
-@function get-fixed-size($fixedUnit) {
-  $rowHeight: map-get($grid-values, "rowHeight");
+@function get-fixed-size($unitQuantity) {
+  // Derive the base unit from the current row height of the grid
+  $fixedUnit: map-get($grid-values, "rowHeight");
 
-  @if ($rowHeight == null or type-of($rowHeight) != "number") {
+  @if ($fixedUnit == null or type-of($fixedUnit) != "number") {
     @error "The rowHeight in $grid-values needs be a valid number. Please check your grid configuration.";
   }
 
-  @if ($fixedUnit == null or type-of($fixedUnit) != "number") {
-    @error "The provided fixed value `#{$fixedUnit}` to get-fixed-size() needs to be a valid number greater than 0.";
+  @if ($unitQuantity == null or type-of($unitQuantity) != "number") {
+    @error "The provided fixed value `#{$unitQuantity}` to get-fixed-size() needs to be a valid number greater than 0.";
   }
 
-  @return $fixedUnit * $rowHeight * 1rem;
+  @return $unitQuantity * $fixedUnit * 1rem;
 }
 
 /// Utility for declaring mobile-first media queries.

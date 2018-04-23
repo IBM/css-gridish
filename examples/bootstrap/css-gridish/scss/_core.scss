@@ -16,18 +16,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: #{map-get($last, breakpoint)}rem;
+  overflow-x: hidden;
   width: 100vw;
-  @if $includeFlexFallback {
-    overflow-x: hidden;
-  }
-}
-
-@if $includeFlexFallback {
-  @supports (display: grid) {
-    .#{$prefix}-container {
-      overflow-x: initial;
-    }
-  }
 }
 
 .#{$prefix}-container--left {
@@ -50,9 +40,6 @@ body {
 
   > * {
     box-sizing: border-box;
-
-    // Give arbituary large column span to all items unless user assigns width
-    grid-column: span 100;
 
     :last-child,
     :last-child > :last-child,
@@ -90,21 +77,25 @@ body {
   }
 }
 
+@include grid-legacy-wrapper($includeFlexFallback) {
+  :root {
+    @include grid-heights-fixed($rows);
+  }
+}
+
 @each $name, $breakpoint in $allBreakpoints {
   @include media-query($name) {
     @if is-same-breakpoint($breakpoint, $last) == false {
-      @include grid-legacy-heights($name, $rows);
+      @include grid-legacy-heights($name);
     }
-    @include grid-legacy-zeros($breakpoint, $allBreakpoints, $name);
-    @include grid-legacy-columns($breakpoint, $last, $name, $allBreakpoints);
+    @include grid-legacy-zeros($breakpoint, $name);
     @include grid-padding($breakpoint);
-    @include grid-margin($breakpoint, $name);
+    @include grid($breakpoint, $name);
+    @include grid-legacy-columns($breakpoint, $name);
+
+    // Wrap all bleed/break classes and css variables in a CSS Grid support query
     @include grid-legacy-wrapper($includeFlexFallback) {
-      @include grid-columns($breakpoint, $first, $name) {
-        display: grid;
-        grid-auto-rows: minmax($rowHeight * 1rem, min-content);
-      }
-      @include grid-variables($breakpoint, $first, $rows);
+      @include grid-margin($breakpoint, $name);
     }
   }
 }

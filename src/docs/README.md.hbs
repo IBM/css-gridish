@@ -62,10 +62,10 @@ If you are new to CSS Grid, please try [learning the basics](https://www.google.
 | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
 | `.{{config.prefix}}-container`                          | Container element of whole page for proper margin and max-width (can be used on body tag ) |
 | `.{{config.prefix}}-container--[left, right]`            | Align the container element to the left or right side                                      |
-| `.{{config.prefix}}-container__bleed--[{{#each config.classBreakpoints}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}]`                         | Extend the background color of a container child into the container margin on both sides starting at a specific breakpoint        |
-| `.{{config.prefix}}-container__bleed--[{{#each config.classBreakpoints}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}]--[left, right]`           | Extend the background color of a grid into the container margin on one side at a specific breakpoint           |
-| `.{{config.prefix}}-container__break--[{{#each config.classBreakpoints}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}]`                         | Child of container element should ignore grid’s margin at a specific breakpoint. Not supported for legacy.        |
-| `.{{config.prefix}}-container__break--[{{#each config.classBreakpoints}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}]--[left, right]`           | Child of container element should ignore grid’s margin on one side at a specific breakpoint. Not supported for legacy.                              |
+| `.{{config.prefix}}-container__bleed--[{{#each config.classBreakpoints}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}]`                         | Extend the background color of a container child into the container margin on both sides starting at a specific breakpoint (CSS Grid browsers only)        |
+| `.{{config.prefix}}-container__bleed--[{{#each config.classBreakpoints}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}]--[left, right]`           | Extend the background color of a grid into the container margin on one side at a specific breakpoint (CSS Grid browsers only)           |
+| `.{{config.prefix}}-container__break--[{{#each config.classBreakpoints}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}]`                         | Child of container element should ignore grid’s margin at a specific breakpoint (CSS Grid browsers only)       |
+| `.{{config.prefix}}-container__break--[{{#each config.classBreakpoints}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}]--[left, right]`           | Child of container element should ignore grid’s margin on one side at a specific breakpoint (CSS Grid browsers only)                             |
 | `.{{config.prefix}}-grid`                               | Use anytime you want to apply CSS Grid Layout, including as embedded subgrids              |
 | `.{{config.prefix}}-grid--fixed-columns`                         | Switch grid’s column widths to fixed instead of fluid                                       |
 | `.{{config.prefix}}-grid--fluid-rows`                         | Switch grid’s row height to match the width of a column                                        |
@@ -106,6 +106,77 @@ We provide the fixed height variables for items that are not direct children of 
 .banner {
   height: var(--{{config.prefix}}-height-10);
   grid-row: span var(--{{config.prefix}}-row-10);
+}
+```
+
+## Mixins and Functions
+
+### Media Query Mixin
+
+You can use the media query mixin to use breakpoints you’ve defined.
+
+**Example SCSS**
+```scss
+button {
+  @include media-query('sm') {
+    border: 2px solid hotpink;
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    border: 2px solid hotpink;
+  }
+}
+```
+
+You can then **combine this mixin with the functions below** to construct media queries that set fluid and fixed sizes based on this grid.
+
+### Get a Fluid Size
+
+Use the `get-fluid-size()` SCSS function to calculate a fluid width based on: (1) a defined breakpoints, and (2) a number of columns to span, relative to the number of available columns for the given breakpoint.
+
+**Example SCSS**
+```scss
+@media screen and (min-width: 20rem) {
+  button {
+    @include media-query('sm') {
+      max-width: get-fluid-size('sm', 1);
+    }
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    max-width: 25vw;
+  }
+}
+```
+
+### Get a Fixed Size
+Use the `get-fixed-size()` SCSS function to calculate a fixed size based on a number of fixed nondimensional units multiplied by the base value from the current row height of the grid (`$rowHeight`);
+
+**Example SCSS**
+```scss
+button {
+  @include media-query('sm') {
+    max-width: get-fixed-size(10);
+  }
+}
+```
+
+**Output CSS**
+```css
+@media screen and (min-width: 20rem) {
+  button {
+    max-width: 5rem;
+  }
 }
 ```
 
