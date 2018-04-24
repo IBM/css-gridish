@@ -2,3 +2,4 @@ bin
 etc
 node_modules
 output
+*.log
