@@ -27,7 +27,7 @@ There are three CSS files to choose from based on what browser support you want 
 | `css/material-grid.min.css` | To only support browsers with [CSS Grid Layout support](https://developer.mozilla.org/en-US/docs/Web/CSS/grid#Browser_compatibility) |
 | `css/material-grid-minimal.min.css` | To only support browsers with [CSS Grid Layout support](https://developer.mozilla.org/en-US/docs/Web/CSS/grid#Browser_compatibility), but not use any generated column or height classes |
 
-An optional JavaScript file included at `js/material-grid.min.js`. This will adjust the grid to not go behind browser scrollbars since different browsers handle the `vw` unit differently. It applies to any browser that supports [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables#Browser_compatibility) and [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#Browser_compatibility).
+There is also an optional JavaScript file included at `js/material-grid.js`. This will adjust the grid to not go behind browser scrollbars since different browsers handle the `vw` unit differently. It applies to any browser that supports [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables#Browser_compatibility) and [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#Browser_compatibility).
 
 ## Breakpoints
 
