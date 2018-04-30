@@ -70,7 +70,7 @@ gulp.task("clean", function() {
   return del([dirDestCss, dirDestScss, `${dirDest}/${prefix}-grid.sketch`]);
 });
 
-gulp.task("css", ["scssRenameLegacy"], function() {
+gulp.task("css", ["scssRenameMinimal"], function() {
   return gulp
     .src(`${dirDestScss}/${prefix}-grid.s\css`)
     .pipe(sass().on("error", sass.logError))
@@ -100,7 +100,22 @@ gulp.task("css-legacy", ["css"], function() {
     .pipe(gulp.dest(dirDestCss));
 });
 
-gulp.task("docs", ["css-legacy"], function() {
+gulp.task("css-minimal", ["css-legacy"], function() {
+  return gulp
+    .src(`${dirDestScss}/${prefix}-grid-minimal.s\css`)
+    .pipe(sass().on("error", sass.logError))
+    .pipe(rename(`${prefix}-grid-minimal.\css`))
+    .pipe(gulp.dest(dirDestCss))
+    .pipe(
+      cleanCSS({
+        level: 2
+      })
+    )
+    .pipe(rename(`${prefix}-grid-minimal.min.\css`))
+    .pipe(gulp.dest(dirDestCss));
+});
+
+gulp.task("docs", ["css-minimal"], function() {
   return gulp
     .src(`${__dirname}/docs/*.hbs`)
     .pipe(
@@ -146,6 +161,14 @@ gulp.task("scssRenameLegacy", ["scssRename"], function() {
     .src(`${dirDestScss}/gridish-grid-legacy.s\css`)
     .pipe(vinylPaths(del))
     .pipe(rename(`${prefix}-grid-legacy.s\css`))
+    .pipe(gulp.dest(dirDestScss));
+});
+
+gulp.task("scssRenameMinimal", ["scssRenameLegacy"], function() {
+  return gulp
+    .src(`${dirDestScss}/gridish-grid-minimal.s\css`)
+    .pipe(vinylPaths(del))
+    .pipe(rename(`${prefix}-grid-minimal.s\css`))
     .pipe(gulp.dest(dirDestScss));
 });
 
