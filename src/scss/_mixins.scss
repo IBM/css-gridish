@@ -1,13 +1,15 @@
 // Set the width of a grid’s column
 @mixin grid($breakpoint, $breakpointName) {
   @if (map-get($breakpoint, columns) != null) {
-    $columnSize: get-fluid-size($breakpointName, 1);
+    $columnSize: get-fluid-size($breakpointName, 1, false);
+    $columnSizeScrollbar: get-fluid-size($breakpointName, 1);
 
     .#{$prefix}-grid {
       @if is-same-breakpoint($breakpoint, $first) {
         grid-auto-rows: minmax($rowHeight * 1rem, min-content);
       }
       grid-template-columns: repeat(auto-fill, $columnSize);
+      grid-template-columns: repeat(auto-fill, $columnSizeScrollbar);
 
       &.#{$prefix}-grid--fixed-columns {
         grid-template-columns: repeat(
@@ -20,6 +22,7 @@
 
       &.#{$prefix}-grid--fluid-rows {
         grid-auto-rows: $columnSize;
+        grid-auto-rows: $columnSizeScrollbar;
       }
 
       @if is-same-breakpoint($breakpoint, $last) == false {
@@ -55,7 +58,8 @@
           $columnMultiplier: $i *
             map-get($breakpoint, columns) /
             map-get($currentBreakpoint, columns);
-          $columnSize: get-fluid-size($name, $columnMultiplier);
+          $columnSize: get-fluid-size($name, $columnMultiplier, false);
+          $columnSizeScrollbar: get-fluid-size($name, $columnMultiplier);
 
           $isSecondToLast: is-same-breakpoint(
             $breakpoint,
@@ -63,6 +67,11 @@
           );
 
           $maxColumnSize: get-fluid-size(
+            nth(nth($allBreakpoints, length($allBreakpoints)), 1),
+            $columnMultiplier,
+            false
+          );
+          $maxColumnSizeScrollbar: get-fluid-size(
             nth(nth($allBreakpoints, length($allBreakpoints)), 1),
             $columnMultiplier
           );
@@ -72,8 +81,10 @@
               // If second-to-last media query, apply max-width instead of remaking classes in last media query
               @if $isSecondToLast {
                 max-width: $maxColumnSize;
+                max-width: $maxColumnSizeScrollbar;
               }
               width: $columnSize;
+              width: $columnSizeScrollbar;
             }
             grid-column: span #{$columnMultiplier};
 
@@ -89,10 +100,13 @@
             grid-row: span $i;
             @if $includeFlexFallback {
               height: $columnSize;
+              height: $columnSizeScrollbar;
               min-height: $columnSize;
+              min-height: $columnSizeScrollbar;
               // If second-to-last media query, apply max-height instead of remaking classes in last media query
               @if $isSecondToLast {
                 max-height: $maxColumnSize;
+                max-height: $maxColumnSizeScrollbar;
               }
             }
           }

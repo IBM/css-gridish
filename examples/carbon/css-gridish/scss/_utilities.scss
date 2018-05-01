@@ -18,6 +18,7 @@
 /// Returns a calc() expression that represents a fluid width at a given breakpoint.
 /// @param {String} $breakpointName A valid breakpoint.
 /// @param {Number} $columnSpan The number of columns to span across.
+/// @param {Boolean} $supportsCSSVariable Does the output rule include CSS Variables?
 /// @return {Length} A calc() expression representing fluid width.
 /// @example scss
 /// button {
@@ -31,7 +32,11 @@
 ///     max-width: 25vw;
 ///   }
 /// }
-@function get-fluid-size($breakpointName, $columnSpan) {
+@function get-fluid-size(
+  $breakpointName,
+  $columnSpan,
+  $supportsCSSVariable: true
+) {
   $breakpoint: map-get($breakpointsAndArtboards, $breakpointName);
 
   @if ($breakpoint == null or type-of($breakpoint) != "map") {
@@ -54,16 +59,27 @@
   }
 
   $container: 100vw;
+  @if ($supportsCSSVariable) {
+    $container: "(100vw - var(--scrollbar-width))";
+  }
+
   // Last breakpoint is a max-width and should be a fixed number
   @if is-same-breakpoint($breakpoint, $last) {
     $container: map-get($breakpoint, breakpoint) * 1rem;
+    @if ($supportsCSSVariable) {
+      $container: "(#{$container} - var(--scrollbar-width))";
+    }
   }
 
   $multiplier: round-decimal($columnSpan / $columnTotal, 4, floor);
 
   // For IE, we can't have a 0 in the $fluidWidth calc().
   @if ($margin == 0) {
-    @return $container * $multiplier;
+    @if ($supportsCSSVariable) {
+      @return calc(#{$container}* #{$multiplier});
+    } @else {
+      @return $container * $multiplier;
+    }
   }
 
   @return calc((#{$container} - #{$margin * 2}) * #{$multiplier});

@@ -27,6 +27,8 @@ There are three CSS files to choose from based on what browser support you want 
 | `css/bx-grid.min.css` | To only support browsers with [CSS Grid Layout support](https://developer.mozilla.org/en-US/docs/Web/CSS/grid#Browser_compatibility) |
 | `css/bx-grid-minimal.min.css` | To only support browsers with [CSS Grid Layout support](https://developer.mozilla.org/en-US/docs/Web/CSS/grid#Browser_compatibility), but not use any generated column or height classes |
 
+There is also an optional JavaScript file included at `js/bx-grid.js`. This will adjust the grid to not go behind browser scrollbars since different browsers handle the `vw` unit differently. It applies to any browser that supports [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables#Browser_compatibility) and [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#Browser_compatibility).
+
 ## Breakpoints
 
 A breakpoint is where the number of columns or another value changes using a media query. There are currently 2 breakpoints where the design specs change for our grid. The great thing about CSS Grid Layout is that you can rearrange your layout at any custom breakpoint between those:

@@ -27,6 +27,7 @@ const route =
 const dirDest = `${dirRoot}/${route}`;
 const dirDestCss = `${dirDest}/\css`;
 const dirDestDesign = `${__dirname}/css-gridish-design.json`;
+const dirDestJs = `${dirDest}/js`;
 const dirDestScss = `${dirDest}/s\css`;
 const dirDestSketch = `${dirDest}/sketch`;
 const prefix = config.prefix ? config.prefix : "gridish";
@@ -67,7 +68,12 @@ handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
 });
 
 gulp.task("clean", function() {
-  return del([dirDestCss, dirDestScss, `${dirDest}/${prefix}-grid.sketch`]);
+  return del([
+    dirDestCss,
+    dirDestJs,
+    dirDestScss,
+    `${dirDest}/${prefix}-grid.sketch`
+  ]);
 });
 
 gulp.task("css", ["scssRenameMinimal"], function() {
@@ -115,7 +121,7 @@ gulp.task("css-minimal", ["css-legacy"], function() {
     .pipe(gulp.dest(dirDestCss));
 });
 
-gulp.task("docs", ["css-minimal"], function() {
+gulp.task("docs", ["js"], function() {
   return gulp
     .src(`${__dirname}/docs/*.hbs`)
     .pipe(
@@ -142,6 +148,13 @@ gulp.task("docs", ["css-minimal"], function() {
       })
     )
     .pipe(gulp.dest(dirDest));
+});
+
+gulp.task("js", ["css-minimal"], function() {
+  return gulp
+    .src(`${__dirname}/js/gridish-grid.js`)
+    .pipe(rename(`${prefix}-grid.js`))
+    .pipe(gulp.dest(dirDestJs));
 });
 
 gulp.task("scss", ["valuesClean"], function() {

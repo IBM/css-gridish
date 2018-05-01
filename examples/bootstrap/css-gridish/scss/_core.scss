@@ -17,6 +17,7 @@ body {
   margin-right: auto;
   max-width: #{map-get($last, breakpoint)}rem;
   overflow-x: hidden;
+  padding-right: var(--scrollbar-width);
   width: 100vw;
 }
 
@@ -77,8 +78,9 @@ body {
   }
 }
 
-@include grid-legacy-wrapper($includeFlexFallback) {
-  :root {
+:root {
+  --scrollbar-width: 0px;
+  @include grid-legacy-wrapper($includeFlexFallback) {
     @include grid-heights-fixed($rows);
   }
 }
