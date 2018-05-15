@@ -85,12 +85,26 @@
               }
               width: $columnSize;
               width: $columnSizeScrollbar;
+              @debug $columnSize;
             }
             grid-column: span #{$columnMultiplier};
 
             @if is-same-breakpoint($breakpoint, $last) == false {
               &.#{$prefix}-grid > *:not([class*="#{$prefix}-grid__col"]) {
                 grid-column: span #{$i};
+              }
+            }
+          }
+
+          .#{$prefix}-grid__offset--#{$currentName}--#{$i} {
+            @if $includeFlexFallback {
+              margin-left: $columnSize;
+              margin-left: $columnSizeScrollbar;
+            }
+
+            @for $j from 1 through map-get($currentBreakpoint, columns) {
+              &.#{$prefix}-grid__col--#{$currentName}--#{$j} {
+                grid-column: #{$i + 1} / span #{$j};
               }
             }
           }

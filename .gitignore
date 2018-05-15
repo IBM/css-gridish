@@ -3,3 +3,4 @@ etc
 node_modules
 output
 *.log
+.idea/
