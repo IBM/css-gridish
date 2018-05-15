@@ -95,6 +95,19 @@
             }
           }
 
+          .#{$prefix}-grid__offset--#{$currentName}--#{$i} {
+            @if $includeFlexFallback {
+              margin-left: $columnSize;
+              margin-left: $columnSizeScrollbar;
+            }
+
+            @for $j from 1 through map-get($currentBreakpoint, columns) {
+              &.#{$prefix}-grid__col--#{$currentName}--#{$j} {
+                grid-column: #{$i + 1} / span #{$j};
+              }
+            }
+          }
+
           .#{$prefix}-grid--fluid-rows
             > .#{$prefix}-grid__height--#{$currentName}--#{$i} {
             grid-row: span $i;
