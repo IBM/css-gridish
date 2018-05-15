@@ -85,7 +85,6 @@
               }
               width: $columnSize;
               width: $columnSizeScrollbar;
-              @debug $columnSize;
             }
             grid-column: span #{$columnMultiplier};
 
