@@ -18,13 +18,13 @@ The truth is that many enterprise projects can’t afford to drop support for br
 
 Requires [Node v8.2.0](https://nodejs.org/en/) or higher, which includes npm and npx.
 
-1. Create a file called `css-gridish.json` in your project root. See the [config documentation](#config-file) or an [example config](./examples/material/css-gridish.json) for help.
-2. Determine how you want your grid built:
-   * If you want to build once, run command `npx css-gridish`.
-   * If you want to add the grid building to your project’s build process:
-     1. Run command `npm install css-gridish`.
-     2. Add `scripts: {build: "css-gridish"}` in your `package.json`.
-     3. Run command `npm run build`.
+1.  Create a file called `css-gridish.json` in your project root. See the [config documentation](#config-file) or an [example config](./examples/material/css-gridish.json) for help.
+2.  Determine how you want your grid built:
+    * If you want to build once, run command `npx css-gridish`.
+    * If you want to add the grid building to your project’s build process:
+      1.  Run command `npm install css-gridish`.
+      2.  Add `scripts: {build: "css-gridish"}` in your `package.json`.
+      3.  Run command `npm run build`.
 
 Your CSS and `README.md` with class documentation will be built into `./css-gridish/`.
 
@@ -92,7 +92,7 @@ $extraBreakpoints: (
 
 ### Transitioning from Legacy
 
-Once your experience can drop support for browsers like IE 11 and Edge <15, you can simply remove all legacy classes and switch over to the non-legacy files. This is a great progressive-enhancement for your performance when it happens.
+Once your experience can drop support for browsers like IE 11 and Edge <15, you can simply switch over to the non-legacy files. This is a great progressive-enhancement for your performance when it happens. A minimal file is also included for when you use native CSS Grid rules instead of our column and row classes.
 
 ## Future Updates
 
@@ -105,6 +105,18 @@ Once your experience can drop support for browsers like IE 11 and Edge <15, you 
 
 A lot of times, you will want an item to break out of the gutters for background color, to extend media, or for another reason. Until the CSS Grid spec has a way to ignore that gutter, we use the padding classes (`.yourGrid-padding`) to opt-in to respecting the gutter. The padding classes are always half the size of a gutter for alignment.
 
+### Why is the legacy version using Flexbox instead of the `-ms` prefix use of CSS Grid?
+
+The biggest reason is due to the lack of auto-placement when using that prefix. See more details about difference in the `-ms` prefix in [this blog post.](https://rachelandrew.co.uk/archives/2016/11/26/should-i-try-to-use-the-ie-implementation-of-css-grid-layout/)
+
+### Why are there no grouping row classes needed?
+
+Thanks to flexbox’s wrapping functionality, nodes that specify rows are not necessary. Only create a node for a row if it has semantic or accessibility significance. You can keep embedding `.yourPrefix-grid` as necessary to accomplish this.
+
+### What happens if I specify the column class for one breakpoint, but not the column class for the next breakpoint?
+
+To maintain a mobile-first opinion, column widths will scale to the next breakpoint if not specified. This means that a `.yourPrefix__col--sm--3` (with 6 total columns) would automatically grow into a `.yourPrefix__col--md--6` (with 12 total columns) if no `md` class was declared to maintain half of the screen size.
+
 ### Why are columns using vw units and sometimes the calc function?
 
 Until Edge and Safari support
@@ -112,11 +124,3 @@ Until Edge and Safari support
 it will be difficult for you to write semantic HTML with CSS Grid Layout. We are
 able to take advantage of vw units and the calc function so you can embed your
 `.yourPrefix-grid` class inside of itself as much that is needed for you.
-
-### Why are there no row classes for the legacy implementation?
-
-Thanks to flexbox’s wrapping functionality, nodes that specify rows are not necessary. Only create a node for a row if it has semantic or accessibility significance. You can keep embedding `.yourPrefix-grid` as necessary to accomplish this.
-
-### What happens in the legacy implementation if I specify the column width for one breakpoint, but not the next larger breakpoint?
-
-To maintain a mobile-first opinion, column widths will scale to the next breakpoint if not specified. This means that a `.yourPrefix__col--sm--3` (with 6 total columns) would automatically grow into a `.yourPrefix__col--md--6` (with 12 total columns) if no `md` class was declared to maintain half of the screen size.

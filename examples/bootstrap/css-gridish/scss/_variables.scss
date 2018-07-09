@@ -9,6 +9,7 @@ $breakpoints: add-padding(map-get($grid-values, "breakpoints"));
 $first: nth(nth($breakpoints, 1), 2);
 $last: nth(nth($breakpoints, -1), 2);
 $includeFlexFallback: false !default;
+$minimal: false !default;
 $rowHeight: map-get($grid-values, "rowHeight");
 $rows: map-get($grid-values, "rows");
 $extraArtboards: map-get($grid-values, "extraArtboards");
