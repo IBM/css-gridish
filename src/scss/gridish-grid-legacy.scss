@@ -2,24 +2,24 @@ $includeFlexFallback: true;
 @import "core.scss";
 
 @supports (display: grid) {
-  .#{$prefix}-grid > *,
-  .#{$prefix}-grid > [class*="#{$prefix}-grid__col--"] {
+  .#{$prefix}--grid > *,
+  .#{$prefix}--grid > [class*="#{$prefix}-grid__col--"] {
     min-width: initial;
     max-width: initial;
     width: initial;
 
-    &.#{$prefix}-grid {
+    &.#{$prefix}--grid {
       display: grid;
     }
   }
 
-  .#{$prefix}-grid > [class*="#{$prefix}-grid__height--"] {
+  .#{$prefix}--grid > [class*="#{$prefix}-grid__height--"] {
     height: unset;
     max-height: unset;
     min-height: initial;
   }
 }
 
-.#{$prefix}-grid > script {
+.#{$prefix}--grid > script {
   display: none;
 }

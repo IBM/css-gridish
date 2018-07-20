@@ -11,7 +11,7 @@ body {
   margin: 0;
 }
 
-.#{$prefix}-container {
+.#{$prefix}--container {
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
@@ -20,15 +20,15 @@ body {
   width: 100vw;
 }
 
-.#{$prefix}-container--left {
+.#{$prefix}--container--left {
   margin-left: 0;
 }
 
-.#{$prefix}-container--right {
+.#{$prefix}--container--right {
   margin-right: 0;
 }
 
-.#{$prefix}-grid {
+.#{$prefix}--grid {
   align-items: flex-start;
   box-sizing: border-box;
   @if $includeFlexFallback {
@@ -55,16 +55,16 @@ body {
 
 // Rules needed in legacy, but needed to change in CSS Grid
 @if $includeFlexFallback {
-  .#{$prefix}-grid > * {
+  .#{$prefix}--grid > * {
     width: 100%;
   }
 
   @supports (display: grid) {
-    .#{$prefix}-grid {
+    .#{$prefix}--grid {
       align-items: unset;
     }
 
-    .#{$prefix}-grid > * {
+    .#{$prefix}--grid > * {
       width: initial;
     }
   }
@@ -72,7 +72,7 @@ body {
 
 // Rules not needed in legacy, but needed in CSS Grid
 @supports (display: grid) {
-  .#{$prefix}-grid > * {
+  .#{$prefix}--grid > * {
     height: 100%;
   }
 }
