@@ -3,7 +3,7 @@ $includeFlexFallback: true;
 
 @supports (display: grid) {
   .#{$prefix}--grid > *,
-  .#{$prefix}--grid > [class*="#{$prefix}-grid__col--"] {
+  .#{$prefix}--grid > [class*="#{$prefix}--grid__col--"] {
     min-width: initial;
     max-width: initial;
     width: initial;
@@ -13,7 +13,7 @@ $includeFlexFallback: true;
     }
   }
 
-  .#{$prefix}--grid > [class*="#{$prefix}-grid__height--"] {
+  .#{$prefix}--grid > [class*="#{$prefix}--grid__height--"] {
     height: unset;
     max-height: unset;
     min-height: initial;

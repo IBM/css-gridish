@@ -34,7 +34,7 @@
 // Generate variables for commonly used rows
 @mixin grid-heights-fixed($rows) {
   @for $i from 1 to $rows {
-    --#{$prefix}-height-#{$i}: get-fixed-size($i);
+    --#{$prefix}--height-#{$i}: get-fixed-size($i);
   }
 }
 
@@ -78,7 +78,7 @@
             grid-column: span #{$columnMultiplier};
 
             @if is-same-breakpoint($breakpoint, $last) == false {
-              &.#{$prefix}--grid > *:not([class*="#{$prefix}-grid__col"]) {
+              &.#{$prefix}--grid > *:not([class*="#{$prefix}--grid__col"]) {
                 grid-column: span #{$i};
               }
             }
@@ -103,7 +103,7 @@
 
   @if $includeFlexFallback {
     @if is-same-breakpoint($breakpoint, $last) {
-      [class*="#{$prefix}-grid__col--"] {
+      [class*="#{$prefix}--grid__col--"] {
         min-width: 0;
       }
     }
@@ -152,7 +152,7 @@
     }
   }
 
-  [class*="#{$prefix}-grid__col--#{$name}--"] {
+  [class*="#{$prefix}--grid__col--#{$name}--"] {
     display: block;
   }
 
@@ -199,14 +199,14 @@
       $previousMargin !=
       "0"
     {
-      [class^="#{$prefix}-container__bleed--#{$previousName}"],
-      [class^="#{$prefix}-container__break--#{$previousName}"] {
+      [class^="#{$prefix}--container__bleed--#{$previousName}"],
+      [class^="#{$prefix}--container__break--#{$previousName}"] {
         margin-left: 0;
         margin-right: 0;
         padding-left: 0;
         padding-right: 0;
 
-        &[class^="#{$prefix}-padding"] {
+        &[class^="#{$prefix}--padding"] {
           padding-left: $padding;
           padding-right: $padding;
         }

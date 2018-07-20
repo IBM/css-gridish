@@ -49,7 +49,7 @@ body {
   }
 }
 
-[class*="#{$prefix}-padding"] {
+[class*="#{$prefix}--padding"] {
   box-sizing: border-box;
 }
 
