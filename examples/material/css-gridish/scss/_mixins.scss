@@ -3,13 +3,13 @@
   @if (map-get($breakpoint, columns) != null) {
     $columnSize: get-fluid-size($breakpointName, 1);
 
-    .#{$prefix}-grid {
+    .#{$prefix}--grid {
       @if is-same-breakpoint($breakpoint, $first) {
         grid-auto-rows: minmax($rowHeight * 1rem, min-content);
       }
       grid-template-columns: repeat(auto-fill, $columnSize);
 
-      &.#{$prefix}-grid--fixed-columns {
+      &.#{$prefix}--grid--fixed-columns {
         grid-template-columns: repeat(
           auto-fill,
           map-get($breakpoint, breakpoint) *
@@ -18,7 +18,7 @@
         );
       }
 
-      &.#{$prefix}-grid--fluid-rows {
+      &.#{$prefix}--grid--fluid-rows {
         grid-auto-rows: $columnSize;
       }
 
@@ -34,7 +34,7 @@
 // Generate variables for commonly used rows
 @mixin grid-heights-fixed($rows) {
   @for $i from 1 to $rows {
-    --#{$prefix}-height-#{$i}: get-fixed-size($i);
+    --#{$prefix}--height-#{$i}: get-fixed-size($i);
   }
 }
 
@@ -67,7 +67,7 @@
             $columnMultiplier
           );
 
-          .#{$prefix}-grid__col--#{$currentName}--#{$i} {
+          .#{$prefix}--grid__col--#{$currentName}--#{$i} {
             @if $includeFlexFallback {
               // If second-to-last media query, apply max-width instead of remaking classes in last media query
               @if $isSecondToLast {
@@ -78,14 +78,14 @@
             grid-column: span #{$columnMultiplier};
 
             @if is-same-breakpoint($breakpoint, $last) == false {
-              &.#{$prefix}-grid > *:not([class*="#{$prefix}-grid__col"]) {
+              &.#{$prefix}--grid > *:not([class*="#{$prefix}--grid__col"]) {
                 grid-column: span #{$i};
               }
             }
           }
 
-          .#{$prefix}-grid--fluid-rows
-            > .#{$prefix}-grid__height--#{$currentName}--#{$i} {
+          .#{$prefix}--grid--fluid-rows
+            > .#{$prefix}--grid__height--#{$currentName}--#{$i} {
             grid-row: span $i;
             @if $includeFlexFallback {
               height: $columnSize;
@@ -103,7 +103,7 @@
 
   @if $includeFlexFallback {
     @if is-same-breakpoint($breakpoint, $last) {
-      [class*="#{$prefix}-grid__col--"] {
+      [class*="#{$prefix}--grid__col--"] {
         min-width: 0;
       }
     }
@@ -112,12 +112,12 @@
 
 // Set the height of an item for legacy grid
 @mixin grid-legacy-heights($name) {
-  .#{$prefix}-grid__height--#{$name}--0 {
+  .#{$prefix}--grid__height--#{$name}--0 {
     height: 0;
     min-height: 0;
   }
   @for $i from 1 to $rows {
-    .#{$prefix}-grid__height--#{$name}--#{$i} {
+    .#{$prefix}--grid__height--#{$name}--#{$i} {
       grid-row: span $i;
       @if $includeFlexFallback {
         height: get-fixed-size($i);
@@ -146,18 +146,18 @@
     @if map-get(nth($currentBreakpoint, 2), breakpoint) <
       map-get($breakpoint, breakpoint)
     {
-      .#{$prefix}-grid__col--#{nth($currentBreakpoint, 1)}--0--only {
+      .#{$prefix}--grid__col--#{nth($currentBreakpoint, 1)}--0--only {
         display: block;
       }
     }
   }
 
-  [class*="#{$prefix}-grid__col--#{$name}--"] {
+  [class*="#{$prefix}--grid__col--#{$name}--"] {
     display: block;
   }
 
-  .#{$prefix}-grid__col--#{$name}--0,
-  .#{$prefix}-grid__col--#{$name}--0--only {
+  .#{$prefix}--grid__col--#{$name}--0,
+  .#{$prefix}--grid__col--#{$name}--0--only {
     display: none;
   }
 }
@@ -199,14 +199,14 @@
       $previousMargin !=
       "0"
     {
-      [class^="#{$prefix}-container__bleed--#{$previousName}"],
-      [class^="#{$prefix}-container__break--#{$previousName}"] {
+      [class^="#{$prefix}--container__bleed--#{$previousName}"],
+      [class^="#{$prefix}--container__break--#{$previousName}"] {
         margin-left: 0;
         margin-right: 0;
         padding-left: 0;
         padding-right: 0;
 
-        &[class^="#{$prefix}-padding"] {
+        &[class^="#{$prefix}--padding"] {
           padding-left: $padding;
           padding-right: $padding;
         }
@@ -224,53 +224,53 @@
       $marginPlusPadding: $margin;
     }
 
-    .#{$prefix}-container {
+    .#{$prefix}--container {
       margin-left: auto;
       margin-right: auto;
       padding-left: $margin;
       padding-right: $margin;
     }
 
-    .#{$prefix}-container--left {
+    .#{$prefix}--container--left {
       margin-left: 0;
     }
 
-    .#{$prefix}-container--right {
+    .#{$prefix}--container--right {
       margin-right: 0;
     }
 
-    .#{$prefix}-container__bleed--#{$nameToUse},
-    .#{$prefix}-container__bleed--#{$nameToUse}--left,
-    .#{$prefix}-container__break--#{$nameToUse},
-    .#{$prefix}-container__break--#{$nameToUse}--left {
+    .#{$prefix}--container__bleed--#{$nameToUse},
+    .#{$prefix}--container__bleed--#{$nameToUse}--left,
+    .#{$prefix}--container__break--#{$nameToUse},
+    .#{$prefix}--container__break--#{$nameToUse}--left {
       margin-left: -#{$margin};
     }
 
-    .#{$prefix}-container__bleed--#{$nameToUse},
-    .#{$prefix}-container__bleed--#{$nameToUse}--right,
-    .#{$prefix}-container__break--#{$nameToUse},
-    .#{$prefix}-container__break--#{$nameToUse}--right {
+    .#{$prefix}--container__bleed--#{$nameToUse},
+    .#{$prefix}--container__bleed--#{$nameToUse}--right,
+    .#{$prefix}--container__break--#{$nameToUse},
+    .#{$prefix}--container__break--#{$nameToUse}--right {
       margin-right: -#{$margin};
     }
 
-    .#{$prefix}-container__bleed--#{$nameToUse},
-    .#{$prefix}-container__bleed--#{$nameToUse}--left {
+    .#{$prefix}--container__bleed--#{$nameToUse},
+    .#{$prefix}--container__bleed--#{$nameToUse}--left {
       padding-left: $margin;
 
-      &.#{$prefix}-padding,
-      &.#{$prefix}-padding--horizontal,
-      &.#{$prefix}-padding--left {
+      &.#{$prefix}--padding,
+      &.#{$prefix}--padding--horizontal,
+      &.#{$prefix}--padding--left {
         padding-left: $marginPlusPadding;
       }
     }
 
-    .#{$prefix}-container__bleed--#{$nameToUse},
-    .#{$prefix}-container__bleed--#{$nameToUse}--right {
+    .#{$prefix}--container__bleed--#{$nameToUse},
+    .#{$prefix}--container__bleed--#{$nameToUse}--right {
       padding-right: $margin;
 
-      &.#{$prefix}-padding,
-      &.#{$prefix}-padding--horizontal,
-      &.#{$prefix}-padding--right {
+      &.#{$prefix}--padding,
+      &.#{$prefix}--padding--horizontal,
+      &.#{$prefix}--padding--right {
         padding-right: $marginPlusPadding;
       }
     }
@@ -282,32 +282,32 @@
   @if (map-get($breakpoint, padding) != null) {
     $padding: map-get($breakpoint, padding);
 
-    .#{$prefix}-padding {
+    .#{$prefix}--padding {
       padding: $padding;
     }
 
-    .#{$prefix}-padding--bottom {
+    .#{$prefix}--padding--bottom {
       padding-bottom: $padding;
     }
 
-    .#{$prefix}-padding--left {
+    .#{$prefix}--padding--left {
       padding-left: $padding;
     }
 
-    .#{$prefix}-padding--right {
+    .#{$prefix}--padding--right {
       padding-right: $padding;
     }
 
-    .#{$prefix}-padding--top {
+    .#{$prefix}--padding--top {
       padding-top: $padding;
     }
 
-    .#{$prefix}-padding--horizontal {
+    .#{$prefix}--padding--horizontal {
       padding-left: $padding;
       padding-right: $padding;
     }
 
-    .#{$prefix}-padding--vertical {
+    .#{$prefix}--padding--vertical {
       padding-bottom: $padding;
       padding-top: $padding;
     }
